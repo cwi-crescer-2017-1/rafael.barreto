@@ -31,4 +31,11 @@ public class SaintTest{
             Saint shaka = new Saint ("shaka",virgem);
             assertEquals(Genero.NAO_INFORMADO,shaka.getGenero());
         }
+        
+        @Test
+        public void verificaSeEstaVivo(){
+            Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
+            Saint shiryu = new Saint ("Shiryu",dragao);
+            assertEquals(Status.VIVO,shiryu.getStatus());
+        }
 }
