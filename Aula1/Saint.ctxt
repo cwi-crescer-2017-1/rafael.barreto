@@ -16,4 +16,6 @@ comment7.params=
 comment7.target=Status\ getStatus()
 comment8.params=
 comment8.target=void\ perderVida()
-numComments=9
+comment9.params=
+comment9.target=int\ getCategoria()
+numComments=10

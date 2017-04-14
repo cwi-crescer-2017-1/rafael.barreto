@@ -53,4 +53,37 @@ public class SaintTest{
             Saint shiryu = new Saint ("Shiryu",dragao);
             assertEquals(1,shiryu.getCategoria());
         }
+        
+        @Test
+        public void testeDaBatalhaSaintCategoriaDiferente(){
+            Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
+            Saint shiryu = new Saint ("Shiryu",dragao);
+            
+            Armadura virgem = new Armadura ("virgem",Categoria.OURO);
+            Saint shaka = new Saint ("shaka",virgem);
+            
+            Batalha batalha = new Batalha();
+            
+            batalha.iniciar(shaka,shiryu);
+            
+            assertEquals(100,0,shaka.getVida());
+            assertEquals(90,0,shiryu.getVida());
+            
+        }
+        
+        @Test
+        public void testeBatalhaSaintMesmaCategoria(){
+            Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
+            Saint shiryu = new Saint ("Shiryu",dragao);
+            
+            Armadura pegaso = new Armadura ("Pegaso",Categoria.BRONZE);
+            Saint seiya = new Saint ("seiya",pegaso);
+            
+            Batalha batalha = new Batalha();
+            
+            batalha.iniciar(seiya,shiryu);
+            
+            assertEquals(100,0,seiya.getVida());
+            assertEquals(90,0,shiryu.getVida());
+        }      
     }

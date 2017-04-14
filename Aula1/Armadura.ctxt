@@ -2,4 +2,6 @@
 comment0.target=Armadura
 comment1.params=constelacao\ categoria
 comment1.target=Armadura(java.lang.String,\ Categoria)
-numComments=2
+comment2.params=
+comment2.target=Categoria\ getCategoria()
+numComments=3

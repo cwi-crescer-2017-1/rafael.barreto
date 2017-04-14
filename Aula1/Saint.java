@@ -39,5 +39,10 @@ public class Saint{
     
     public void perderVida(){
         this.vida-=10;
+    }   
+    
+    public int getCategoria(){
+        int categoria = this.armadura.getCategoria().getValor();    
+        return categoria;
     }
 }
