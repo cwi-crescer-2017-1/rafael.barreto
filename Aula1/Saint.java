@@ -10,7 +10,11 @@ public class Saint{
         this.nome = nome;
         this.armadura = armadura;
         this.status = Status.VIVO;
-        this.vida = 15;
+        this.vida = 100;
+    }
+    
+    public double getVida(){
+        return this.vida;
     }
     
     public void vestirArmadura(){
@@ -33,7 +37,7 @@ public class Saint{
         return this.status;
     }
     
-    public void perderVida(double dano){
-        this.vida-=dano;
+    public void perderVida(){
+        this.vida-=10;
     }
 }

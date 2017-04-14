@@ -38,4 +38,12 @@ public class SaintTest{
             Saint shiryu = new Saint ("Shiryu",dragao);
             assertEquals(Status.VIVO,shiryu.getStatus());
         }
+        
+        @Test
+        public void testaPerdeVida(){
+            Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
+            Saint shiryu = new Saint ("Shiryu",dragao);
+            shiryu.perderVida();
+            assertEquals(90,0,shiryu.getVida());
+        }
 }
