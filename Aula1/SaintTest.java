@@ -46,4 +46,11 @@ public class SaintTest{
             shiryu.perderVida();
             assertEquals(90,0,shiryu.getVida());
         }
-}
+        
+        @Test
+        public void testaMetodoGetCategoria(){
+            Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
+            Saint shiryu = new Saint ("Shiryu",dragao);
+            assertEquals(1,shiryu.getCategoria());
+        }
+    }
