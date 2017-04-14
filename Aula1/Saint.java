@@ -1,12 +1,16 @@
 public class Saint{   
     private String nome; 
-    private Armadura armadura;
     private boolean armaduraVestida;
+    private double vida;
+    private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
+    private Status status;   
     
     public Saint(String nome, Armadura armadura){
-        this.nome=nome;
-        this.armadura=armadura;
+        this.nome = nome;
+        this.armadura = armadura;
+        this.status = Status.VIVO;
+        this.vida = 15;
     }
     
     public void vestirArmadura(){
@@ -23,5 +27,13 @@ public class Saint{
     
     public void setGenero(Genero genero){
         this.genero = genero;
+    }
+    
+    public Status getStatus(){
+        return this.status;
+    }
+    
+    public void perderVida(double dano){
+        this.vida-=dano;
     }
 }
