@@ -37,8 +37,8 @@ public class Saint{
         return this.status;
     }
     
-    public void perderVida(){
-        this.vida-=10;
+    public void perderVida(double perdeVida){
+        this.vida-=perdeVida;
     }   
     
     public int getCategoria(){
