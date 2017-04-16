@@ -24,7 +24,7 @@ public class SaintTest{
             boolean resultado = hyoga.getArmaduraVestida();
             assertEquals(false,resultado);
         }
-        
+    
         @Test
         public void aoCriarSaintGeneroENaoInformado(){
             Armadura virgem = new Armadura ("virgem",Categoria.OURO);

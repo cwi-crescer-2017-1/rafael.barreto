@@ -126,7 +126,7 @@ public class BatalhaTest
             assertEquals(90,0,shiryu.getVida());
         }    
         
-              @Test
+        @Test
         public void testeBatalhaSaintMesmaCategoriaPrata(){
             Armadura altar = new Armadura ("Altar",Categoria.PRATA);
             Saint harukei = new Saint ("Harukei",altar);
@@ -142,7 +142,7 @@ public class BatalhaTest
             assertEquals(90,0,harukei.getVida());
         }  
         
-                  @Test
+        @Test
         public void testeBatalhaSaintMesmaCategoriaOuro(){
             Armadura escorpiao   = new Armadura ("Escorpiao",Categoria.OURO);
             Saint milo = new Saint ("Milo",escorpiao);

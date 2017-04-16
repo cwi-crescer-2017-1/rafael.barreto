@@ -5,15 +5,11 @@ public class Batalha{
         int categoriaSaint1 = saint1.getCategoria();
         int categoriaSaint2 = saint2.getCategoria();
         
-        if(categoriaSaint1>categoriaSaint2){
+        if(categoriaSaint1>categoriaSaint2 || categoriaSaint1==categoriaSaint2){
             saint2.perderVida(10);            
         }else{
-            if(categoriaSaint1==categoriaSaint2){
-                saint2.perderVida(10);
-            }else{
-                saint1.perderVida(10);
-            }
-        }
+                saint1.perderVida(10);         
+         }
     }
 }
     
