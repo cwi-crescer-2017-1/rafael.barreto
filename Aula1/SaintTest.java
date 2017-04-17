@@ -107,4 +107,10 @@ public class SaintTest{
 		Saint shiryu= new Saint("Shiryu", new Armadura("Dragao",Categoria.BRONZE));
 		assertEquals(5,shiryu.getSentidosDespertados());
     }
+
+	@Test
+	public void criarSaintPrataNasce6SentidosDespertados(){
+		Saint prata = new Saint("prata",new Armadura("prata",Categoria.PRATA));
+		assertEquals(6,prata.getSentidosDespertados());
+	}
 }
