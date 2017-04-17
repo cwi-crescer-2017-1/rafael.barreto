@@ -2,7 +2,7 @@ public class Saint{
     private String nome; 
     private boolean armaduraVestida;
     private double vida = 100;
-    private int qtdsentidos = 5;
+    protected int qtdsentidos = 5;
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;       
@@ -17,6 +17,7 @@ public class Saint{
             this.qtdsentidos=6;
         }else if(this.armadura.getCategoria() == Categoria.OURO){
             this.qtdsentidos = 7;
+			String Constelacao = armadura.getConstelacao();
         }
     }  
 
