@@ -13,12 +13,10 @@ public class Saint{
         this.status = Status.VIVO;
         this.vida = 100;
 
-        if(this.armadura.getCategoria() == Categoria.PRATA){
-            this.qtdsentidos=6;
-        }else if(this.armadura.getCategoria() == Categoria.OURO){
+       if(this.armadura.getCategoria() == Categoria.OURO){
             this.qtdsentidos = 7;
 			String Constelacao = armadura.getConstelacao();
-        }
+       }
     }  
 
     public double getVida(){
