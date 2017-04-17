@@ -1,17 +1,18 @@
 public class Saint{   
     private String nome; 
     private boolean armaduraVestida;
-    private double vida;
+    private double vida = 100;
+	private int sentido = 5;
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
-    private Status status;   
-    
+    private Status status;       
+  
     public Saint(String nome, Armadura armadura){
         this.nome = nome;
         this.armadura = armadura;
         this.status = Status.VIVO;
         this.vida = 100;
-    }
+    }  
     
     public double getVida(){
         return this.vida;
@@ -45,4 +46,8 @@ public class Saint{
         int categoria = this.armadura.getCategoria().getValor();    
         return categoria;
     }
+
+	public int getSentidosDespertados(){
+	 return this.sentido;   
+	}
 }

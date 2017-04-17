@@ -1,15 +1,21 @@
 public class Batalha{
     
-    public void iniciar(Saint saint1, Saint saint2){
-          
-        int categoriaSaint1 = saint1.getCategoria();
-        int categoriaSaint2 = saint2.getCategoria();
-        
-        if(categoriaSaint1>categoriaSaint2 || categoriaSaint1==categoriaSaint2){
-            saint2.perderVida(10);            
-        }else{
-                saint1.perderVida(10);         
-         }
+    private Saint saint1,saint2;
+    final double dano=10;
+    public Batalha(Saint saint1, Saint saint2){
+        this.saint1 = saint1;
+        this.saint2 = saint2;
     }
+    
+    public void iniciar(){
+        int valor1 = saint1.getCategoria();
+        int valor2 = saint2.getCategoria();
+        
+        if(valor1>=valor2){
+          this.saint2.perderVida(dano);
+        }else{
+          this.saint1.perderVida(dano);
+        }
+    }   
 }
     
