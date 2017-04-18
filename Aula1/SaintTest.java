@@ -139,4 +139,24 @@ public class SaintTest{
     public void constelacaoInvalidaDeveDarErro() throws Exception {
         GoldSaint jabu = new GoldSaint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.OURO));
     }
+    
+    @Test
+    public void testeSaintGetGolpes() throws Exception{ 
+        
+        Golpe soco = new Golpe("soco",10);
+        Golpe chute = new Golpe("chute",17);
+        Golpe cabecada = new Golpe("Cabecada",25);        
+        Armadura cancer = new Armadura(new Constelacao ("Cancer",chute,soco,cabecada),Categoria.OURO);
+        String saintNome="Mascara Da Morte";
+        
+        GoldSaint mascaraDaMorte = new GoldSaint (saintNome,cancer);
+        
+        boolean teste = mascaraDaMorte.getGolpes()[0].getNome().equals(chute.getNome());
+        assertEquals(true,teste);
+        teste = mascaraDaMorte.getGolpes()[1].getNome().equals(soco.getNome());
+        assertEquals(true,teste);
+        teste = mascaraDaMorte.getGolpes()[2].getNome().equals(cabecada.getNome());
+        assertEquals(true,teste);       
+    
+    }
 }

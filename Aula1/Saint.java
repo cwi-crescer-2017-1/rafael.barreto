@@ -59,4 +59,8 @@ public class Saint{
     public int getSentidosDespertados(){
         return this.qtdsentidos;   
     }
+    
+    public Golpe[] getGolpes(){    
+        return this.armadura.getConstelacao().getGolpe();
+    }
 }
