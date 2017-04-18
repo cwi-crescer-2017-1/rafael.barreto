@@ -10,7 +10,7 @@ public class Saint{
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
-    
+
     public Saint(String nome, Armadura armadura){
         this.nome = nome;
         this.armadura = armadura;
@@ -44,12 +44,12 @@ public class Saint{
 
     public void perderVida (double perdeVida) throws InvalidParameterException {
         int status=this.status.getStatusValor();
-        
+
         if(perdeVida<0){
             throw new InvalidParameterException(" valor passado nao pode ser negativo ");
         }else if(this.vida>=1){           
-           this.vida-=perdeVida;
-           if(vida <= 0 && status !=2){this.status = Status.MORTO; this.vida=0;}
+            this.vida-=perdeVida;
+            if(vida <= 0 && status !=2){this.status = Status.MORTO; this.vida=0;}
         }
     }   
 
@@ -61,23 +61,27 @@ public class Saint{
     public int getSentidosDespertados(){
         return this.qtdsentidos;   
     }
-    
+
     private Constelacao getConstelacao(){
         return this.armadura.getConstelacao();
     }
-    
+
     public ArrayList<Golpe> getGolpes(){    
         return this.getConstelacao().getGolpe();
     }
-    
+
     public void aprenderGolpe(Golpe golpe){
-       this.getConstelacao().adicionarGolpe(golpe);         
+        this.getConstelacao().adicionarGolpe(golpe);         
     }
-    
+
     public Golpe getProximoGolpe(){         
-       ArrayList<Golpe> golpes = getConstelacao().getGolpe();     
-       int posicao = this.acumulador % golpes.size();
-       this.acumulador++;
-       returnd golpes.get(0);                
+        ArrayList<Golpe> golpesArray = getConstelacao().getGolpe();     
+        if(golpesArray.size() > 0){
+            int posicao = this.acumulador % golpesArray.size();
+            Golpe golpe = golpesArray.get(posicao);
+            this.acumulador++;
+            return golpe;  
+        }
+        return null;                      
     }
 }
