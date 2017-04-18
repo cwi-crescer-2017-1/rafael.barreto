@@ -159,4 +159,38 @@ public class SaintTest{
         assertEquals(true,teste);       
     
     }
+    
+    @Test
+    public void testaSeEstaTrocandoDeGolpe() throws Exception{
+        Golpe soco = new Golpe("soco",10);
+        Golpe chute = new Golpe("chute",17);
+        Golpe cabecada = new Golpe("Cabecada",25);        
+        Armadura cancer = new Armadura(new Constelacao ("Cancer",chute,soco,cabecada),Categoria.OURO);
+        String saintNome="Mascara Da Morte";
+        
+        GoldSaint mascaraDaMorte = new GoldSaint (saintNome,cancer);
+        
+        Golpe golpeAtaque = mascaraDaMorte.getProximoGolpe();
+        assertEquals(chute.getNome(),golpeAtaque.getNome());        
+        
+        golpeAtaque = mascaraDaMorte.getProximoGolpe();
+        assertEquals(soco.getNome(),golpeAtaque.getNome());
+        
+        golpeAtaque = mascaraDaMorte.getProximoGolpe();
+        assertEquals(cabecada.getNome(),golpeAtaque.getNome());
+        
+        golpeAtaque = mascaraDaMorte.getProximoGolpe();
+        assertEquals(chute.getNome(),golpeAtaque.getNome());        
+        
+
+        golpeAtaque = mascaraDaMorte.getProximoGolpe();
+        assertEquals(soco.getNome(),golpeAtaque.getNome());
+        
+        golpeAtaque = mascaraDaMorte.getProximoGolpe();
+        assertEquals(cabecada.getNome(),golpeAtaque.getNome());
+        
+        golpeAtaque = mascaraDaMorte.getProximoGolpe();
+        assertEquals(chute.getNome(),golpeAtaque.getNome());    
+    
+    }
 }

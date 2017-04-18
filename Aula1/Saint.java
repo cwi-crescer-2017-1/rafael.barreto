@@ -5,10 +5,11 @@ public class Saint{
     private boolean armaduraVestida;
     private double vida = 100;
     protected int qtdsentidos = 5;
+    private int proximoGolpe = 0;
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
-    private Status status;       
-
+    private Status status;
+    
     public Saint(String nome, Armadura armadura){
         this.nome = nome;
         this.armadura = armadura;
@@ -66,5 +67,16 @@ public class Saint{
     
     public void aprenderGolpe(Golpe golpe){
          this.armadura.getConstelacao().setGolpe(golpe);         
+    }
+    
+    public Golpe getProximoGolpe(){
+   
+       if(proximoGolpe < 3){
+           this.proximoGolpe++;
+       }else{
+           this.proximoGolpe = 1;                      
+       }
+       return this.armadura.getConstelacao().getGolpe()[this.proximoGolpe-1]; 
+  
     }
 }
