@@ -156,7 +156,7 @@ public class SaintTest{
         Golpe soco = new Golpe("soco",10);
         Golpe chute = new Golpe("chute",17);
         Golpe cabecada = new Golpe("Cabecada",25);        
-        Armadura cancer = new Armadura(new Constelacao ("Cancer",chute,soco,cabecada),Categoria.OURO);
+        Armadura cancer = new Armadura(new Constelacao ("Cancer"),Categoria.OURO);
         String saintNome="Mascara Da Morte";
         
         GoldSaint mascaraDaMorte = new GoldSaint (saintNome,cancer);
@@ -176,7 +176,7 @@ public class SaintTest{
         Golpe soco = new Golpe("soco",10);
         Golpe chute = new Golpe("chute",17);
         Golpe cabecada = new Golpe("Cabecada",25);        
-        Armadura cancer = new Armadura(new Constelacao ("Cancer",chute,soco,cabecada),Categoria.OURO);
+        Armadura cancer = new Armadura(new Constelacao ("Cancer"),Categoria.OURO);
         String saintNome="Mascara Da Morte";
         
         GoldSaint mascaraDaMorte = new GoldSaint (saintNome,cancer);
