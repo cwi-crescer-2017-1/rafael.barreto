@@ -104,13 +104,19 @@ public class SaintTest{
 
     @Test
     public void criarSaintNasce5SentidosDespertado(){
-		Saint shiryu= new Saint("Shiryu", new Armadura("Dragao",Categoria.BRONZE));
-		assertEquals(5,shiryu.getSentidosDespertados());
+        Saint shiryu= new Saint("Shiryu", new Armadura("Dragao",Categoria.BRONZE));
+        assertEquals(5,shiryu.getSentidosDespertados());
     }
 
-	@Test
-	public void criarSaintPrataNasce6SentidosDespertados(){
-		SilverSaint prata = new SilverSaint("prata",new Armadura("prata",Categoria.PRATA));
-		assertEquals(6,prata.getSentidosDespertados());
-	}
+    @Test
+    public void criarSaintPrataNasce6SentidosDespertados(){
+        SilverSaint prata = new SilverSaint("prata",new Armadura("prata",Categoria.PRATA));
+        assertEquals(6,prata.getSentidosDespertados());
+    }
+
+    @Test
+    public void criarSaintPrataNasce7SentidosDespertados() throws Exception{
+        GoldSaint aldebaram = new GoldSaint ("Aldebaram",new Armadura("Touro",Categoria.OURO));
+        assertEquals(7,aldebaram.getSentidosDespertados());
+    }
 }

@@ -12,11 +12,6 @@ public class Saint{
         this.armadura = armadura;
         this.status = Status.VIVO;
         this.vida = 100;
-
-       if(this.armadura.getCategoria() == Categoria.OURO){
-            this.qtdsentidos = 7;
-			String Constelacao = armadura.getConstelacao();
-       }
     }  
 
     public double getVida(){
