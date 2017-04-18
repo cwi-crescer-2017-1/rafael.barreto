@@ -14,6 +14,24 @@ public class ConstelacaoTest
         boolean teste = aries.getGolpe()[2].getNome().equals(nomeGolpe);
         assertEquals(true,teste);
     }
+    
+    @Test
+    public void adicionaGolpeEmPosicaoLivre(){
+         String golpe1="soco",golpe2="chute", golpe3="cabecada";
+         Saint seiya = new Saint("Seiya",new Armadura(new Constelacao("pegaso"),Categoria.BRONZE));
+         seiya.aprenderGolpe(new Golpe(golpe1 ,10));        
+         boolean teste = seiya.getGolpes()[0].getNome().equals(golpe1);
+         assertEquals(true,teste);
+        
+         seiya.aprenderGolpe(new Golpe(golpe2 ,10));
+         teste = seiya.getGolpes()[1].getNome().equals(golpe2);
+         assertEquals(true,teste);
+         
+         seiya.aprenderGolpe(new Golpe(golpe3 ,10));
+         teste = seiya.getGolpes()[2].getNome().equals(golpe3);
+         assertEquals(true,teste);         
+    }       
+    
 /*
     @Test
     public void testeCriarConstelacaoUsandoArrayParametro(){

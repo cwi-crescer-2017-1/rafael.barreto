@@ -9,5 +9,5 @@ public class Golpe{
     
     public String getNome(){
         return this.nome;
-    }
+    } 
 }

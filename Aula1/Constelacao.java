@@ -27,6 +27,16 @@ public class Constelacao{
     
     public void adicionarGolpe(Golpe golpe){
         this.golpe[2]=golpe;
+    }    
+    
+    public void setGolpe(Golpe golpe){
+        int tamanho = this.golpe.length;
+        for (int x= 0; x<tamanho;x++){
+            if(this.golpe[x] == null ){
+                this.golpe[x] = golpe;
+                break;
+            }
+        }
     }
     
     public Golpe[] getGolpe(){

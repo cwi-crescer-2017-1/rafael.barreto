@@ -63,4 +63,8 @@ public class Saint{
     public Golpe[] getGolpes(){    
         return this.armadura.getConstelacao().getGolpe();
     }
+    
+    public void aprenderGolpe(Golpe golpe){
+         this.armadura.getConstelacao().setGolpe(golpe);         
+    }
 }
