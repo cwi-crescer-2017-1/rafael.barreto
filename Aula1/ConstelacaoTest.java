@@ -14,7 +14,7 @@ public class ConstelacaoTest
         boolean teste = aries.getGolpe()[2].getNome().equals(nomeGolpe);
         assertEquals(true,teste);
     }*/
-    
+    //modificar este teste usando o equals da classe Golpe.
     @Test
     public void adicionaGolpeEmPosicaoLivre(){
          String golpe1="soco",golpe2="chute", golpe3="cabecada";

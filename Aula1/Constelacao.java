@@ -28,17 +28,7 @@ public class Constelacao{
     
     public void adicionarGolpe(Golpe golpe){
        this.golpe[ultimaPosicaoPreenchida++] = golpe;      
-    }    
-    
-    public void setGolpe(Golpe golpe){
-        int tamanho = this.golpe.length;
-        for (int i= 0; i<tamanho;i++){
-            if(this.golpe[i] == null ){
-                this.golpe[i] = golpe;
-                break;
-            }
-        }
-    }
+    }  
     
     public Golpe[] getGolpe(){
         return this.golpe;

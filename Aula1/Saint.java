@@ -5,7 +5,7 @@ public class Saint{
     private boolean armaduraVestida;
     private double vida = 100;
     protected int qtdsentidos = 5;
-    private int proximoGolpe = 0;
+    private int acumulador = 0;
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
@@ -61,22 +61,22 @@ public class Saint{
         return this.qtdsentidos;   
     }
     
+    private Constelacao getConstelacao(){
+        return this.armadura.getConstelacao();
+    }
+    
     public Golpe[] getGolpes(){    
-        return this.armadura.getConstelacao().getGolpe();
+        return this.getConstelacao().getGolpe();
     }
     
     public void aprenderGolpe(Golpe golpe){
-         this.armadura.getConstelacao().setGolpe(golpe);         
+       this.getConstelacao().adicionarGolpe(golpe);         
     }
     
     public Golpe getProximoGolpe(){
-   
-       if(proximoGolpe < 3){
-           this.proximoGolpe++;
-       }else{
-           this.proximoGolpe = 1;                      
-       }
-       return this.armadura.getConstelacao().getGolpe()[this.proximoGolpe-1]; 
-  
+       Golpe[] golpes = getGolpes();
+       int posicao = this.acumulador % golpes.length;
+       this.acumulador++;       
+       return golpes[posicao];          
     }
 }
