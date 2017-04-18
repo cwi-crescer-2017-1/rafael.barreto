@@ -1,6 +1,7 @@
 public class Constelacao{
     private String nome;
     private Golpe[] golpe = new Golpe[3];
+    private int ultimaPosicaoPreenchida =0;
     
     public Constelacao (String nome){
         this.nome = nome;    
@@ -26,14 +27,14 @@ public class Constelacao{
     }
     
     public void adicionarGolpe(Golpe golpe){
-        this.golpe[2]=golpe;
+       this.golpe[ultimaPosicaoPreenchida++] = golpe;      
     }    
     
     public void setGolpe(Golpe golpe){
         int tamanho = this.golpe.length;
-        for (int x= 0; x<tamanho;x++){
-            if(this.golpe[x] == null ){
-                this.golpe[x] = golpe;
+        for (int i= 0; i<tamanho;i++){
+            if(this.golpe[i] == null ){
+                this.golpe[i] = golpe;
                 break;
             }
         }
@@ -41,6 +42,5 @@ public class Constelacao{
     
     public Golpe[] getGolpe(){
         return this.golpe;
-    }
-    
+    }   
 }

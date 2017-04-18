@@ -6,14 +6,14 @@ import org.junit.Test;
 
 public class ConstelacaoTest
 {
-    @Test
+    /*@Test
     public void testaAdicionarGolpeUltimaPosicaoArray(){
         Constelacao aries = new Constelacao("aries");
         String nomeGolpe = "exclamacao de athena";
         aries.adicionarGolpe(new Golpe(nomeGolpe,70));
         boolean teste = aries.getGolpe()[2].getNome().equals(nomeGolpe);
         assertEquals(true,teste);
-    }
+    }*/
     
     @Test
     public void adicionaGolpeEmPosicaoLivre(){
@@ -30,7 +30,7 @@ public class ConstelacaoTest
          seiya.aprenderGolpe(new Golpe(golpe3 ,10));
          teste = seiya.getGolpes()[2].getNome().equals(golpe3);
          assertEquals(true,teste);         
-    }       
+    }   
     
 /*
     @Test

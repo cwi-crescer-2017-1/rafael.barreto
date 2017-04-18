@@ -1,4 +1,4 @@
-import java.security.*;
+import java.security.InvalidParameterException;
 
 public class Saint{   
     private String nome; 
@@ -48,7 +48,7 @@ public class Saint{
             throw new InvalidParameterException(" valor passado nao pode ser negativo ");
         }else if(this.vida>=1){           
            this.vida-=perdeVida;
-           if(vida <= 0 && status !=2){this.status = Status.MORTO;}
+           if(vida <= 0 && status !=2){this.status = Status.MORTO; this.vida=0;}
         }
     }   
 
