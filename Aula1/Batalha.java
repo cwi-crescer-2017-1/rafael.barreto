@@ -7,7 +7,7 @@ public class Batalha{
         this.saint2 = saint2;
     }
     
-    public void iniciar(){
+    public void iniciar()throws Exception{
         int valor1 = saint1.getCategoria();
         int valor2 = saint2.getCategoria();
         

@@ -1,3 +1,5 @@
+import java.security.*;
+
 public class Saint{   
     private String nome; 
     private boolean armaduraVestida;
@@ -38,8 +40,15 @@ public class Saint{
         return this.status;
     }
 
-    public void perderVida(double perdeVida){
-        this.vida-=perdeVida;
+    public void perderVida (double perdeVida) throws InvalidParameterException {
+        int status=this.status.getStatusValor();
+        
+        if(perdeVida<0){
+            throw new InvalidParameterException(" valor passado nao pode ser negativo ");
+        }else if(this.vida>=1){           
+           this.vida-=perdeVida;
+           if(vida <= 0 && status !=2){this.status = Status.MORTO;}
+        }
     }   
 
     public int getCategoria(){

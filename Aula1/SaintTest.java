@@ -40,7 +40,7 @@ public class SaintTest{
     }
 
     @Test
-    public void testaPerdeVida10(){
+    public void testaPerdeVida10() throws Exception {
         Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
         Saint shiryu = new Saint ("Shiryu",dragao);
         shiryu.perderVida(10);
@@ -48,7 +48,7 @@ public class SaintTest{
     }
 
     @Test
-    public void testaPerdeVida20(){
+    public void testaPerdeVida20() throws Exception {
         Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
         Saint shiryu = new Saint ("Shiryu",dragao);
         shiryu.perderVida(20);
@@ -56,7 +56,7 @@ public class SaintTest{
     }
 
     @Test
-    public void testaPerdeVida80(){
+    public void testaPerdeVida80() throws Exception {
         Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
         Saint shiryu = new Saint ("Shiryu",dragao);
         shiryu.perderVida(80);
@@ -64,7 +64,7 @@ public class SaintTest{
     }
 
     @Test
-    public void testaPerdeVida85(){
+    public void testaPerdeVida85() throws Exception {
         Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
         Saint shiryu = new Saint ("Shiryu",dragao);
         shiryu.perderVida(85.5);
@@ -72,7 +72,7 @@ public class SaintTest{
     }
 
     @Test
-    public void testaPerdeVida90(){
+    public void testaPerdeVida90() throws Exception{
         Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
         Saint shiryu = new Saint ("Shiryu",dragao);
         shiryu.perderVida(90);
@@ -88,11 +88,26 @@ public class SaintTest{
     }
 
     @Test
-    public void testaPerdeVida100(){
+    public void testaPerdeVida100() throws Exception{
         Armadura dragao = new Armadura ("dragao",Categoria.BRONZE);
         Saint shiryu = new Saint ("Shiryu",dragao);
         shiryu.perderVida(100);
         assertEquals(0,0,shiryu.getVida());
+    }
+    
+    @Test
+    public void mudarStatusParaMortoAoZerarVida(){
+        SilverSaint retsu = new SilverSaint("Retsu",new Armadura("Lince",Categoria.PRATA));
+        retsu.perderVida(100);
+        assertEquals(Status.MORTO,retsu.getStatus());
+    }    
+    
+    @Test(expected = Exception.class)
+    public void testePerderVidaValorDanoNegativoDeveDarErro() throws Exception {
+        GoldSaint aldebaram = new GoldSaint("Aldebaram",new Armadura("Touro",Categoria.OURO));
+        aldebaram.perderVida(-10);
+        aldebaram.perderVida(-90);
+        aldebaram.perderVida(-1000);   
     }
 
     @Test
@@ -118,5 +133,10 @@ public class SaintTest{
     public void criarSaintPrataNasce7SentidosDespertados() throws Exception{
         GoldSaint aldebaram = new GoldSaint ("Aldebaram",new Armadura("Touro",Categoria.OURO));
         assertEquals(7,aldebaram.getSentidosDespertados());
+    }
+    
+    @Test (expected=Exception.class)
+    public void constelacaoInvalidaDeveDarErro() throws Exception {
+        GoldSaint jabu = new GoldSaint("Jabu",new Armadura("unicornio",Categoria.OURO));
     }
 }

@@ -1,6 +1,16 @@
 public enum Status{
-    VIVO, 
-    MORTO, 
-    DESACORDADO;
+    VIVO(1), 
+    MORTO(2), 
+    DESACORDADO(3);   
+    
+    private int valor;
+    
+    private Status(int valor){
+        this.valor = valor;
+    }  
+   
+    public int getStatusValor(){
+        return this.valor;
+    }
     
 }
