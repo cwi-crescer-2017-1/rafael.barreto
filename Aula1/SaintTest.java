@@ -110,7 +110,7 @@ public class SaintTest{
 
 	@Test
 	public void criarSaintPrataNasce6SentidosDespertados(){
-		Saint prata = new SilverSaint("prata",new Armadura("prata",Categoria.PRATA));
+		SilverSaint prata = new SilverSaint("prata",new Armadura("prata",Categoria.PRATA));
 		assertEquals(6,prata.getSentidosDespertados());
 	}
 }
