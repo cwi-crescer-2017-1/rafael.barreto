@@ -61,12 +61,32 @@ public class ListaSaints{
     
     
     public Saint getSaintMaiorVida(){//retorna primeiro saint encontrado com a maior vida
-        return null;
+        int tamanhoLista = listaSaints.size();
+        Saint saint = listaSaints.get(0);
+        
+        for(int i=0; i<tamanhoLista;i++){
+            Saint saintLista = listaSaints.get(i);
+            
+            if(saintLista.getVida() > saint.getVida()){
+                saint = saintLista;                                
+            }
+        }       
+        return saint;
     }
     
     
     public Saint getSaintMenorVida(){//retorna primeiro saint encontrado com a menor vida
-        return null;
+          int tamanhoLista = listaSaints.size();
+        Saint saint = listaSaints.get(0);
+        
+        for(int i=0; i<tamanhoLista;i++){
+            Saint saintLista = listaSaints.get(i);
+            
+            if(saintLista.getVida() < saint.getVida()){
+                saint = saintLista;               
+            }
+        }    
+        return saint;
     }
     
     public void ordenar(){   }   

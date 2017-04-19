@@ -86,5 +86,25 @@ public class ListaSaintsTest
      resultado = cavaleiros.buscarPorCategoria(Categoria.BRONZE);     
      assertEquals(seiya,resultado); 
    } 
+   
+     @Test
+   public void buscaSaintComMaiorVida() throws Exception{
+     Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
+     Saint shura = new GoldSaint("Shura",capricornio);
+     
+     Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
+     Saint mu = new GoldSaint("Mu",aries);
+     
+     ListaSaints cavaleiros = new ListaSaints();           
+     mu.perderVida(50);
+     
+     cavaleiros.adicionar(shura);
+     cavaleiros.adicionar(mu);
+     
+     Saint resultado;     
+     resultado = cavaleiros.getSaintMaiorVida();     
+     assertEquals(shura,resultado); 
+ 
+   } 
  
 }

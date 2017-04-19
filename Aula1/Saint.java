@@ -10,6 +10,8 @@ public class Saint{
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
+   
+
 
     public Saint(String nome, Armadura armadura){
         this.nome = nome;
