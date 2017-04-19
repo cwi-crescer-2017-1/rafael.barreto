@@ -89,6 +89,8 @@ public class ListaSaints{
         return saint;
     }
     
-    public void ordenar(){   }   
+    public void ordenar(){ 
+        java.util.Collections.sort(listaSaints);
+    }   
 
 }
