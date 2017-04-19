@@ -17,6 +17,10 @@ public class Saint{
         this.status = Status.VIVO;
         this.vida = 100;
     }  
+    
+    public String getNome(){
+        return this.nome;
+    }
 
     public double getVida(){
         return this.vida;
@@ -83,5 +87,14 @@ public class Saint{
             return golpe;  
         }
         return null;                      
+    }  
+    
+    public boolean equals(Object object){
+        Saint saintFora = (Saint)object;      
+    
+        return this.nome.equals(saintFora.getNome())
+            && this.status == saintFora.getStatus()
+            && this.vida == saintFora.getVida()  
+            && this.getCategoria() == saintFora.getCategoria();
     }
 }
