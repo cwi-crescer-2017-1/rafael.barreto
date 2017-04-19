@@ -89,19 +89,15 @@ public class ListaSaints{
     public void ordenar(){ 
         int tamanhoLista = listaSaints.size();
         int resultado;
-        Saint saint;
-        Saint saintLista;
-        Saint saintTemp;         
+        Saint saintTemp;        
         
         for (int i = 0; i < listaSaints.size(); i++) {
 
-            for (int j = listaSaints.size() - 1; j > i; j--) {
+            for (int j = listaSaints.size() - 1; j > i; j--) {                
                 if (listaSaints.get(i).getNome().compareToIgnoreCase(listaSaints.get(j).getNome()) > 0) {
-
                     saintTemp = listaSaints.get(i);
                     listaSaints.set(i, listaSaints.get(j));
                     listaSaints.set(j, saintTemp);
-
                 }
             }
         }

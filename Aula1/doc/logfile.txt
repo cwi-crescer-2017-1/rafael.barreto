@@ -1,6 +1,6 @@
 Class documentation
 <---- javadoc command: ---->
-/usr/lib/jvm/java-8-oracle/bin/javadoc
+C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
 -author
 -version
 -nodeprecated
@@ -12,30 +12,27 @@ Class documentation
 -source
 1.8
 -classpath
-/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.11.jar:/usr/share/bluej/hamcrest-core-1.3.jar:/usr/share/bluej/lang-stride.jar:/usr/share/bluej/userlib/pi4j-service.jar:/usr/share/bluej/userlib/pi4j-device.jar:/usr/share/bluej/userlib/pi4j-core.jar:/usr/share/bluej/userlib/pi4j-gpio-extension.jar:/home/rafael/crescer2017/rafael.barreto/Aula1
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.11.jar;C:\Program Files (x86)\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\BlueJ\lib\lang-stride.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\Aula1
 -d
-/home/rafael/crescer2017/rafael.barreto/Aula1/doc
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\Aula1\doc
 -encoding
 UTF-8
 -charset
 UTF-8
 -docletpath
-/usr/share/bluej/bjdoclet.jar
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
 -doclet
 bluej.doclet.doclets.formats.html.HtmlDoclet
-/home/rafael/crescer2017/rafael.barreto/Aula1/Saint.java
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\Aula1\ListaSaints.java
 <---- end of javadoc command ---->
-Loading source file /home/rafael/crescer2017/rafael.barreto/Aula1/Saint.java...
-Constructing Javadoc information...
-Standard Doclet version 1.8.0_121
-Building tree for all the packages and classes...
-Generating /home/rafael/crescer2017/rafael.barreto/Aula1/doc/Saint.html...
-Generating /home/rafael/crescer2017/rafael.barreto/Aula1/doc/package-frame.html...
-Generating /home/rafael/crescer2017/rafael.barreto/Aula1/doc/package-summary.html...
-Generating /home/rafael/crescer2017/rafael.barreto/Aula1/doc/constant-values.html...
-Building index for all the packages and classes...
-Building index for all classes...
-Generating /home/rafael/crescer2017/rafael.barreto/Aula1/doc/allclasses-frame.html...
-Generating /home/rafael/crescer2017/rafael.barreto/Aula1/doc/allclasses-noframe.html...
-Generating /home/rafael/crescer2017/rafael.barreto/Aula1/doc/index.html...
-Generating /home/rafael/crescer2017/rafael.barreto/Aula1/doc/stylesheet.css...
+Loading source file C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\Aula1\ListaSaints.java...
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\Aula1\ListaSaints.java:98: error: illegal start of expression
+                if (listaSaints.get(i).getNome().compareToIgnoreCase(listaSaints.get(j).getNome()) > 0) {
+                ^
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\Aula1\ListaSaints.java:98: error: not a statement
+                if (listaSaints.get(i).getNome().compareToIgnoreCase(listaSaints.get(j).getNome()) > 0) {
+                   ^
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\Aula1\ListaSaints.java:98: error: ';' expected
+                if (listaSaints.get(i).getNome().compareToIgnoreCase(listaSaints.get(j).getNome()) > 0) {
+                                                                                                       ^
+3 errors
