@@ -49,7 +49,7 @@ public class ListaSaintsTest
    } 
    
    @Test
-   public void buscarSaintPorStatusMorto    () throws Exception{
+   public void buscarSaintPorStatusMorto() throws Exception{
      Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
      Saint shura = new GoldSaint("Shura",capricornio);
      
@@ -65,6 +65,26 @@ public class ListaSaintsTest
      Saint resultado;     
      resultado = cavaleiros.buscarPorStatus(Status.MORTO);     
      assertEquals(mu,resultado); 
+ 
+   } 
+   
+    @Test
+   public void buscarSaintPorCategoria() throws Exception{
+     Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
+     Saint shura = new GoldSaint("Shura",capricornio);
+     
+     Armadura pegaso = new Armadura (new Constelacao("pegaso"),Categoria.BRONZE);
+     Saint seiya = new BronzeSaint("Seiya",pegaso);
+     
+     
+     ListaSaints cavaleiros = new ListaSaints();                
+     
+     cavaleiros.adicionar(shura);
+     cavaleiros.adicionar(seiya);
+     
+     Saint resultado;     
+     resultado = cavaleiros.buscarPorCategoria(Categoria.BRONZE);     
+     assertEquals(seiya,resultado); 
    } 
  
 }

@@ -34,7 +34,18 @@ public class ListaSaints{
         return null;
     }
     
-    public Saint buscarPorCategoria(Categoria categoria){return null;}
+    public Saint buscarPorCategoria(Categoria categoria){
+        int tamanhoLista = listaSaints.size();
+        
+        
+        for(int i = 0 ; i<tamanhoLista; i++){
+            Saint saint = this.listaSaints.get(i);
+            if(saint.getCategoria() == categoria.getValor()){
+                return saint;
+            }        
+        }
+        return null;
+    }
     
     public Saint buscarPorStatus(Status status){
         int tamanhoLista = listaSaints.size();
