@@ -35,6 +35,10 @@ public class Saint{
     public boolean getArmaduraVestida(){
         return this.armaduraVestida;
     }
+    
+    public Armadura getArmadura(){
+        return this.armadura;
+    }
 
     public Genero getGenero (){
         return this.genero;
@@ -98,9 +102,5 @@ public class Saint{
             && this.status == saintFora.getStatus()
             && this.vida == saintFora.getVida()  
             && this.getCategoria() == saintFora.getCategoria();
-    }  
-    
-    public int compareTo(Saint saint){        
-        return this.nome.compareTo(saint.getNome());
-    }
+    }      
 }
