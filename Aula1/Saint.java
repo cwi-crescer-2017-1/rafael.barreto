@@ -1,7 +1,7 @@
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
-public class Saint{   
+public class Saint implements Comparable<Saint>{   
     private String nome; 
     private boolean armaduraVestida;
     private double vida = 100;
@@ -98,5 +98,9 @@ public class Saint{
             && this.status == saintFora.getStatus()
             && this.vida == saintFora.getVida()  
             && this.getCategoria() == saintFora.getCategoria();
+    }
+    
+    public int compareTo(Saint saint){
+        return this.nome.compareTo(saint.getNome());
     }
 }
