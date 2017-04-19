@@ -21,35 +21,14 @@ public class ListaSaintsTest
      cavaleiros.adicionar(mu);
      
      Saint resultado;     
-     resultado = cavaleiros.buscarPorNome("Shura");
-     
+     resultado = cavaleiros.buscarPorNome("Shura");     
      assertEquals(shura,resultado);
      
      resultado = cavaleiros.buscarPorNome("Mu");
      assertEquals(mu,resultado);
      
    }
-   
-   @Test
-   public void buscarSaintPorStatusMorto() throws Exception{
-     Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-     Saint shura = new GoldSaint("Shura",capricornio);
-     
-     Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-     Saint mu = new GoldSaint("Mu",aries);
-     
-     mu.perderVida(110);
-     
-     ListaSaints cavaleiros = new ListaSaints();           
-     
-     cavaleiros.adicionar(shura);
-     cavaleiros.adicionar(mu);
-     
-     Saint resultado = cavaleiros.buscarPorStatus(Status.MORTO);
-     asserEquals(mu,resultado);
-     
-   }
-   
+  
    @Test
    public void buscarSaintPorStatusVivo() throws Exception{
      Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
@@ -58,17 +37,34 @@ public class ListaSaintsTest
      Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
      Saint mu = new GoldSaint("Mu",aries);
      
-     mu.perderVida(110);
-     
      ListaSaints cavaleiros = new ListaSaints();           
+     mu.perderVida(100);
      
      cavaleiros.adicionar(shura);
      cavaleiros.adicionar(mu);
      
-     Saint resultado = cavaleiros.buscarPorStatus(Status.VIVO);
-     asserEquals(mu,resultado);
+     Saint resultado;     
+     resultado = cavaleiros.buscarPorStatus(Status.VIVO);     
+     assertEquals(shura,resultado); 
+   } 
+   
+   @Test
+   public void buscarSaintPorStatusMorto    () throws Exception{
+     Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
+     Saint shura = new GoldSaint("Shura",capricornio);
      
-   }
-    
-    
+     Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
+     Saint mu = new GoldSaint("Mu",aries);
+     
+     ListaSaints cavaleiros = new ListaSaints();           
+     mu.perderVida(100);
+     
+     cavaleiros.adicionar(shura);
+     cavaleiros.adicionar(mu);
+     
+     Saint resultado;     
+     resultado = cavaleiros.buscarPorStatus(Status.MORTO);     
+     assertEquals(mu,resultado); 
+   } 
+ 
 }
