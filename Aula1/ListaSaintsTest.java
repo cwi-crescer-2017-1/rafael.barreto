@@ -149,9 +149,12 @@ public class ListaSaintsTest
      
      cavaleiros.ordenar();
      
-     assertEquals(aldebaram,cavaleiros.get(5)); 
-     assertEquals(hyoga,cavaleiros.get(4)); 
-     //assertEquals(jabu,cavaleiros.get(3)); 
+     assertEquals(aldebaram,cavaleiros.get(0)); 
+     assertEquals(hyoga,cavaleiros.get(1)); 
+     assertEquals(jabu,cavaleiros.get(2)); 
+     assertEquals(mu,cavaleiros.get(3)); 
+     assertEquals(shiryu,cavaleiros.get(4)); 
+     assertEquals(shura,cavaleiros.get(5)); 
 
  
    } 
