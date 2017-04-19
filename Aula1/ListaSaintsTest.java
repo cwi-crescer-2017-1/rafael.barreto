@@ -126,5 +126,34 @@ public class ListaSaintsTest
      assertEquals(mu,resultado); 
  
    } 
+   
+   @Test
+   public void ordenarAListaPorOrdemDeNomes() throws Exception{
+     Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
+     Saint shura = new Saint("Shura",capricornio);     
+     Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
+     Saint mu = new Saint("Mu",aries);  
+     Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
+     Saint shiryu = new Saint ("Shiryu",dragao);
+     Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
+     Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
+     Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+     ListaSaints cavaleiros = new ListaSaints();           
+     
+     cavaleiros.adicionar(shura);
+     cavaleiros.adicionar(mu);
+     cavaleiros.adicionar(hyoga);
+     cavaleiros.adicionar(shiryu);
+     cavaleiros.adicionar(aldebaram);
+     cavaleiros.adicionar(jabu);      
+     
+     cavaleiros.ordenar();
+     
+     assertEquals(aldebaram,cavaleiros.get(5)); 
+     assertEquals(hyoga,cavaleiros.get(4)); 
+     //assertEquals(jabu,cavaleiros.get(3)); 
+
+ 
+   } 
  
 }

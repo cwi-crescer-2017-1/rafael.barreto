@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class ListaSaints{
     
@@ -76,7 +76,7 @@ public class ListaSaints{
     
     
     public Saint getSaintMenorVida(){//retorna primeiro saint encontrado com a menor vida
-          int tamanhoLista = listaSaints.size();
+        int tamanhoLista = listaSaints.size();
         Saint saint = listaSaints.get(0);
         
         for(int i=0; i<tamanhoLista;i++){
@@ -90,7 +90,24 @@ public class ListaSaints{
     }
     
     public void ordenar(){ 
-        java.util.Collections.sort(listaSaints);
-    }   
-
+        int tamanhoLista = listaSaints.size();
+        int resultado;
+        Saint saint;
+        Saint saintLista;
+        Saint saintTemp;         
+        
+        for (int i=0; i< tamanhoLista;i++){
+                for (int j= 0 ; j<tamanhoLista -1; j++){
+                    saint = listaSaints.get(j);
+                    saintLista = listaSaints.get(j+1);
+                    resultado = saint.compareTo(saintLista);
+                    
+                    if(resultado > 0 ){
+                        saintTemp = saintLista;
+                        listaSaints.remove(saintLista);
+                        listaSaints.add(i,saintTemp);
+                    }
+                }               
+        }
+    }
 }
