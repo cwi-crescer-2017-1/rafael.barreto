@@ -149,15 +149,44 @@ public class ListaSaints{
          listaUnida.unirlistas(lista.todos());   
          
          return listaUnida;
-    }  
+    } 
     
+    public ListaSaints diff(ListaSaints lista){
+        ListaSaints listaDiff = new ListaSaints();
+        
+        listaDiff.unirlistas(this.listaSaints);
+        listaDiff.diffListas(this.listaSaints,lista.todos());
     
-    // metodos privados
+        return listaDiff;
+    }
+    
+    // METODOS PRIVADOS
     
     private void unirlistas(ArrayList<Saint> lista){              
        
         for ( Saint saint : lista){
             listaSaints.add(saint);
         }        
-    }     
+    }
+    
+    private void diffListas(ArrayList<Saint> lista, ArrayList<Saint> lista2){        
+        int tamanhoLista1 = lista.size();
+        int tamanhoLista2 = lista2.size();
+        int tamanho;
+        
+        if (tamanhoLista1>tamanhoLista2){tamanho = tamanhoLista2;}
+        else {tamanho = tamanhoLista1;}
+        
+        for( int i =0; i<tamanho; i++){
+            
+            String nome1 = lista.get(i).getNome();
+            String nome2 = lista2.get(i).getNome();
+            
+            boolean saintNomeIgual = !nome1.equals(nome2);            
+            
+            if(saintNomeIgual){
+                listaSaints.add(lista2.get(i));
+            }        
+        }        
+    }
 }

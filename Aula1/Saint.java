@@ -10,16 +10,27 @@ public class Saint{
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
-   
 
 
     public Saint(String nome, Armadura armadura){
         this.nome = nome;
         this.armadura = armadura;
         this.status = Status.VIVO;
-        this.vida = 100;
+        this.vida = 100;        
     }  
-    
+
+    public Saint(String nome, String nomeConstelacao, Categoria categoriaArmadura){
+        
+        Constelacao constelacao = new Constelacao(nomeConstelacao);
+        Armadura armadura = new Armadura(constelacao,categoriaArmadura);
+        
+        this.nome = nome;
+        this.status = Status.VIVO;
+        this.vida = 100; 
+        this.armadura = armadura;
+
+    }
+
     public String getNome(){
         return this.nome;
     }
@@ -35,7 +46,7 @@ public class Saint{
     public boolean getArmaduraVestida(){
         return this.armaduraVestida;
     }
-    
+
     public Armadura getArmadura(){
         return this.armadura;
     }
@@ -94,13 +105,13 @@ public class Saint{
         }
         return null;                      
     }  
-    
+
     public boolean equals(Object object){
         Saint saintFora = (Saint)object;      
-    
+
         return this.nome.equals(saintFora.getNome())
-            && this.status == saintFora.getStatus()
-            && this.vida == saintFora.getVida()  
-            && this.getCategoria() == saintFora.getCategoria();
+        && this.status == saintFora.getStatus()
+        && this.vida == saintFora.getVida()  
+        && this.getCategoria() == saintFora.getCategoria();
     }      
 }
