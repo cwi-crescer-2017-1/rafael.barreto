@@ -1,4 +1,9 @@
 public class GoldSaint extends Saint {
+    public GoldSaint(String nome, String armaduraSaint) throws Exception{           
+          this( nome , new Armadura(new Constelacao(armaduraSaint),Categoria.OURO));
+          this.qtdsentidos = 5;         
+    }
+    
     public GoldSaint(String nome , Armadura armadura) throws Exception{
         super(nome, armadura);
         this.qtdsentidos = 7;

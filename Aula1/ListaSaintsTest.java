@@ -145,6 +145,8 @@ public class ListaSaintsTest
         assertEquals(null,resultado);
     } 
 
+    // TESTES DO METODO ORDENAR
+
     @Test
     public void ordenarAListaPorVida() throws Exception{
         Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
@@ -179,6 +181,8 @@ public class ListaSaintsTest
         assertEquals(hyoga,cavaleiros.get(4)); 
         assertEquals(shura,cavaleiros.get(5));
     }
+
+    // TESTES DO METODO ORDENAR COM PARAMETROS 
 
     @Test
     public void ordenarAListaPorVidaFormaAscendente() throws Exception{
@@ -327,6 +331,7 @@ public class ListaSaintsTest
         assertEquals(jabu,todosCavaleiros.get(2)); 
 
     }
+
     @ Test public void diffListaAlgunsDiferente() {
         Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
         Saint shura = new Saint("Shura",capricornio);     
@@ -478,6 +483,19 @@ public class ListaSaintsTest
         assertEquals(false,csv.isEmpty());
     }
 
+    @ Test public void csvComListaCom1Saints(){
+        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
+        Saint shura = new Saint("Shura",capricornio);
+        
+        ListaSaints cavaleiros = new ListaSaints(); 
+        cavaleiros.adicionar(shura);        
+
+        String csv = cavaleiros.getCSV();  
+
+        assertEquals(false,csv.isEmpty());
+    }
+    
+
     @ Test public void csvComListaSemSaints(){              
         ListaSaints cavaleiros = new ListaSaints();         
 
@@ -487,4 +505,6 @@ public class ListaSaintsTest
     }
 
 }
+
+
 
