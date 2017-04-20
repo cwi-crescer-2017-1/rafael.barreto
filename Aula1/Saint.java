@@ -11,7 +11,6 @@ public class Saint{
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
 
-
     public Saint(String nome, Armadura armadura){
         this.nome = nome;
         this.armadura = armadura;
@@ -23,7 +22,7 @@ public class Saint{
         
         Constelacao constelacao = new Constelacao(nomeConstelacao);
         Armadura armadura = new Armadura(constelacao,categoriaArmadura);
-        
+
         this.nome = nome;
         this.status = Status.VIVO;
         this.vida = 100; 
@@ -113,5 +112,22 @@ public class Saint{
         && this.status == saintFora.getStatus()
         && this.vida == saintFora.getVida()  
         && this.getCategoria() == saintFora.getCategoria();
-    }      
+    }
+
+    public String toString (){        
+        
+        String csv;
+        
+        csv = getNome()+", "+getVida()+", "+getConstelacao().getNome() + ", " + getArmadura().getCategoria() + ", "+getStatus() + ", " + getGenero()+ ", " + getArmaduraVestida()   ;
+              
+        // Nome do Saint
+        // Vida
+        // Nome da constelação
+        // Categoria armadura
+        // Status
+        // Gênero
+        // Armadura está vestida?
+
+        return csv;
+    }
 }

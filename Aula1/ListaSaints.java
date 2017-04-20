@@ -1,5 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
+import java.lang.NullPointerException;
+
 
 public class ListaSaints{
 
@@ -39,10 +41,11 @@ public class ListaSaints{
             }
         }      
         return subLista;
-        /*
-        return (ArrayList<Saint>)this.listaSaints.stream()
-        .filter(s-> s.getArmadura().getCategoria().equals(categoria))
-        .collect(Collectors.toList()); */ // exercicio resolvida com lambda do java 8
+
+        // exercicio resolvida com lambda do java 8
+        // return (ArrayList<Saint>)this.listaSaints.stream()
+        // .filter(s-> s.getArmadura().getCategoria().equals(categoria))
+        // .collect(Collectors.toList()); 
 
     }
 
@@ -143,69 +146,82 @@ public class ListaSaints{
     }
 
     public ListaSaints unir(ListaSaints lista){        
-         ListaSaints listaUnida = new ListaSaints();
+        ListaSaints listaUnida = new ListaSaints();
 
-         listaUnida.unirlistas(this.listaSaints);
-         listaUnida.unirlistas(lista.todos());   
-         
-         return listaUnida;
+        listaUnida.unirlistas(this.listaSaints);
+        listaUnida.unirlistas(lista.todos());   
+
+        return listaUnida;
     } 
-    
+
     public ListaSaints diff(ListaSaints lista){
         ListaSaints listaDiff = new ListaSaints();
-        
+
         listaDiff.unirlistas(this.listaSaints);
-        listaDiff.diffListas(lista.todos());
-    
+        listaDiff = listaDiff.diffListas(lista);
+
         return listaDiff;
     }
-    
-   
+
     public ListaSaints intersec(ListaSaints lista){
         ListaSaints listaIntersec = new ListaSaints();
-        
+
         int tamanhoLista1 = this.listaSaints.size();
         int tamanhoLista2 = lista.todos().size();
         int tamanho;
-        
+
         if(tamanhoLista1 > tamanhoLista2) {tamanho = tamanhoLista2;}
         else {tamanho = tamanhoLista1;}
-        
+
         for(int i=0; i < tamanho ; i++){
             listaIntersec.adicionar(this.listaSaints.get(i));
             listaIntersec.adicionar(lista.todos().get(i));        
         }                
-        
-       return listaIntersec;
+
+        return listaIntersec;
     }
-    
+
+    public String getCSV(){
+        String csv = "";
+
+        for(Saint saint : this.listaSaints){
+            csv += saint.toString() + System.lineSeparator();            
+        }
+        return csv;
+    }
+
     // METODOS PRIVADOS
-    
+
     private void unirlistas(ArrayList<Saint> lista){              
-       
+
         for ( Saint saint : lista){
             listaSaints.add(saint);
         }        
     }
-    
-    private void diffListas( ArrayList<Saint> lista2){        
-        int tamanhoLista1 = this.listaSaints.size();
-        int tamanhoLista2 = lista2.size();
-        int tamanho;
+
+    private ListaSaints diffListas( ListaSaints lista2){         
+        int tamanhoLista1 = this.listaSaints.size(); 
+        int tamanhoLista2 = lista2.todos().size();
+        boolean lista2Vazia = true;
         
-        if (tamanhoLista1>tamanhoLista2){tamanho = tamanhoLista2;}
-        else {tamanho = tamanhoLista1;}
-        
-        for( int i =0; i<tamanho; i++){
+        for( int i =0 ; i < tamanhoLista1 ; i++){ 
             
-            String nome1 = this.listaSaints.get(i).getNome();
-            String nome2 = lista2.get(i).getNome();
-            
-            boolean saintNomeIgual = !nome1.equals(nome2);            
-            
-            if(saintNomeIgual){
-                listaSaints.add(lista2.get(i));
-            }        
+            for( int j = 0 ; j < tamanhoLista2 ; j++){
+                
+                String nome1 = listaSaints.get(i).getNome(); 
+                String nome2 = lista2.get(j).getNome(); 
+
+                boolean saintNomeIgual = nome1.equals(nome2);             
+
+                if(saintNomeIgual){ 
+                    lista2.remover(lista2.get(j));
+                    tamanhoLista2 = lista2.todos().size();
+                    lista2Vazia = false;
+                    break;
+                }
+            }
         }        
-    }       
-}
+        if(lista2.todos().isEmpty() && lista2Vazia ){throw new NullPointerException(" Lista sem Objetos");}
+        else {return lista2;}
+    } 
+}       
