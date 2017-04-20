@@ -2,11 +2,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.lang.NullPointerException;
 
-
 public class ListaSaints{
-
     private ArrayList<Saint> listaSaints = new ArrayList<>(); 
-
     public void adicionar(Saint saint){
         this.listaSaints.add(saint);
     }
@@ -174,11 +171,15 @@ public class ListaSaints{
         else {tamanho = tamanhoLista1;}
 
         for(int i=0; i < tamanho ; i++){
-            listaIntersec.adicionar(this.listaSaints.get(i));
-            listaIntersec.adicionar(lista.todos().get(i));        
-        }                
 
-        return listaIntersec;
+            listaIntersec.adicionar(this.listaSaints.get(i));
+            listaIntersec.adicionar(lista.todos().get(i));
+
+        }                
+        if(lista.todos().isEmpty()) {
+            listaIntersec.todos().addAll(this.listaSaints);
+        }
+        return listaIntersec;  
     }
 
     public String getCSV(){
@@ -203,11 +204,11 @@ public class ListaSaints{
         int tamanhoLista1 = this.listaSaints.size(); 
         int tamanhoLista2 = lista2.todos().size();
         boolean lista2Vazia = true;
-        
+
         for( int i =0 ; i < tamanhoLista1 ; i++){ 
-            
+
             for( int j = 0 ; j < tamanhoLista2 ; j++){
-                
+
                 String nome1 = listaSaints.get(i).getNome(); 
                 String nome2 = lista2.get(j).getNome(); 
 
