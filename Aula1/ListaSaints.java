@@ -155,9 +155,28 @@ public class ListaSaints{
         ListaSaints listaDiff = new ListaSaints();
         
         listaDiff.unirlistas(this.listaSaints);
-        listaDiff.diffListas(this.listaSaints,lista.todos());
+        listaDiff.diffListas(lista.todos());
     
         return listaDiff;
+    }
+    
+   
+    public ListaSaints intersec(ListaSaints lista){
+        ListaSaints listaIntersec = new ListaSaints();
+        
+        int tamanhoLista1 = this.listaSaints.size();
+        int tamanhoLista2 = lista.todos().size();
+        int tamanho;
+        
+        if(tamanhoLista1 > tamanhoLista2) {tamanho = tamanhoLista2;}
+        else {tamanho = tamanhoLista1;}
+        
+        for(int i=0; i < tamanho ; i++){
+            listaIntersec.adicionar(this.listaSaints.get(i));
+            listaIntersec.adicionar(lista.todos().get(i));        
+        }                
+        
+       return listaIntersec;
     }
     
     // METODOS PRIVADOS
@@ -169,8 +188,8 @@ public class ListaSaints{
         }        
     }
     
-    private void diffListas(ArrayList<Saint> lista, ArrayList<Saint> lista2){        
-        int tamanhoLista1 = lista.size();
+    private void diffListas( ArrayList<Saint> lista2){        
+        int tamanhoLista1 = this.listaSaints.size();
         int tamanhoLista2 = lista2.size();
         int tamanho;
         
@@ -179,7 +198,7 @@ public class ListaSaints{
         
         for( int i =0; i<tamanho; i++){
             
-            String nome1 = lista.get(i).getNome();
+            String nome1 = this.listaSaints.get(i).getNome();
             String nome2 = lista2.get(i).getNome();
             
             boolean saintNomeIgual = !nome1.equals(nome2);            
@@ -188,5 +207,5 @@ public class ListaSaints{
                 listaSaints.add(lista2.get(i));
             }        
         }        
-    }
+    }       
 }
