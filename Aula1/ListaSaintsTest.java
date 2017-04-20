@@ -28,7 +28,7 @@ public class ListaSaintsTest
         assertEquals(mu,resultado);
 
     }
-//arrumar este teste
+
     @Test
     public void buscarSaintPorStatusVivo() throws Exception{
         Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
@@ -43,11 +43,11 @@ public class ListaSaintsTest
         cavaleiros.adicionar(shura);
         cavaleiros.adicionar(mu);
 
-        Saint resultado;     
-        cavaleiros.buscarPorStatus(Status.VIVO);// este metodo retorna uma array list arrumar isto   
-        //assertEquals(shura,resultado); 
+        ArrayList<Saint> resultado = new ArrayList<>();
+        resultado  = cavaleiros.buscarPorStatus(Status.VIVO);
+        assertEquals(shura,resultado.get(0)); 
     } 
-//arrumar este teste
+
     @Test
     public void buscarSaintPorStatusMorto() throws Exception{
         Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
@@ -62,12 +62,12 @@ public class ListaSaintsTest
         cavaleiros.adicionar(shura);
         cavaleiros.adicionar(mu);
 
-        Saint resultado;     
-        cavaleiros.buscarPorStatus(Status.MORTO);  // este metodo retorna uma array list arrumar isto    
-        //assertEquals(mu,resultado); 
+        ArrayList<Saint> resultado = new ArrayList<>();
+        resultado  = cavaleiros.buscarPorStatus(Status.MORTO);  
+        assertEquals(mu,resultado.get(0)); 
 
     } 
-//arrumar este teste /
+
     @Test
     public void buscarSaintPorCategoria() throws Exception{
         Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
@@ -80,9 +80,9 @@ public class ListaSaintsTest
         cavaleiros.adicionar(shura);
         cavaleiros.adicionar(seiya);
 
-        Saint resultado;     
-        cavaleiros.buscarPorCategoria(Categoria.BRONZE);//este metodo retornar uma arry list arrumar isto   
-        //assertEquals(seiya,resultado); 
+        ArrayList<Saint> resultado = new ArrayList<>();     
+        resultado = cavaleiros.buscarPorCategoria(Categoria.BRONZE);//este metodo retornar uma arry list arrumar isto   
+        assertEquals(seiya,resultado.get(0));
     } 
 
     @Test
@@ -168,7 +168,7 @@ public class ListaSaintsTest
         cavaleiros.adicionar(jabu);
         jabu.perderVida(5);
 
-        cavaleiros.ordenar(TipoOrdenacao.DESCENDENTE);
+        cavaleiros.ordenar();
 
         assertEquals(aldebaram,cavaleiros.get(0)); 
         assertEquals(shiryu,cavaleiros.get(1)); 
@@ -178,5 +178,106 @@ public class ListaSaintsTest
         assertEquals(shura,cavaleiros.get(5));
     }
     
-    // criar cenarios de teste para ordenacao ascendente e descendente 
+
+    @Test
+    public void ordenarAListaPorVidaFormaAscendente() throws Exception{
+        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
+        Saint shura = new Saint("Shura",capricornio);     
+        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
+        Saint mu = new Saint("Mu",aries);  
+        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
+        Saint shiryu = new Saint ("Shiryu",dragao);
+        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
+        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
+        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+        ListaSaints cavaleiros = new ListaSaints();     
+
+        cavaleiros.adicionar(shura);
+        shura.perderVida(70);
+        cavaleiros.adicionar(mu);
+        mu.perderVida(20);
+        cavaleiros.adicionar(hyoga);
+        hyoga.perderVida(30);
+        cavaleiros.adicionar(shiryu);
+        shiryu.perderVida(3);
+        cavaleiros.adicionar(aldebaram);
+        cavaleiros.adicionar(jabu);
+        jabu.perderVida(5);
+
+        cavaleiros.ordenar(TipoOrdenacao.ASCENDENTE);
+
+        assertEquals(aldebaram,cavaleiros.get(0)); 
+        assertEquals(shiryu,cavaleiros.get(1)); 
+        assertEquals(jabu,cavaleiros.get(2)); 
+        assertEquals(mu,cavaleiros.get(3)); 
+        assertEquals(hyoga,cavaleiros.get(4)); 
+        assertEquals(shura,cavaleiros.get(5));
+    }
+    
+    
+
+    @Test
+    public void ordenarAListaPorVidaFormaDescendente() throws Exception{
+        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
+        Saint shura = new Saint("Shura",capricornio);     
+        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
+        Saint mu = new Saint("Mu",aries);  
+        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
+        Saint shiryu = new Saint ("Shiryu",dragao);
+        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
+        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
+        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+        ListaSaints cavaleiros = new ListaSaints();     
+
+        cavaleiros.adicionar(shura);
+        shura.perderVida(70);
+        cavaleiros.adicionar(mu);
+        mu.perderVida(20);
+        cavaleiros.adicionar(hyoga);
+        hyoga.perderVida(30);
+        cavaleiros.adicionar(shiryu);
+        shiryu.perderVida(3);
+        cavaleiros.adicionar(aldebaram);
+        cavaleiros.adicionar(jabu);
+        jabu.perderVida(5);
+
+        cavaleiros.ordenar(TipoOrdenacao.DESCENDENTE);
+
+        assertEquals(aldebaram,cavaleiros.get(5)); 
+        assertEquals(shiryu,cavaleiros.get(4)); 
+        assertEquals(jabu,cavaleiros.get(3)); 
+        assertEquals(mu,cavaleiros.get(2)); 
+        assertEquals(hyoga,cavaleiros.get(1)); 
+        assertEquals(shura,cavaleiros.get(0));
+    }
+    
+    //testa metodo unir
+    
+    @Test public void unirListas(){
+        
+        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
+        Saint shura = new Saint("Shura",capricornio);     
+        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
+        Saint mu = new Saint("Mu",aries);  
+        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
+        Saint shiryu = new Saint ("Shiryu",dragao);
+        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
+        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
+        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+        ListaSaints cavaleirosOuro = new ListaSaints(); 
+        
+        cavaleirosOuro.adicionar(shura);
+        cavaleirosOuro.adicionar(mu);
+        cavaleirosOuro.adicionar(aldebaram);
+        
+        ListaSaints cavaleirosBronze = new ListaSaints(); 
+        cavaleirosBronze.adicionar(shiryu); 
+        cavaleirosBronze.adicionar(hyoga);
+        cavaleirosBronze.adicionar(jabu); 
+        
+        ListaSaints todosCavaleiros = new ListaSaints();
+        
+        todosCavaleiros = cavaleirosOuro.unir(cavaleirosBronze);        
+        
+    }    
 }

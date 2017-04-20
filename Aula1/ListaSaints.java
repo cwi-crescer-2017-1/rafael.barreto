@@ -30,7 +30,7 @@ public class ListaSaints{
         }
         return null;
     }
-    //Arrumar teste deste metodo
+
     public ArrayList<Saint> buscarPorCategoria(Categoria categoria){        
         ArrayList<Saint> subLista = new ArrayList<>();
         for ( Saint saint : this.listaSaints){
@@ -45,7 +45,7 @@ public class ListaSaints{
         .collect(Collectors.toList()); */ // exercicio resolvida com lambda do java 8
 
     }
-    //Arrumar teste dese metodo
+
     public ArrayList<Saint> buscarPorStatus(Status status){
         ArrayList<Saint> subLista = new ArrayList<>();
 
@@ -72,8 +72,7 @@ public class ListaSaints{
         return saint;
     }
 
-    public Saint getSaintMenorVida(){
-        //retorna primeiro saint encontrado com a menor vida
+    public Saint getSaintMenorVida(){  //retorna primeiro saint encontrado com a menor vida
         if(listaSaints.isEmpty())return null;
         int tamanhoLista = listaSaints.size();       
 
@@ -91,19 +90,21 @@ public class ListaSaints{
     };
 
     public void ordenar(){      
-        int tamanhoLista = listaSaints.size();
-        int resultado;
-        Saint saintTemp;        
+        boolean precisaTrocarPosicao;
 
-        for (int i = 0; i < listaSaints.size(); i++) {
-            for (int j = listaSaints.size() - 1; j > i; j--) {                
-                if (listaSaints.get(i).getVida() < listaSaints.get(j).getVida()) {
-                    saintTemp = listaSaints.get(i);
-                    listaSaints.set(i, listaSaints.get(j));
-                    listaSaints.set(j, saintTemp);
-                }
-            }
-        }
+        do { 
+            precisaTrocarPosicao = false; 
+            for (int i = 0; i < this.listaSaints.size() - 1; i++) { 
+                Saint atual = this.listaSaints.get(i); 
+                Saint proximo = this.listaSaints.get(i + 1); 
+                boolean precisaTrocar = atual.getVida() < proximo.getVida(); 
+                if (precisaTrocar) { 
+                    this.listaSaints.set(i, proximo); 
+                    this.listaSaints.set(i + 1, atual); 
+                    precisaTrocarPosicao = true; 
+                } 
+            } 
+        } while (precisaTrocarPosicao);  
     }
 
     public void ordenar(TipoOrdenacao ordenacao){
@@ -140,13 +141,23 @@ public class ListaSaints{
             } while (precisaTrocarPosicao); 
         }
     }
+
+    public ListaSaints unir(ListaSaints lista){        
+         ListaSaints listaUnida = new ListaSaints();
+
+         listaUnida.unirlistas(this.listaSaints);
+         listaUnida.unirlistas(lista.todos());   
+         
+         return listaUnida;
+    }  
     
-    public ListaSaints unir(ArrayList<Saint> lista){
-        int tamanho = listaSaints.size();       
-        tamanho = lista.size();
-        for(int i = 0 ; i < tamanho ; i++){
-            listaSaints.add(lista.get(i));        
-        } 
-        return null;
-    }   
+    
+    // metodos privados
+    
+    private void unirlistas(ArrayList<Saint> lista){              
+       
+        for ( Saint saint : lista){
+            listaSaints.add(saint);
+        }        
+    }     
 }
