@@ -6,14 +6,11 @@ import java.security.InvalidParameterException;
 
 public class SaintTest{
     @Test
-    public void SaintVestirArmaduraDeixarArmaduraVestida(){
-        //1.Arrange
-
-        Armadura capricornio = new Armadura (new Constelacao("capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura", capricornio);           
+    public void SaintVestirArmaduraDeixarArmaduraVestida() throws Exception{
+        //1.Arrange      
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");          
         //2.Act
         shura.vestirArmadura();
-
         //3.Assert
         boolean resultado = shura.getArmaduraVestida();   
         assertEquals(true,resultado);
@@ -21,157 +18,144 @@ public class SaintTest{
 
     @Test
     public void SaintNaoVestirArmaduraDeixarArmaduraNaoVestida(){
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
+        Saint hyoga = new BronzeSaint("Hyoga","Cisne");
         boolean resultado = hyoga.getArmaduraVestida();
         assertEquals(false,resultado);
     }
 
     @Test
-    public void SaintAoCriarSaintGeneroENaoInformado(){
-        Armadura virgem = new Armadura (new Constelacao("virgem"),Categoria.OURO);
-        Saint shaka = new Saint ("shaka",virgem);
+    public void SaintAoCriarSaintGeneroENaoInformado() throws Exception {        
+        Saint shaka = new GoldSaint ("shaka","Virgem");
         assertEquals(Genero.NAO_INFORMADO,shaka.getGenero());
     }
 
     @Test
-    public void SaintVerificaSeEstaVivo(){
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void SaintVerificaSeEstaVivo(){        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         assertEquals(Status.VIVO,shiryu.getStatus());
     }
 
     @Test
-    public void SaintTestaPerdeVida10() throws Exception {
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void SaintTestaPerdeVida10() throws Exception {        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         shiryu.perderVida(10);
         assertEquals(90,0,shiryu.getVida());
     }
 
     @Test
-    public void SaintPerdeVida20() throws Exception {
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void SaintPerdeVida20() throws Exception {        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         shiryu.perderVida(20);
         assertEquals(80,0,shiryu.getVida());
     }
 
     @Test
-    public void SaintPerdeVida80() throws Exception {
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void SaintPerdeVida80() throws Exception {        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         shiryu.perderVida(80);
         assertEquals(20,0,shiryu.getVida());
     }
 
     @Test
-    public void saintPerdeVida85() throws Exception {
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void saintPerdeVida85() throws Exception {        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         shiryu.perderVida(85.5);
         assertEquals(14.5,shiryu.getVida(),0.01);
     }
 
     @Test
-    public void saintPerdeVida90() throws Exception{
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void saintPerdeVida90() throws Exception{        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         shiryu.perderVida(90);
         assertEquals(10,0,shiryu.getVida());
     }
 
   @Test
-    public void saintPerdeVida110() throws Exception{
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void saintPerdeVida110() throws Exception{        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         shiryu.perderVida(110);
         assertEquals(0,shiryu.getVida(),0.01);
     }
 
 
     @Test
-    public void saintSetarGenero(){
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void saintSetarGenero(){        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         shiryu.setGenero(Genero.FEMININO);
 
     }
 
     @Test
-    public void saintPerdeVida100() throws Exception{
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void saintPerdeVida100() throws Exception{        
+        Saint shiryu = new BronzeSaint("Shiryu","Dragao");
         shiryu.perderVida(100);
         assertEquals(0,0,shiryu.getVida());
     }
     
     @Test
     public void saintMudarStatusParaMortoAoZerarVida(){
-        SilverSaint retsu = new SilverSaint("Retsu",new Armadura(new Constelacao("Lince"),Categoria.PRATA));
+        SilverSaint retsu = new SilverSaint("Retsu","Lince");
         retsu.perderVida(100);
         assertEquals(Status.MORTO,retsu.getStatus());
     }    
     
     @Test(expected = InvalidParameterException.class)
     public void saintPerderVidaValorDanoNegativoDeveDarErro() throws Exception {
-        GoldSaint aldebaram = new GoldSaint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
+        GoldSaint aldebaram = new GoldSaint("Aldebaram","Touro");
         aldebaram.perderVida(-10);
         aldebaram.perderVida(-90);
         aldebaram.perderVida(-1000);   
     }
 
     @Test
-    public void saintMetodoGetCategoria(){
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
+    public void saintMetodoGetCategoria(){        
+        Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         assertEquals(1,shiryu.getCategoria());
     }      
 
     @Test
     public void saintCriarSaintNasce5SentidosDespertado(){
-        Saint shiryu= new Saint("Shiryu", new Armadura(new Constelacao("Dragao"),Categoria.BRONZE));
+        Saint shiryu= new BronzeSaint ("Shiryu","dragao");
         assertEquals(5,shiryu.getSentidosDespertados());
     }
 
     @Test
     public void saintCriarSaintPrataNasce6SentidosDespertados(){
-        SilverSaint prata = new SilverSaint("prata",new Armadura(new Constelacao("prata"),Categoria.PRATA));
+        SilverSaint prata = new SilverSaint("prata","prata");
         assertEquals(6,prata.getSentidosDespertados());
     }
 
     @Test
     public void saintCriarSaintPrataNasce7SentidosDespertados() throws Exception{
-        GoldSaint aldebaram = new GoldSaint ("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
+        GoldSaint aldebaram = new GoldSaint ("Aldebaram", "Touro");
         assertEquals(7,aldebaram.getSentidosDespertados());
     }
     
     @Test (expected=Exception.class)
     public void saintConstelacaoInvalidaDeveDarErro() throws Exception {
-        GoldSaint jabu = new GoldSaint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.OURO));
-    }
-    /*arrumar
-    @Test
+        GoldSaint jabu = new GoldSaint("Jabu","Unicornio");
+    }    
+   
     public void testeSaintGetGolpes() throws Exception{ 
         
         Golpe soco = new Golpe("soco",10);
         Golpe chute = new Golpe("chute",17);
-        Golpe cabecada = new Golpe("Cabecada",25);        
-        Armadura cancer = new Armadura(new Constelacao ("Cancer"),Categoria.OURO);
-        String saintNome="Mascara Da Morte";
+        Golpe cabecada = new Golpe("Cabecada",25);                        
         
-        GoldSaint mascaraDaMorte = new GoldSaint (saintNome,cancer);
+        GoldSaint mascaraDaMorte = new GoldSaint ("mascara da Morte","Cancer");
         
-        boolean teste = mascaraDaMorte.getGolpes()[0].getNome().equals(chute.getNome());
+        mascaraDaMorte.aprenderGolpe(soco);
+        mascaraDaMorte.aprenderGolpe(chute);
+        mascaraDaMorte.aprenderGolpe(cabecada);
+        
+        boolean teste = mascaraDaMorte.getGolpes().get(0).equals(soco.getNome());
         assertEquals(true,teste);
-        teste = mascaraDaMorte.getGolpes()[1].getNome().equals(soco.getNome());
+        teste = mascaraDaMorte.getGolpes().get(0).getNome().equals(chute.getNome());
         assertEquals(true,teste);
-        teste = mascaraDaMorte.getGolpes()[2].getNome().equals(cabecada.getNome());
+        teste = mascaraDaMorte.getGolpes().get(0).getNome().equals(cabecada.getNome());
         assertEquals(true,teste);       
     
-    }*/
-    
-    
-    
+    }   
     
     @Test
     public void saintTestaSeEstaTrocandoDeGolpe() throws Exception{      
@@ -179,7 +163,7 @@ public class SaintTest{
          Golpe meteoroDePegaso = new Golpe("Meteoro de Pegaso",10);
          Golpe cometaDePegaso = new Golpe("Cometa de Pegaso",10);
          Golpe centelhaDePegaso = new Golpe("Centelha de Pegaso",10);         
-         Saint seiya = new Saint("Seiya",new Armadura(new Constelacao("pegaso"),Categoria.BRONZE));
+         Saint seiya = new BronzeSaint ("Seiya","Pegaso");
          
          seiya.aprenderGolpe(meteoroDePegaso);        
          seiya.aprenderGolpe(cometaDePegaso);    
@@ -204,7 +188,7 @@ public class SaintTest{
          Golpe meteoroDePegaso = new Golpe("Meteoro de Pegaso",10);
          Golpe cometaDePegaso = new Golpe("Cometa de Pegaso",10);
          Golpe centelhaDePegaso = new Golpe("Centelha de Pegaso",10);         
-         Saint seiya = new Saint("Seiya",new Armadura(new Constelacao("pegaso"),Categoria.BRONZE));
+         Saint seiya = new BronzeSaint ("Seiya","Pegaso");
          
          seiya.aprenderGolpe(meteoroDePegaso);        
          seiya.aprenderGolpe(cometaDePegaso);    
@@ -230,7 +214,7 @@ public class SaintTest{
          Golpe poDeDiamante = new Golpe("po de Diamante",35);
          Golpe trovaoAuroraAtaque = new Golpe("trovao Aurora Ataque",50);  
          
-         Saint seiya = new Saint("Seiya",new Armadura(new Constelacao("pegaso"),Categoria.BRONZE));
+         Saint seiya = new BronzeSaint ("Seiya","Pegaso");
          
          seiya.aprenderGolpe(meteoroDePegaso);        
          seiya.aprenderGolpe(cometaDePegaso);    
@@ -261,8 +245,8 @@ public class SaintTest{
     
     @Test
     public void saintTestaMetodoComparaSaint(){
-        Saint seiya = new BronzeSaint("Seiya",new Armadura(new Constelacao("pegaso"),Categoria.BRONZE));
-        Saint shiryu = new BronzeSaint("Seiya",new Armadura(new Constelacao("pegaso"),Categoria.BRONZE));
+        Saint seiya = new BronzeSaint("Seiya","Pegaso");
+        Saint shiryu = new BronzeSaint("Seiya","pegaso");
         
         assertEquals(seiya,shiryu);
     }

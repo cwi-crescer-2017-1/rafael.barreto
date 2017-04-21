@@ -10,14 +10,11 @@ public class ListaSaintsTest
 {
     @Test
     public void buscarSaintPorNome() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new GoldSaint("Shura",capricornio);
 
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new GoldSaint("Mu",aries);
+        Saint shura = new GoldSaint("Shura","Capricornio");
 
+        Saint mu = new GoldSaint("Mu","Aries");
         ListaSaints cavaleiros = new ListaSaints();           
-
         cavaleiros.adicionar(shura);
         cavaleiros.adicionar(mu);
 
@@ -32,12 +29,10 @@ public class ListaSaintsTest
 
     @Test
     public void buscarSaintPorStatusVivo() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new GoldSaint("Shura",capricornio);
 
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new GoldSaint("Mu",aries);
+        Saint shura = new GoldSaint("Shura","Capricornio");
 
+        Saint mu = new GoldSaint("Mu","Aries");
         ListaSaints cavaleiros = new ListaSaints();           
         mu.perderVida(100);
 
@@ -52,12 +47,10 @@ public class ListaSaintsTest
 
     @Test
     public void buscarSaintPorStatusMorto() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new GoldSaint("Shura",capricornio);
 
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new GoldSaint("Mu",aries);
+        Saint shura = new GoldSaint("Shura","Capricornio");
 
+        Saint mu = new GoldSaint("Mu","Aries");
         ListaSaints cavaleiros = new ListaSaints();           
         mu.perderVida(100);
 
@@ -72,11 +65,9 @@ public class ListaSaintsTest
 
     @Test
     public void buscarSaintPorCategoria() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new GoldSaint("Shura",capricornio);
 
-        Armadura pegaso = new Armadura (new Constelacao("pegaso"),Categoria.BRONZE);
-        Saint seiya = new BronzeSaint("Seiya",pegaso);
+        Saint shura = new GoldSaint("Shura","Capricornio");     
+        Saint seiya = new BronzeSaint("Seiya","pegaso");
 
         ListaSaints cavaleiros = new ListaSaints();                
         cavaleiros.adicionar(shura);
@@ -89,12 +80,10 @@ public class ListaSaintsTest
 
     @Test
     public void buscaSaintComMaiorVida() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new GoldSaint("Shura",capricornio);
 
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new GoldSaint("Mu",aries);
+        Saint shura = new GoldSaint("Shura","Capricornio");
 
+        Saint mu = new GoldSaint("Mu","Aries");
         ListaSaints cavaleiros = new ListaSaints();           
         mu.perderVida(50);
 
@@ -118,12 +107,10 @@ public class ListaSaintsTest
 
     @Test
     public void buscaSaintComMenorVida() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new GoldSaint("Shura",capricornio);
 
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new GoldSaint("Mu",aries);
+        Saint shura = new GoldSaint("Shura","Capricornio");
 
+        Saint mu = new GoldSaint("Mu","Aries");
         ListaSaints cavaleiros = new ListaSaints();           
         mu.perderVida(50);
 
@@ -149,15 +136,15 @@ public class ListaSaintsTest
 
     @Test
     public void ordenarAListaPorVida() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
         ListaSaints cavaleiros = new ListaSaints();     
 
         cavaleiros.adicionar(shura);
@@ -186,15 +173,15 @@ public class ListaSaintsTest
 
     @Test
     public void ordenarAListaPorVidaFormaAscendente() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
         ListaSaints cavaleiros = new ListaSaints();     
 
         cavaleiros.adicionar(shura);
@@ -221,15 +208,15 @@ public class ListaSaintsTest
 
     @Test
     public void ordenarAListaPorVidaFormaDescendente() throws Exception{
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
         ListaSaints cavaleiros = new ListaSaints();     
 
         cavaleiros.adicionar(shura);
@@ -256,17 +243,14 @@ public class ListaSaintsTest
 
     //testa metodo unir
 
-    @Test public void unirListasCavaleiros(){
+    @Test public void unirListasCavaleiros() throws Exception{
 
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
         ListaSaints cavaleirosOuro = new ListaSaints(); 
 
         cavaleirosOuro.adicionar(shura);
@@ -302,16 +286,14 @@ public class ListaSaintsTest
     // testa metodo diff
 
     @ Test 
-    public void diffListaTotalmenteDiferente() {
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+    public void diffListaTotalmenteDiferente() throws Exception {
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
 
         ListaSaints cavaleirosOuro = new ListaSaints(); 
         cavaleirosOuro.adicionar(shura);
@@ -332,16 +314,14 @@ public class ListaSaintsTest
 
     }
 
-    @ Test public void diffListaAlgunsDiferente() {
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+    @ Test public void diffListaAlgunsDiferente() throws Exception {
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
 
         ListaSaints cavaleirosOuro = new ListaSaints(); 
         cavaleirosOuro.adicionar(shura);
@@ -360,16 +340,14 @@ public class ListaSaintsTest
     }
 
     @ Test (expected = NullPointerException.class)
-    public void diffListaTotalmenteIgual() throws NullPointerException {
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+    public void diffListaTotalmenteIgual() throws Exception  {
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
 
         ListaSaints cavaleirosOuro = new ListaSaints(); 
         cavaleirosOuro.adicionar(shura);
@@ -389,16 +367,14 @@ public class ListaSaintsTest
 
     // TESTA METODO INTERSEC 
 
-    @ Test public void intersecListaTotalmenteDiferente(){
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+    @ Test public void intersecListaTotalmenteDiferente() throws Exception {
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
 
         ListaSaints cavaleirosOuro = new ListaSaints(); 
         cavaleirosOuro.adicionar(shura);
@@ -431,16 +407,14 @@ public class ListaSaintsTest
 
     }
 
-    @ Test public void intersecListacheiaComListaVazia(){
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+    @ Test public void intersecListacheiaComListaVazia() throws Exception {
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+        BronzeSaint shiryu = new BronzeSaint ("Shiryu","dragao");
+        BronzeSaint hyoga = new BronzeSaint("Hyoga","cisne");
+        GoldSaint aldebaram = new GoldSaint ("aldebaram","Touro");
+        BronzeSaint jabu = new BronzeSaint ("jabu","unicornio");
 
         ListaSaints cavaleirosOuro = new ListaSaints(); 
         cavaleirosOuro.adicionar(shura);
@@ -459,34 +433,24 @@ public class ListaSaintsTest
     }
 
     // TESTES CSV
-    @ Test public void csvComListaCom6Saints(){
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);     
-        Armadura aries = new Armadura (new Constelacao("Aries"),Categoria.OURO);
-        Saint mu = new Saint("Mu",aries);  
-        Armadura dragao = new Armadura (new Constelacao("dragao"),Categoria.BRONZE);
-        Saint shiryu = new Saint ("Shiryu",dragao);
-        Saint hyoga = new Saint("hyoga",new Armadura (new Constelacao("cisne"),Categoria.BRONZE));
-        Saint aldebaram = new Saint("Aldebaram",new Armadura(new Constelacao("Touro"),Categoria.OURO));
-        Saint jabu = new Saint("Jabu",new Armadura(new Constelacao("unicornio"),Categoria.BRONZE));
+    @ Test public void csvComListaCom2Saints()throws Exception{
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
+        GoldSaint mu = new GoldSaint("Mu","Aries");
+        
 
         ListaSaints cavaleiros = new ListaSaints(); 
         cavaleiros.adicionar(shura);
-        cavaleiros.adicionar(mu);
-        cavaleiros.adicionar(aldebaram);
-        cavaleiros.adicionar(shiryu); 
-        cavaleiros.adicionar(hyoga);        
-        cavaleiros.adicionar(jabu); 
+        cavaleiros.adicionar(mu);       
 
         String csv = cavaleiros.getCSV();  
 
         assertEquals(false,csv.isEmpty());
     }
 
-    @ Test public void csvComListaCom1Saints(){
-        Armadura capricornio = new Armadura (new Constelacao("Capricornio"),Categoria.OURO);
-        Saint shura = new Saint("Shura",capricornio);
-        
+    @ Test public void csvComListaCom1Saints() throws Exception {
+
+        GoldSaint shura = new GoldSaint("Shura","Capricornio");
         ListaSaints cavaleiros = new ListaSaints(); 
         cavaleiros.adicionar(shura);        
 
@@ -494,9 +458,9 @@ public class ListaSaintsTest
 
         assertEquals(false,csv.isEmpty());
     }
-    
 
-    @ Test public void csvComListaSemSaints(){              
+    @ Test public void csvComListaSemSaints(){
+        
         ListaSaints cavaleiros = new ListaSaints();         
 
         String csv = cavaleiros.getCSV();  
@@ -505,6 +469,5 @@ public class ListaSaintsTest
     }
 
 }
-
 
 

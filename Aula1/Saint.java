@@ -1,7 +1,7 @@
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
-public class Saint{   
+public abstract class Saint{   
     private String nome; 
     private boolean armaduraVestida;
     private double vida = 100;

@@ -14,8 +14,8 @@ public class BatalhaTest
         Golpe exclamacaoAthena = new Golpe("Exclamaçao de Athena ",70);
         Golpe cometaPegaso = new Golpe("Cometa de Pegaso",30);
             
-        Saint seiya = new Saint ("Seiya",new Armadura (new Constelacao("pegaso"),Categoria.BRONZE));
-        Saint shaina = new Saint ("Shaina",new Armadura (new Constelacao("pegaso"),Categoria.PRATA));       
+        Saint seiya = new BronzeSaint("seiya","pegaso");
+        Saint shaina = new SilverSaint("Sahina","Cobra");
         Batalha batalha1 = new Batalha(shaina,seiya);
 
         batalha1.iniciar();
@@ -26,8 +26,8 @@ public class BatalhaTest
 
         @Test
         public void categoriasIguais() throws Exception{                 
-        Saint aldebaram = new Saint ("aldebaram",new Armadura (new Constelacao("Touro"),Categoria.OURO));       
-        Saint mu = new Saint ("Mu",new Armadura (new Constelacao("Aries"),Categoria.OURO));
+        Saint aldebaram = new GoldSaint("Aldebaram","Touro");
+        Saint mu = new GoldSaint("Mu","Aries");
         Batalha batalha = new Batalha (aldebaram,mu);
 
         batalha.iniciar();
