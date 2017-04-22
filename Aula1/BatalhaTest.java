@@ -31,8 +31,8 @@ public class BatalhaTest
         assertEquals(0.0,seiya.getVida(),0.01);
         }
 
-        @Test
-        public void categoriasIguais() throws Exception{                 
+       @Test
+       public void categoriasIguais() throws Exception{                 
        Golpe meteoroPegaso = new Golpe("Meteoro de pegaso",10);
        Golpe exclamacaoAthena = new Golpe("Exclamacao de Athena ",30);
        Golpe correnteDeAndromeda = new Golpe("Corrente de Andromeda",15);
@@ -52,5 +52,24 @@ public class BatalhaTest
         
         assertEquals(0.0,shun.getVida(),0.01);
         assertEquals(10.0,seiya.getVida(),0.01);
+      }
+      
+      @Test
+       public void batalhaSemArmadura() throws Exception{                 
+       Golpe meteoroPegaso = new Golpe("Meteoro de pegaso",10);
+       Golpe exclamacaoAthena = new Golpe("Exclamacao de Athena ",30);
+       Golpe correnteDeAndromeda = new Golpe("Tesouro do ceu",25);
+            
+        BronzeSaint seiya = new BronzeSaint("seiya","pegaso");
+        GoldSaint shaka = new GoldSaint ("Shaka","Virgem");     
+        
+        seiya.aprenderGolpe(meteoroPegaso);       
+        shaka.aprenderGolpe(correnteDeAndromeda);
+        
+        Batalha luta = new Batalha(shaka,seiya);
+        luta.iniciar();        
+        
+        assertEquals(70.0,shaka.getVida(),0.01);
+        assertEquals(0.0,seiya.getVida(),0.01);
       }
 }
