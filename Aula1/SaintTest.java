@@ -250,4 +250,25 @@ public class SaintTest{
         
         assertEquals(seiya,shiryu);
     }
+    
+    // TESTE METODO ADICIONA MOVIMENTO 
+     @Test
+    public void saintAdicionarMovimento(){
+        Saint seiya = new BronzeSaint("Seiya","Pegaso");
+        Saint shiryu = new BronzeSaint("Seiya","pegaso");
+        
+        Golpear seiyaGolpea = new Golpear(seiya,shiryu);
+        seiya.aprenderGolpe(new Golpe("meteoro de pegaso",10));
+        seiyaGolpea.executar();
+        
+        assertEquals(90,shiryu.getVida(),0.01);
+        assertEquals(100,seiya.getVida(),0.01);                        
+    }    
+    
+    //TESTE METODO GET PROXIMO MOVIMENTO 
+    @Test
+    public void saintGetProximoMovimento(){
+         Saint seiya = new BronzeSaint("Seiya","Pegaso");
+         Saint shiryu = new BronzeSaint("Seiya","pegaso");
+    }
 }

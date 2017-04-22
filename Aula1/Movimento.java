@@ -2,6 +2,6 @@
 
 public interface Movimento
 {
-    public void executar(Saint saint);
+    public void executar();
     
 }

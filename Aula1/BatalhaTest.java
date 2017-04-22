@@ -9,30 +9,48 @@ import org.junit.Test;
 public class BatalhaTest
 {
         @Test
-        public void categoria1MaiorQueCategoria2() throws Exception{
+        public void batalhaSaintPrataXSaintBronzeComArmadura() throws Exception{
         Golpe meteoroPegaso = new Golpe("Meteoro de pegaso",10);
-        Golpe exclamacaoAthena = new Golpe("Exclamaçao de Athena ",70);
+        Golpe exclamacaoAthena = new Golpe("Exclamacao de Athena ",30);
         Golpe cometaPegaso = new Golpe("Cometa de Pegaso",30);
             
-        Saint seiya = new BronzeSaint("seiya","pegaso");
-        Saint shaina = new SilverSaint("Sahina","Cobra");
-        Batalha batalha1 = new Batalha(shaina,seiya);
-
-        batalha1.iniciar();
-
-        assertEquals(100.0,shaina.getVida(),0.01);
-        assertEquals(90.0,seiya.getVida(),0.01);
+        BronzeSaint seiya = new BronzeSaint("seiya","pegaso");
+        SilverSaint shaina = new SilverSaint("Shaina","Cobra");
+        
+        seiya.vestirArmadura();
+        shaina.vestirArmadura();
+        
+        seiya.aprenderGolpe(meteoroPegaso);
+        shaina.aprenderGolpe(exclamacaoAthena);
+        
+        Batalha luta = new Batalha(shaina,seiya);
+        luta.iniciar();
+        
+        
+        assertEquals(80.0,shaina.getVida(),0.01);
+        assertEquals(0.0,seiya.getVida(),0.01);
         }
 
         @Test
         public void categoriasIguais() throws Exception{                 
-        Saint aldebaram = new GoldSaint("Aldebaram","Touro");
-        Saint mu = new GoldSaint("Mu","Aries");
-        Batalha batalha = new Batalha (aldebaram,mu);
-
-        batalha.iniciar();
-
-        assertEquals(100.0,aldebaram.getVida(),0.01);
-        assertEquals(90.0,mu.getVida(),0.01);
+       Golpe meteoroPegaso = new Golpe("Meteoro de pegaso",10);
+       Golpe exclamacaoAthena = new Golpe("Exclamacao de Athena ",30);
+       Golpe correnteDeAndromeda = new Golpe("Corrente de Andromeda",15);
+            
+        BronzeSaint seiya = new BronzeSaint("seiya","pegaso");
+        BronzeSaint shun = new BronzeSaint("Shun","Andromeda");
+        
+        seiya.vestirArmadura();
+        shun.vestirArmadura();
+        
+        seiya.aprenderGolpe(meteoroPegaso);
+        seiya.aprenderGolpe(exclamacaoAthena);
+        shun.aprenderGolpe(correnteDeAndromeda);
+        
+        Batalha luta = new Batalha(shun,seiya);
+        luta.iniciar();        
+        
+        assertEquals(0.0,shun.getVida(),0.01);
+        assertEquals(10.0,seiya.getVida(),0.01);
       }
 }

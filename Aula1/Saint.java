@@ -1,12 +1,15 @@
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
+
 public abstract class Saint{   
     private String nome; 
     private boolean armaduraVestida;
     private double vida = 100;
     protected int qtdsentidos = 5;
     private int acumulador = 0;
+    private int acumuladorMovimento =0;
+    private ArrayList<Movimento> movimentos;
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
@@ -86,8 +89,11 @@ public abstract class Saint{
         return this.armadura.getConstelacao();
     }
 
-    public ArrayList<Golpe> getGolpes(){    
-        return this.getConstelacao().getGolpe();
+    public ArrayList<Golpe> getGolpes(){
+        
+        boolean contemGolpe = this.getConstelacao().getGolpe().isEmpty();
+        if(contemGolpe){ return null;  }
+        else{  return this.getConstelacao().getGolpe(); }
     }
 
     public void aprenderGolpe(Golpe golpe){
@@ -130,4 +136,20 @@ public abstract class Saint{
 
         return csv;
     }
+    
+    public void adicionarMovimento(Movimento movimento){        
+        this.movimentos.add(movimento);
+    }
+    
+    public ArrayList<Movimento> getProximoMovimento(){
+        ArrayList<Movimento> movimentos = new ArrayList<>();
+        
+        if(this.movimentos.size()>0){
+            int posicao  = acumuladorMovimento % this.movimentos.size();
+            movimentos.add(this.movimentos.get(posicao));
+            this.acumuladorMovimento ++;
+            return movimentos;
+        }    
+        return null;
+    }   
 }

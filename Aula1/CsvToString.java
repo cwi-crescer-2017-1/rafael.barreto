@@ -1,11 +1,15 @@
-public class CsvToString{
-        
-    public CsvToString(String csv){
-        
-        String[] nome = csv.split(",", 0); 
-        String[] nome2 = null;
-        System.out.print(nome[1]);
-        System.out.print(nome[2]);
-   
+public class CsvToString extends Saint{
+    
+    public CsvToString(String nome, String armaduraNome){
+        super (nome,armaduraNome,Categoria.BRONZE);
     }
+
+     
+   public String[] toString (String nome){
+       String [] csv  = nome.split(",", 1);
+       
+       
+       
+       return csv;
+   }
 }
