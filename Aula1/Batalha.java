@@ -1,5 +1,3 @@
-// Altere a classe Batalha para, no método iniciar, enquanto nenhum Saint estiver morto alternar os movimentos a serem aplicados entre eles, 
-// simulando uma batalha por turnos. A lógica do ataque inicial deverá ser mantida.
 import java.util.ArrayList;
 
 public class Batalha{
@@ -23,24 +21,24 @@ public class Batalha{
           
             if(saint1MaiorCategoria ) {                
                 saint1Vivo= saint1.getStatus().equals(Status.VIVO);
-                if(saint1Vivo){ saint1Golpeia.executar(); }
+                if(saint1Vivo){ 
+                    saint1Golpeia.executar(); 
+                }
                 saint2Vivo= saint2.getStatus().equals(Status.VIVO); 
-                if(saint2Vivo){saint2Golpeia.executar(); }
+                if(saint2Vivo){
+                    saint2Golpeia.executar(); 
+                }
             }else{                
                  saint2Vivo= saint2.getStatus().equals(Status.VIVO);
-                if(saint2Vivo){ saint2Golpeia.executar(); }
+                if(saint2Vivo){
+                    saint2Golpeia.executar(); 
+                }
                 saint1Vivo= saint1.getStatus().equals(Status.VIVO); 
-                if(saint1Vivo){saint1Golpeia.executar(); }
+                if(saint1Vivo){
+                    saint1Golpeia.executar(); 
+                }
             } 
         }
     }   
 }
 
-// int valor1 = saint1.getCategoria();
-// int valor2 = saint2.getCategoria();
-
-// if(valor1>=valor2){
-// this.saint2.perderVida(dano);
-// }else{
-// this.saint1.perderVida(dano);
-// }

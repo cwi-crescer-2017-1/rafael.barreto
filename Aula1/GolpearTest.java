@@ -39,7 +39,7 @@ public class GolpearTest
         BronzeSaint shiryu = new BronzeSaint("Seiya","pegaso");
         
         babel.vestirArmadura();
-        babel.aprenderGolpe(new Golpe("Turbilhão de Chamas",10));
+        babel.aprenderGolpe(new Golpe("Turbilhao de Chamas",10));
         
         Golpear babelGolpea = new Golpear(babel,shiryu);
         babelGolpea.executar();
