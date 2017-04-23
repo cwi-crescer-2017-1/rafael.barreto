@@ -14,13 +14,7 @@ public abstract class Saint{
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
 
-    public Saint(String nome, Armadura armadura){
-        this.nome = nome;
-        this.armadura = armadura;
-        this.status = Status.VIVO;
-        this.vida = 100;        
-    }  
-
+  
     public Saint(String nome, String nomeConstelacao, Categoria categoriaArmadura){
         
         Constelacao constelacao = new Constelacao(nomeConstelacao);
