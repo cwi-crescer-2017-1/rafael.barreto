@@ -123,17 +123,7 @@ public abstract class Saint{
     public String toString (){        
         
         String csv;
-        
-        csv = getNome()+", "+getVida()+", "+getConstelacao().getNome() + ", " + getArmadura().getCategoria() + ", "+getStatus() + ", " + getGenero()+ ", " + getArmaduraVestida()   ;
-              
-        // Nome do Saint
-        // Vida
-        // Nome da constelação
-        // Categoria armadura
-        // Status
-        // Gênero
-        // Armadura está vestida?
-
+        csv = getNome()+","+getVida()+","+getConstelacao().getNome() + "," + getArmadura().getCategoria() + ","+getStatus() + "," + getGenero()+ "," + getArmaduraVestida();
         return csv;
     }
     
@@ -142,7 +132,7 @@ public abstract class Saint{
     }
     
     public ArrayList<Movimento> getProximoMovimento(){
-        ArrayList<Movimento> movimentos = new ArrayList<>();
+        ArrayList<Movimento> movimentos = new ArrayList<>();   
         
         if(this.movimentos.size()>0){
             int posicao  = acumuladorMovimento % this.movimentos.size();

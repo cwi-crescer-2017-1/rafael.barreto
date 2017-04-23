@@ -440,11 +440,13 @@ public class ListaSaintsTest
 
         ListaSaints cavaleiros = new ListaSaints(); 
         cavaleiros.adicionar(shura);
-        cavaleiros.adicionar(mu);       
+        cavaleiros.adicionar(mu); 
+        mu.perderVida(10);
 
         String csv = cavaleiros.getCSV();  
+        String compara = "Shura,100.0,Capricornio,OURO,VIVO,NAO_INFORMADO,false"+System.lineSeparator()+"Mu,90.0,Aries,OURO,VIVO,NAO_INFORMADO,false"+System.lineSeparator();
 
-        assertEquals(false,csv.isEmpty());
+        assertEquals(compara,csv);
     }
 
     @ Test public void csvComListaCom1Saints() throws Exception {
@@ -453,9 +455,11 @@ public class ListaSaintsTest
         ListaSaints cavaleiros = new ListaSaints(); 
         cavaleiros.adicionar(shura);        
 
-        String csv = cavaleiros.getCSV();  
+        String csv = cavaleiros.getCSV();
+        String compara = "Shura,100.0,Capricornio,OURO,VIVO,NAO_INFORMADO,false"+System.lineSeparator();
 
-        assertEquals(false,csv.isEmpty());
+        assertEquals(compara,csv);
+       
     }
 
     @ Test public void csvComListaSemSaints(){

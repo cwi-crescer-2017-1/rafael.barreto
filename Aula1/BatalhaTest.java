@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -71,5 +69,18 @@ public class BatalhaTest
         
         assertEquals(70.0,shaka.getVida(),0.01);
         assertEquals(0.0,seiya.getVida(),0.01);
+      }
+      
+       @Test(expected = NullPointerException.class)
+       public void batalhaSemGolpesLancaNullPointerException() throws Exception,NullPointerException{                 
+       Golpe meteoroPegaso = new Golpe("Meteoro de pegaso",10);
+       Golpe exclamacaoAthena = new Golpe("Exclamacao de Athena ",30);
+       Golpe correnteDeAndromeda = new Golpe("Tesouro do ceu",25);
+            
+        BronzeSaint seiya = new BronzeSaint("seiya","pegaso");
+        GoldSaint shaka = new GoldSaint ("Shaka","Virgem");
+        
+        Batalha luta = new Batalha(shaka,seiya);
+        luta.iniciar(); 
       }
 }

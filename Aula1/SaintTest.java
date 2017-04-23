@@ -253,7 +253,7 @@ public class SaintTest{
     
     // TESTE METODO ADICIONA MOVIMENTO 
      @Test
-    public void saintAdicionarMovimento(){
+    public void saintAdicionarMovimento()throws Exception{
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
         Saint shiryu = new BronzeSaint("Seiya","pegaso");
         

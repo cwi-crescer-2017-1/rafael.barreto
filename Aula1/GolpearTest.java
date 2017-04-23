@@ -7,7 +7,7 @@ import org.junit.Test;
 public class GolpearTest
 {
     @Test
-    public void  testeGolpearSaint(){
+    public void  testeGolpearSaint()throws Exception{
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
         Saint shiryu = new BronzeSaint("Seiya","pegaso");
         
@@ -20,7 +20,7 @@ public class GolpearTest
     } 
     
      @Test
-    public void  testeGolpearSaintArmaduraBronzeVestida(){
+    public void  testeGolpearSaintArmaduraBronzeVestida()throws Exception{
         BronzeSaint seiya = new BronzeSaint("Seiya","Pegaso");
         BronzeSaint shiryu = new BronzeSaint("Seiya","pegaso");
         
@@ -34,7 +34,7 @@ public class GolpearTest
     } 
     
     @Test
-    public void  testeGolpearSaintArmaduraPrataVestida(){
+    public void  testeGolpearSaintArmaduraPrataVestida()throws Exception{
         SilverSaint babel = new SilverSaint("Babel","Centauro");
         BronzeSaint shiryu = new BronzeSaint("Seiya","pegaso");
         
@@ -58,5 +58,16 @@ public class GolpearTest
         aldebaramGolpea.executar();
         
         assertEquals(20,shiryu.getVida(),0.01);   
+    } 
+    
+    @Test(expected = NullPointerException.class)
+    public void  testeGolpearSaintSemGolpeLancaNullPointerException()throws Exception{
+        Saint seiya = new BronzeSaint("Seiya","Pegaso");
+        Saint shiryu = new BronzeSaint("Seiya","pegaso");
+        
+        Golpear seiyaGolpea = new Golpear(seiya,shiryu);
+        seiyaGolpea.executar();
+        
+        assertEquals(90,shiryu.getVida(),0.01);           
     } 
 }
