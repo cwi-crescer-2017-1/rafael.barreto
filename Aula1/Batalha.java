@@ -13,29 +13,32 @@ public class Batalha{
         boolean saint1Vivo= saint1.getStatus().equals(Status.VIVO);
         boolean saint2Vivo= saint1.getStatus().equals(Status.VIVO);        
         boolean saint1MaiorCategoria = (saint1.getCategoria()>=saint2.getCategoria());
+        Saint saintEmAcao = null ;
+        
+        Movimento movimentoSaint1 = new Golpear(saint1,saint2);
+        Movimento movimentoSaint2 = new Golpear(saint2,saint1);
 
-        Golpear saint1Golpeia = new Golpear(saint1,saint2);
-        Golpear saint2Golpeia = new Golpear(saint2,saint1);
-
-        while(saint1Vivo && saint2Vivo){ 
-          
+        while(saint1Vivo && saint2Vivo){
+            
             if(saint1MaiorCategoria ) {                
                 saint1Vivo= saint1.getStatus().equals(Status.VIVO);
+               
                 if(saint1Vivo){ 
-                    saint1Golpeia.executar(); 
+                    movimentoSaint1.executar(); 
                 }
                 saint2Vivo= saint2.getStatus().equals(Status.VIVO); 
                 if(saint2Vivo){
-                    saint2Golpeia.executar(); 
+                    movimentoSaint2.executar(); 
                 }
             }else{                
                  saint2Vivo= saint2.getStatus().equals(Status.VIVO);
-                if(saint2Vivo){
-                    saint2Golpeia.executar(); 
+                
+                 if(saint2Vivo){
+                    movimentoSaint2.executar(); 
                 }
                 saint1Vivo= saint1.getStatus().equals(Status.VIVO); 
                 if(saint1Vivo){
-                    saint1Golpeia.executar(); 
+                     movimentoSaint1.executar(); 
                 }
             } 
         }

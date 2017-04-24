@@ -13,6 +13,7 @@ public abstract class Saint{
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
+    private static int qtdSaints = 0;
 
   
     public Saint(String nome, String nomeConstelacao, Categoria categoriaArmadura){
@@ -24,7 +25,7 @@ public abstract class Saint{
         this.status = Status.VIVO;
         this.vida = 100; 
         this.armadura = armadura;
-
+        qtdSaints ++;
     }
 
     public String getNome(){

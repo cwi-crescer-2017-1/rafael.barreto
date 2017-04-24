@@ -6,6 +6,6 @@ public class VestirArmadura implements Movimento{
     }    
  
     public void executar(){
-        saint.vestirArmadura();
+        this.saint.vestirArmadura();
     }
 }

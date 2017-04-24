@@ -12,8 +12,8 @@ public class BatalhaTest
         Golpe exclamacaoAthena = new Golpe("Exclamacao de Athena ",30);
         Golpe cometaPegaso = new Golpe("Cometa de Pegaso",30);
             
-        BronzeSaint seiya = new BronzeSaint("seiya","pegaso");
-        SilverSaint shaina = new SilverSaint("Shaina","Cobra");
+        Saint seiya = new BronzeSaint("seiya","pegaso");
+        Saint shaina = new SilverSaint("Shaina","Cobra");
         
         seiya.vestirArmadura();
         shaina.vestirArmadura();

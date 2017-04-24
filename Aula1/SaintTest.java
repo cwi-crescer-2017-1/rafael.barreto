@@ -70,13 +70,12 @@ public class SaintTest{
         assertEquals(10,0,shiryu.getVida());
     }
 
-  @Test
+    @Test
     public void saintPerdeVida110() throws Exception{        
         Saint shiryu = new BronzeSaint ("Shiryu","dragao");
         shiryu.perderVida(110);
         assertEquals(0,shiryu.getVida(),0.01);
     }
-
 
     @Test
     public void saintSetarGenero(){        
@@ -91,14 +90,14 @@ public class SaintTest{
         shiryu.perderVida(100);
         assertEquals(0,0,shiryu.getVida());
     }
-    
+
     @Test
     public void saintMudarStatusParaMortoAoZerarVida(){
         SilverSaint retsu = new SilverSaint("Retsu","Lince");
         retsu.perderVida(100);
         assertEquals(Status.MORTO,retsu.getStatus());
     }    
-    
+
     @Test(expected = InvalidParameterException.class)
     public void saintPerderVidaValorDanoNegativoDeveDarErro() throws Exception {
         GoldSaint aldebaram = new GoldSaint("Aldebaram","Touro");
@@ -130,145 +129,157 @@ public class SaintTest{
         GoldSaint aldebaram = new GoldSaint ("Aldebaram", "Touro");
         assertEquals(7,aldebaram.getSentidosDespertados());
     }
-    
+
     @Test (expected=Exception.class)
     public void saintConstelacaoInvalidaDeveDarErro() throws Exception {
         GoldSaint jabu = new GoldSaint("Jabu","Unicornio");
     }    
-   
+
     public void testeSaintGetGolpes() throws Exception{ 
-        
+
         Golpe soco = new Golpe("soco",10);
         Golpe chute = new Golpe("chute",17);
         Golpe cabecada = new Golpe("Cabecada",25);                        
-        
+
         GoldSaint mascaraDaMorte = new GoldSaint ("mascara da Morte","Cancer");
-        
+
         mascaraDaMorte.aprenderGolpe(soco);
         mascaraDaMorte.aprenderGolpe(chute);
         mascaraDaMorte.aprenderGolpe(cabecada);
-        
+
         boolean teste = mascaraDaMorte.getGolpes().get(0).equals(soco.getNome());
         assertEquals(true,teste);
         teste = mascaraDaMorte.getGolpes().get(0).getNome().equals(chute.getNome());
         assertEquals(true,teste);
         teste = mascaraDaMorte.getGolpes().get(0).getNome().equals(cabecada.getNome());
         assertEquals(true,teste);       
-    
+
     }   
-    
+
     @Test
     public void saintTestaSeEstaTrocandoDeGolpe() throws Exception{      
-    
-         Golpe meteoroDePegaso = new Golpe("Meteoro de Pegaso",10);
-         Golpe cometaDePegaso = new Golpe("Cometa de Pegaso",10);
-         Golpe centelhaDePegaso = new Golpe("Centelha de Pegaso",10);         
-         Saint seiya = new BronzeSaint ("Seiya","Pegaso");
-         
-         seiya.aprenderGolpe(meteoroDePegaso);        
-         seiya.aprenderGolpe(cometaDePegaso);    
-         seiya.aprenderGolpe(centelhaDePegaso);  
-         
-         seiya.getProximoGolpe();        
-         assertEquals(meteoroDePegaso,seiya.getGolpes().get(0));
-         
-         seiya.getProximoGolpe();        
-         assertEquals(cometaDePegaso,seiya.getGolpes().get(1));
-         
-         seiya.getProximoGolpe();        
-         assertEquals(centelhaDePegaso,seiya.getGolpes().get(2));
-         
-         seiya.getProximoGolpe();        
-         assertEquals(meteoroDePegaso,seiya.getGolpes().get(0));
-    
+
+        Golpe meteoroDePegaso = new Golpe("Meteoro de Pegaso",10);
+        Golpe cometaDePegaso = new Golpe("Cometa de Pegaso",10);
+        Golpe centelhaDePegaso = new Golpe("Centelha de Pegaso",10);         
+        Saint seiya = new BronzeSaint ("Seiya","Pegaso");
+
+        seiya.aprenderGolpe(meteoroDePegaso);        
+        seiya.aprenderGolpe(cometaDePegaso);    
+        seiya.aprenderGolpe(centelhaDePegaso);  
+
+        seiya.getProximoGolpe();        
+        assertEquals(meteoroDePegaso,seiya.getGolpes().get(0));
+
+        seiya.getProximoGolpe();        
+        assertEquals(cometaDePegaso,seiya.getGolpes().get(1));
+
+        seiya.getProximoGolpe();        
+        assertEquals(centelhaDePegaso,seiya.getGolpes().get(2));
+
+        seiya.getProximoGolpe();        
+        assertEquals(meteoroDePegaso,seiya.getGolpes().get(0));
+
     }
-    
+
     @Test
     public void saintAdiciona3Golpes(){
-         Golpe meteoroDePegaso = new Golpe("Meteoro de Pegaso",10);
-         Golpe cometaDePegaso = new Golpe("Cometa de Pegaso",10);
-         Golpe centelhaDePegaso = new Golpe("Centelha de Pegaso",10);         
-         Saint seiya = new BronzeSaint ("Seiya","Pegaso");
-         
-         seiya.aprenderGolpe(meteoroDePegaso);        
-         seiya.aprenderGolpe(cometaDePegaso);    
-         seiya.aprenderGolpe(centelhaDePegaso);    
-         
-         assertEquals(meteoroDePegaso,seiya.getGolpes().get(0));
-         assertEquals(cometaDePegaso,seiya.getGolpes().get(1));
-         assertEquals(centelhaDePegaso,seiya.getGolpes().get(2));
-         
+        Golpe meteoroDePegaso = new Golpe("Meteoro de Pegaso",10);
+        Golpe cometaDePegaso = new Golpe("Cometa de Pegaso",10);
+        Golpe centelhaDePegaso = new Golpe("Centelha de Pegaso",10);         
+        Saint seiya = new BronzeSaint ("Seiya","Pegaso");
+
+        seiya.aprenderGolpe(meteoroDePegaso);        
+        seiya.aprenderGolpe(cometaDePegaso);    
+        seiya.aprenderGolpe(centelhaDePegaso);    
+
+        assertEquals(meteoroDePegaso,seiya.getGolpes().get(0));
+        assertEquals(cometaDePegaso,seiya.getGolpes().get(1));
+        assertEquals(centelhaDePegaso,seiya.getGolpes().get(2));
+
     }    
-    
+
     @Test
     public void saintAdiciona9Golpes(){
-         Golpe meteoroDePegaso = new Golpe("Meteoro de Pegaso",10);
-         Golpe cometaDePegaso = new Golpe("Cometa de Pegaso",20);
-         Golpe centelhaDePegaso = new Golpe("Centelha de Pegaso",60);
-         
-         Golpe capsulaDoPoder = new Golpe("capsula do Poder",20);
-         Golpe relampagoDePlasma = new Golpe("relampago de Plasma",30);
-         Golpe pataDoLeao = new Golpe("pata do Leao",60);  
-         
-         Golpe circuloDeGelo = new Golpe("circulo de Gelo",15);
-         Golpe poDeDiamante = new Golpe("po de Diamante",35);
-         Golpe trovaoAuroraAtaque = new Golpe("trovao Aurora Ataque",50);  
-         
-         Saint seiya = new BronzeSaint ("Seiya","Pegaso");
-         
-         seiya.aprenderGolpe(meteoroDePegaso);        
-         seiya.aprenderGolpe(cometaDePegaso);    
-         seiya.aprenderGolpe(centelhaDePegaso);    
-         
-         
-         seiya.aprenderGolpe(capsulaDoPoder);        
-         seiya.aprenderGolpe(relampagoDePlasma);    
-         seiya.aprenderGolpe(pataDoLeao);    
-         
-         
-         seiya.aprenderGolpe(circuloDeGelo);        
-         seiya.aprenderGolpe(poDeDiamante);    
-         seiya.aprenderGolpe(trovaoAuroraAtaque);    
-         
-         assertEquals(meteoroDePegaso,seiya.getGolpes().get(0));
-         assertEquals(cometaDePegaso,seiya.getGolpes().get(1));
-         assertEquals(centelhaDePegaso,seiya.getGolpes().get(2));
-         
-         assertEquals(capsulaDoPoder,seiya.getGolpes().get(3));
-         assertEquals(relampagoDePlasma,seiya.getGolpes().get(4));
-         assertEquals(pataDoLeao,seiya.getGolpes().get(5));
-         
-         assertEquals(circuloDeGelo,seiya.getGolpes().get(6));
-         assertEquals(poDeDiamante,seiya.getGolpes().get(7));
-         assertEquals(trovaoAuroraAtaque,seiya.getGolpes().get(8));
+        Golpe meteoroDePegaso = new Golpe("Meteoro de Pegaso",10);
+        Golpe cometaDePegaso = new Golpe("Cometa de Pegaso",20);
+        Golpe centelhaDePegaso = new Golpe("Centelha de Pegaso",60);
+
+        Golpe capsulaDoPoder = new Golpe("capsula do Poder",20);
+        Golpe relampagoDePlasma = new Golpe("relampago de Plasma",30);
+        Golpe pataDoLeao = new Golpe("pata do Leao",60);  
+
+        Golpe circuloDeGelo = new Golpe("circulo de Gelo",15);
+        Golpe poDeDiamante = new Golpe("po de Diamante",35);
+        Golpe trovaoAuroraAtaque = new Golpe("trovao Aurora Ataque",50);  
+
+        Saint seiya = new BronzeSaint ("Seiya","Pegaso");
+
+        seiya.aprenderGolpe(meteoroDePegaso);        
+        seiya.aprenderGolpe(cometaDePegaso);    
+        seiya.aprenderGolpe(centelhaDePegaso);    
+
+        seiya.aprenderGolpe(capsulaDoPoder);        
+        seiya.aprenderGolpe(relampagoDePlasma);    
+        seiya.aprenderGolpe(pataDoLeao);    
+
+        seiya.aprenderGolpe(circuloDeGelo);        
+        seiya.aprenderGolpe(poDeDiamante);    
+        seiya.aprenderGolpe(trovaoAuroraAtaque);    
+
+        assertEquals(meteoroDePegaso,seiya.getGolpes().get(0));
+        assertEquals(cometaDePegaso,seiya.getGolpes().get(1));
+        assertEquals(centelhaDePegaso,seiya.getGolpes().get(2));
+
+        assertEquals(capsulaDoPoder,seiya.getGolpes().get(3));
+        assertEquals(relampagoDePlasma,seiya.getGolpes().get(4));
+        assertEquals(pataDoLeao,seiya.getGolpes().get(5));
+
+        assertEquals(circuloDeGelo,seiya.getGolpes().get(6));
+        assertEquals(poDeDiamante,seiya.getGolpes().get(7));
+        assertEquals(trovaoAuroraAtaque,seiya.getGolpes().get(8));
     }   
-    
+
     @Test
     public void saintTestaMetodoComparaSaint(){
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
         Saint shiryu = new BronzeSaint("Seiya","pegaso");
-        
+
         assertEquals(seiya,shiryu);
     }
-    
+
     // TESTE METODO ADICIONA MOVIMENTO 
-     @Test
-    public void saintAdicionarMovimento()throws Exception{
+    @Test
+    public void saintAdicionarMovimento(){
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
         Saint shiryu = new BronzeSaint("Seiya","pegaso");
-        
-        Golpear seiyaGolpea = new Golpear(seiya,shiryu);
+
+        Movimento seiyaGolpea = new Golpear(seiya,shiryu);
         seiya.aprenderGolpe(new Golpe("meteoro de pegaso",10));
         seiyaGolpea.executar();
-        
-        assertEquals(90,shiryu.getVida(),0.01);
-        assertEquals(100,seiya.getVida(),0.01);                        
+
+        assertEquals("meteoro de pegaso",seiya.getGolpes().get(0).getNome());
+
     }    
-    
-    //TESTE METODO GET PROXIMO MOVIMENTO 
+    // TERMINAR
     @Test
-    public void saintGetProximoMovimento(){
-         Saint seiya = new BronzeSaint("Seiya","Pegaso");
-         Saint shiryu = new BronzeSaint("Seiya","pegaso");
+    public void qtdSaints(){           
+           Saint seiya = new BronzeSaint("Seiya","Pegaso");
+           Saint shiryu = new BronzeSaint("Seiya","pegaso"); 
     }
+
+    // TESTE METODO GET PROXIMO MOVIMENTO verificar depois
+    // @Test 
+    // public void getProximoMovimentoDuasVezesComUmMovimento() throws Exception { 
+        
+        // Saint seiya = new BronzeSaint("Seiya","Pegaso"); 
+        
+        // Movimento vestirArmadura = new VestirArmadura(seiya);
+        // seiya.adicionarMovimento(vestirArmadura);
+        
+        // seiya.getProximoMovimento(); 
+        
+        // assertEquals(vestirArmadura, seiya.getProximoMovimento()); 
+    // } 
+
 }

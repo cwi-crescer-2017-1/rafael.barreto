@@ -7,7 +7,7 @@ import org.junit.Test;
 public class GolpearTest
 {
     @Test
-    public void  testeGolpearSaint()throws Exception{
+    public void  testeGolpearSaintSemArmaduraVestida()throws Exception{
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
         Saint shiryu = new BronzeSaint("Seiya","pegaso");
         
@@ -22,9 +22,9 @@ public class GolpearTest
      @Test
     public void  testeGolpearSaintArmaduraBronzeVestida()throws Exception{
         BronzeSaint seiya = new BronzeSaint("Seiya","Pegaso");
-        BronzeSaint shiryu = new BronzeSaint("Seiya","pegaso");
+        BronzeSaint shiryu = new BronzeSaint("shiryu","dragao");
         
-        seiya.vestirArmadura();
+        new VestirArmadura(seiya).executar();
         seiya.aprenderGolpe(new Golpe("meteoro de pegaso",10));
         
         Golpear seiyaGolpea = new Golpear(seiya,shiryu);
@@ -38,7 +38,7 @@ public class GolpearTest
         SilverSaint babel = new SilverSaint("Babel","Centauro");
         BronzeSaint shiryu = new BronzeSaint("Seiya","pegaso");
         
-        babel.vestirArmadura();
+         new VestirArmadura(babel).executar();
         babel.aprenderGolpe(new Golpe("Turbilhao de Chamas",10));
         
         Golpear babelGolpea = new Golpear(babel,shiryu);
@@ -52,7 +52,7 @@ public class GolpearTest
         GoldSaint aldebaram =  new GoldSaint("aldebaram","Touro");
         BronzeSaint shiryu = new BronzeSaint("Seiya","pegaso");
         
-        aldebaram.vestirArmadura();
+         new VestirArmadura(aldebaram).executar();
         aldebaram.aprenderGolpe(new Golpe("Grande Chifre",20));
         Golpear aldebaramGolpea = new Golpear(aldebaram,shiryu);
         aldebaramGolpea.executar();
