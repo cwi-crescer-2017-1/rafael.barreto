@@ -9,15 +9,17 @@ public abstract class Saint{
     protected int qtdsentidos = 5;
     private int acumulador = 0;
     private int acumuladorMovimento =0;
+    private int idSaint = 0;
+    private static int id = 0;  
+    private static int qtdSaints = 0;
     private ArrayList <Movimento> movimentos = new ArrayList<>();
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
-    private static int qtdSaints = 0;
+    
 
   
-    public Saint(String nome, String nomeConstelacao, Categoria categoriaArmadura){
-        
+    public Saint(String nome, String nomeConstelacao, Categoria categoriaArmadura){        
         Constelacao constelacao = new Constelacao(nomeConstelacao);
         Armadura armadura = new Armadura(constelacao,categoriaArmadura);
 
@@ -25,11 +27,18 @@ public abstract class Saint{
         this.status = Status.VIVO;
         this.vida = 100; 
         this.armadura = armadura;
-        qtdSaints ++;
+        this.idSaint = Saint.id;
+        this.id++;
+        Saint.qtdSaints ++;
+        
     }
     
     public static int getQtdSaints(){
         return Saint.qtdSaints;
+    }
+    
+    public int getId(){
+        return this.idSaint;
     }
 
     public String getNome(){

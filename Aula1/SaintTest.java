@@ -329,4 +329,52 @@ public class SaintTest{
         
         assertEquals(1,saintsCriados);
     }
+    
+     // Testes de Id
+    @Test
+    public void criar3SaintsOuroComId() throws Exception {        
+        int saintSeiya, saintShiryu, saintIkki; 
+        
+        saintIkki = saintShiryu = saintSeiya = Saint.getQtdSaints();
+        
+        Saint seiya = new GoldSaint("Seiya","Sagitario");
+        Saint shiryu = new GoldSaint("Shiryu","Libra");
+        Saint ikki = new GoldSaint("Ikki","Leao"); 
+        
+        saintSeiya = Saint.getQtdSaints() - seiya.getId();
+        saintShiryu = Saint.getQtdSaints() - shiryu.getId();
+        saintIkki = Saint.getQtdSaints() - ikki.getId();
+        
+        assertEquals(3,saintSeiya);
+        assertEquals(2,saintShiryu);
+        assertEquals(1,saintIkki);
+        
+    }
+    
+    @Test
+    public void criar2SaintsOuroPrataComId() throws Exception {
+         int saintSeiya, saintShiryu, saintIkki; 
+        
+        saintIkki = saintShiryu = saintSeiya = Saint.getQtdSaints();
+        
+        Saint seiya = new GoldSaint("Seiya","Sagitario");
+        Saint shiryu = new GoldSaint("Shiryu","Libra");        
+        
+        saintSeiya = Saint.getQtdSaints() - seiya.getId();
+        saintShiryu = Saint.getQtdSaints() - shiryu.getId();        
+        
+        assertEquals(2,saintSeiya);
+        assertEquals(1,saintShiryu);        
+    }
+    
+     @Test
+    public void criar1SaintsBronzeComId() throws Exception {
+        int saintSeiya, saintShiryu, saintIkki; 
+        
+        saintIkki = saintShiryu = saintSeiya = Saint.getQtdSaints();
+        
+        Saint seiya = new GoldSaint("Seiya","Sagitario");        
+        saintSeiya = Saint.getQtdSaints() - seiya.getId();       
+        assertEquals(1,saintSeiya);        
+    }
 }
