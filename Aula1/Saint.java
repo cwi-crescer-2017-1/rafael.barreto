@@ -26,9 +26,8 @@ public abstract class Saint{
         this.status = Status.VIVO;
         this.vida = 100; 
         this.armadura = armadura;
-        this.idSaint =  Saint.qtdSaints;
+        this.idSaint =  Saint.qtdSaints+1;
         Saint.qtdSaints ++;
-        
     }
     
     public static int getQtdSaints(){

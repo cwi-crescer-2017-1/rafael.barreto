@@ -353,9 +353,9 @@ public class SaintTest{
         saintShiryu = Saint.getQtdSaints() - shiryu.getId();
         saintIkki = Saint.getQtdSaints() - ikki.getId();
         
-        assertEquals(3,saintSeiya);
-        assertEquals(2,saintShiryu);
-        assertEquals(1,saintIkki);
+        assertEquals(2,saintSeiya);
+        assertEquals(1,saintShiryu);
+        assertEquals(0,saintIkki);
         
     }
     
@@ -371,8 +371,8 @@ public class SaintTest{
         saintSeiya = Saint.getQtdSaints() - seiya.getId();
         saintShiryu = Saint.getQtdSaints() - shiryu.getId();        
         
-        assertEquals(2,saintSeiya);
-        assertEquals(1,saintShiryu);        
+        assertEquals(1,saintSeiya);
+        assertEquals(0,saintShiryu);        
     }
     
     @Test
@@ -383,6 +383,6 @@ public class SaintTest{
         
         Saint seiya = new GoldSaint("Seiya","Sagitario");        
         saintSeiya = Saint.getQtdSaints() - seiya.getId();       
-        assertEquals(1,saintSeiya);        
+        assertEquals(0,saintSeiya);        
     }
 }
