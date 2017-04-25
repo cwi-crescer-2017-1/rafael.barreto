@@ -470,7 +470,5 @@ public class ListaSaintsTest
 
         assertEquals(true,csv.isEmpty());
     }
-
 }
-
 

@@ -10,7 +10,6 @@ public abstract class Saint{
     private int acumulador = 0;
     private int acumuladorMovimento =0;
     private int idSaint = 0;
-    private static int id = 0;  
     private static int qtdSaints = 0;
     private ArrayList <Movimento> movimentos = new ArrayList<>();
     private Armadura armadura;
@@ -27,8 +26,7 @@ public abstract class Saint{
         this.status = Status.VIVO;
         this.vida = 100; 
         this.armadura = armadura;
-        this.idSaint = Saint.id;
-        this.id++;
+        this.idSaint =  Saint.qtdSaints;
         Saint.qtdSaints ++;
         
     }
@@ -125,7 +123,8 @@ public abstract class Saint{
         return this.nome.equals(saintFora.getNome())
         && this.status == saintFora.getStatus()
         && this.vida == saintFora.getVida()  
-        && this.getCategoria() == saintFora.getCategoria();
+        && this.getCategoria() == saintFora.getCategoria()
+        && this.getId() == saintFora.getId();
     }
 
     public String toString (){        

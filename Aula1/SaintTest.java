@@ -241,9 +241,17 @@ public class SaintTest{
     }   
 
     @Test
-    public void saintTestaMetodoComparaSaint(){
+    public void saintTestaMetodoComparaSaintIdDiferente(){
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
         Saint shiryu = new BronzeSaint("Seiya","pegaso");
+
+        assertFalse(seiya.equals(shiryu));
+    }
+    
+    @Test
+    public void saintTestaMetodoComparaSaintIdIgual(){
+        Saint seiya = new BronzeSaint("Seiya","Pegaso");
+        Saint shiryu = seiya;
 
         assertEquals(seiya,shiryu);
     }
@@ -353,7 +361,7 @@ public class SaintTest{
     
     @Test
     public void criar2SaintsOuroPrataComId() throws Exception {
-         int saintSeiya, saintShiryu, saintIkki; 
+        int saintSeiya, saintShiryu, saintIkki; 
         
         saintIkki = saintShiryu = saintSeiya = Saint.getQtdSaints();
         
@@ -367,7 +375,7 @@ public class SaintTest{
         assertEquals(1,saintShiryu);        
     }
     
-     @Test
+    @Test
     public void criar1SaintsBronzeComId() throws Exception {
         int saintSeiya, saintShiryu, saintIkki; 
         
