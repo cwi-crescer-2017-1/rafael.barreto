@@ -5,6 +5,13 @@ import org.junit.Test;
 import java.security.InvalidParameterException;
 
 public class SaintTest{
+
+    @After
+
+    public void tearDown(){
+        System.gc();
+    }
+
     @Test
     public void SaintVestirArmaduraDeixarArmaduraVestida() throws Exception{
         //1.Arrange      
@@ -247,7 +254,7 @@ public class SaintTest{
 
         assertFalse(seiya.equals(shiryu));
     }
-    
+
     @Test
     public void saintTestaMetodoComparaSaintIdIgual(){
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
@@ -264,33 +271,31 @@ public class SaintTest{
 
         Movimento seiyaGolpea = new Golpear(seiya,shiryu);
         seiya.aprenderGolpe(new Golpe("meteoro de pegaso",10));
-       
+
         seiya.adicionarMovimento(seiyaGolpea);
         //seiya.getProximoMovimento()     
-        
+
         assertEquals("meteoro de pegaso",seiya.getGolpes().get(0).getNome());
 
     }    
     // TERMINAR
     @Test
     public void qtdSaints(){           
-           Saint seiya = new BronzeSaint("Seiya","Pegaso");
-           Saint shiryu = new BronzeSaint("Seiya","pegaso"); 
+        Saint seiya = new BronzeSaint("Seiya","Pegaso");
+        Saint shiryu = new BronzeSaint("Seiya","pegaso"); 
     }
 
-     @Test  
-     public void getProximoMovimentoDuasVezesComUmMovimento() throws Exception { 
-        
-    
+    @Test  
+    public void getProximoMovimentoDuasVezesComUmMovimento() throws Exception { 
+
         Saint hyoga = new BronzeSaint("Hyoga", "Cisne");
         Movimento vestirArmadura = new VestirArmadura(hyoga);
         hyoga.adicionarMovimento(vestirArmadura);
         hyoga.getProximoMovimento();
         assertEquals(vestirArmadura, hyoga.getProximoMovimento());
-    
+
     } 
-    
-    
+
     @Test
     public void golpearDeveAdicionarMovimentoGolpear() throws Exception {
         Saint saga = new GoldSaint("Saga", "Gemeos");
@@ -300,89 +305,76 @@ public class SaintTest{
         Golpear golpear = new Golpear(saga, seiya);
         assertEquals(golpear, saga.getProximoMovimento());
     }   
-    
+
     // Testes de contagem de saints criados
     @Test
-    public void criar3SaintsOuro() throws Exception {
-        int saintsCriados = Saint.getQtdSaints();
-        
+    public void criar3SaintsOuroDeveSerUmAMais() throws Exception {
         Saint seiya = new GoldSaint("Seiya","Sagitario");
         Saint shiryu = new GoldSaint("Shiryu","Libra");
-        Saint ikki = new GoldSaint("Ikki","Leao");        
-        
-        saintsCriados = Saint.getQtdSaints() - saintsCriados;            
-        
-        assertEquals(3,saintsCriados);
+        Saint ikki = new GoldSaint("Ikki","Leao");   
+
+        assertEquals(3 , Saint.getQtdSaints());
     }
-    
+
     @Test
     public void criar2SaintsOuroPrata() throws Exception {
-        int saintsCriados = Saint.getQtdSaints();
-        
         Saint seiya = new GoldSaint("Seiya","Sagitario");
-        Saint babel = new SilverSaint("babel","Torre");   
-        
-        saintsCriados = Saint.getQtdSaints() - saintsCriados;            
-        
-        assertEquals(2,saintsCriados);
+        Saint babel = new SilverSaint("babel","Torre"); 
+
+        assertEquals(2, Saint.getQtdSaints());
     }
-    
-     @Test
+
+    @Test
     public void criar1SaintsBronze() throws Exception {
         int saintsCriados = Saint.getQtdSaints();
-        
+
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
-        
-        saintsCriados = Saint.getQtdSaints() - saintsCriados;            
-        
-        assertEquals(1,saintsCriados);
+
+        assertEquals(1, Saint.getQtdSaints());
     }
-    
-     // Testes de Id
+
+    // Testes de Id
     @Test
-    public void criar3SaintsOuroComId() throws Exception {        
-        int saintSeiya, saintShiryu, saintIkki; 
-        
-        saintIkki = saintShiryu = saintSeiya = Saint.getQtdSaints();
-        
-        Saint seiya = new GoldSaint("Seiya","Sagitario");
-        Saint shiryu = new GoldSaint("Shiryu","Libra");
-        Saint ikki = new GoldSaint("Ikki","Leao"); 
-        
-        saintSeiya = Saint.getQtdSaints() - seiya.getId();
-        saintShiryu = Saint.getQtdSaints() - shiryu.getId();
-        saintIkki = Saint.getQtdSaints() - ikki.getId();
-        
-        assertEquals(2,saintSeiya);
-        assertEquals(1,saintShiryu);
-        assertEquals(0,saintIkki);
-        
-    }
-    
-    @Test
-    public void criar2SaintsOuroPrataComId() throws Exception {
-        int saintSeiya, saintShiryu, saintIkki; 
-        
-        saintIkki = saintShiryu = saintSeiya = Saint.getQtdSaints();
-        
+    public void criar3SaintsOuroComId() throws Exception { 
+        int idAntes = Saint.quantidadeDeSaints();     
+
+        Saint shaka = new GoldSaint ("shaka","Virgem");
         Saint seiya = new GoldSaint("Seiya","Sagitario");
         Saint shiryu = new GoldSaint("Shiryu","Libra");        
-        
-        saintSeiya = Saint.getQtdSaints() - seiya.getId();
-        saintShiryu = Saint.getQtdSaints() - shiryu.getId();        
-        
-        assertEquals(1,saintSeiya);
-        assertEquals(0,saintShiryu);        
+
+        assertEquals(idAntes+1,shaka.getId());
+        assertEquals(idAntes+2,seiya.getId());
+        assertEquals(idAntes+3,shiryu.getId()); 
+
+    }
+
+    @Test
+    public void criar2SaintsOuroPrataComId() throws Exception {
+        int idAntes = Saint.quantidadeDeSaints();     
+
+        Saint seiya = new GoldSaint("Seiya","Sagitario");
+        Saint shiryu = new GoldSaint("Shiryu","Libra");        
+
+        assertEquals(idAntes+1,seiya.getId());
+        assertEquals(idAntes+2,shiryu.getId()); 
+    }
+
+    @Test
+    public void criar1SaintsBronzeComId() throws Exception {      
+        int idAntes = Saint.quantidadeDeSaints();        
+        Saint seiya = new GoldSaint("Seiya","Sagitario");
+        assertEquals(idAntes+1,seiya.getId());        
     }
     
     @Test
-    public void criar1SaintsBronzeComId() throws Exception {
-        int saintSeiya, saintShiryu, saintIkki; 
+    public void criar1SaintsBronzeComIdDepoisLimparEDeveIncrementar() throws Exception {      
+        int idAntes = Saint.quantidadeDeSaints();        
         
-        saintIkki = saintShiryu = saintSeiya = Saint.getQtdSaints();
-        
+        Saint shiryu = new GoldSaint("Shiryu","Libra");  
+        // limpa shiryu da memoria
+        shiryu = null;       
+        //
         Saint seiya = new GoldSaint("Seiya","Sagitario");        
-        saintSeiya = Saint.getQtdSaints() - seiya.getId();       
-        assertEquals(0,saintSeiya);        
+        assertEquals(idAntes+2 ,seiya.getId());        
     }
 }

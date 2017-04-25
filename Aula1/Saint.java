@@ -9,7 +9,8 @@ public abstract class Saint{
     protected int qtdsentidos = 5;
     private int acumulador = 0;
     private int acumuladorMovimento =0;
-    private int idSaint = 0;
+    private int id = 0;
+    private static int quantidadeDeSaints = 0;
     private static int qtdSaints = 0;
     private ArrayList <Movimento> movimentos = new ArrayList<>();
     private Armadura armadura;
@@ -26,16 +27,24 @@ public abstract class Saint{
         this.status = Status.VIVO;
         this.vida = 100; 
         this.armadura = armadura;
-        this.idSaint =  Saint.qtdSaints+1;
+        this.id =  ++Saint.quantidadeDeSaints;
         Saint.qtdSaints ++;
+    }
+    
+    protected void finalize() throws Throwable {
+        Saint.qtdSaints --;    
     }
     
     public static int getQtdSaints(){
         return Saint.qtdSaints;
     }
     
+    public static int quantidadeDeSaints(){
+      return Saint.quantidadeDeSaints;  
+    }
+    
     public int getId(){
-        return this.idSaint;
+        return this.id;
     }
 
     public String getNome(){
