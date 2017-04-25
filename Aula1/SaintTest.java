@@ -256,8 +256,10 @@ public class SaintTest{
 
         Movimento seiyaGolpea = new Golpear(seiya,shiryu);
         seiya.aprenderGolpe(new Golpe("meteoro de pegaso",10));
-        seiyaGolpea.executar();
-
+       
+        seiya.adicionarMovimento(seiyaGolpea);
+        //seiya.getProximoMovimento()     
+        
         assertEquals("meteoro de pegaso",seiya.getGolpes().get(0).getNome());
 
     }    
@@ -268,18 +270,27 @@ public class SaintTest{
            Saint shiryu = new BronzeSaint("Seiya","pegaso"); 
     }
 
-    // TESTE METODO GET PROXIMO MOVIMENTO verificar depois
-    // @Test 
-    // public void getProximoMovimentoDuasVezesComUmMovimento() throws Exception { 
+     @Test  
+     public void getProximoMovimentoDuasVezesComUmMovimento() throws Exception { 
         
-        // Saint seiya = new BronzeSaint("Seiya","Pegaso"); 
-        
-        // Movimento vestirArmadura = new VestirArmadura(seiya);
-        // seiya.adicionarMovimento(vestirArmadura);
-        
-        // seiya.getProximoMovimento(); 
-        
-        // assertEquals(vestirArmadura, seiya.getProximoMovimento()); 
-    // } 
+    
+        Saint hyoga = new BronzeSaint("Hyoga", "Cisne");
+        Movimento vestirArmadura = new VestirArmadura(hyoga);
+        hyoga.adicionarMovimento(vestirArmadura);
+        hyoga.getProximoMovimento();
+        assertEquals(vestirArmadura, hyoga.getProximoMovimento());
+    
+    } 
+    
+    
+    @Test
+    public void golpearDeveAdicionarMovimentoGolpear() throws Exception {
+        Saint saga = new GoldSaint("Saga", "Gemeos");
+        saga.aprenderGolpe(new Golpe("Outra dimensão", 10));
+        Saint seiya = new BronzeSaint("Seiya", "Pégaso");
+        saga.golpear(seiya);
+        Golpear golpear = new Golpear(saga, seiya);
+        assertEquals(golpear, saga.getProximoMovimento());
+    }	
 
 }

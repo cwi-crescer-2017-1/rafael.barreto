@@ -2,6 +2,6 @@
 
 public interface Movimento
 {
-    public void executar()throws NullPointerException;
+    public void executar();
     
 }

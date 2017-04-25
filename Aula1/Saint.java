@@ -9,7 +9,7 @@ public abstract class Saint{
     protected int qtdsentidos = 5;
     private int acumulador = 0;
     private int acumuladorMovimento =0;
-    private ArrayList<Movimento> movimentos;
+    private ArrayList <Movimento> movimentos = new ArrayList<>();
     private Armadura armadura;
     private Genero genero=Genero.NAO_INFORMADO;
     private Status status;
@@ -126,15 +126,23 @@ public abstract class Saint{
         this.movimentos.add(movimento);
     }
     
-    public ArrayList<Movimento> getProximoMovimento(){
-        ArrayList<Movimento> movimentos = new ArrayList<>();   
+    public Movimento getProximoMovimento(){
+        Movimento movimentos = null; 
         
         if(this.movimentos.size()>0){
             int posicao  = acumuladorMovimento % this.movimentos.size();
-            movimentos.add(this.movimentos.get(posicao));
+            movimentos = (this.movimentos.get(posicao));
             this.acumuladorMovimento ++;
             return movimentos;
         }    
         return null;
-    }   
+    } 
+    
+    //"agendando" execução do golpe no saint passado por parâmetro
+    // o golpe de fato só será executado na batalha.
+    public void golpear(Saint golpeado) {
+        this.adicionarMovimento(new Golpear(this, golpeado));
+    }
+    
+    
 }
