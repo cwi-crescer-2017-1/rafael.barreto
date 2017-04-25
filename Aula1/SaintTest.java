@@ -291,6 +291,42 @@ public class SaintTest{
         saga.golpear(seiya);
         Golpear golpear = new Golpear(saga, seiya);
         assertEquals(golpear, saga.getProximoMovimento());
-    }	
-
+    }   
+    
+    // Testes de contagem de saints criados
+    @Test
+    public void criar3SaintsOuro() throws Exception {
+        int saintsCriados = Saint.getQtdSaints();
+        
+        Saint seiya = new GoldSaint("Seiya","Sagitario");
+        Saint shiryu = new GoldSaint("Shiryu","Libra");
+        Saint ikki = new GoldSaint("Ikki","Leao");        
+        
+        saintsCriados = Saint.getQtdSaints() - saintsCriados;            
+        
+        assertEquals(3,saintsCriados);
+    }
+    
+    @Test
+    public void criar2SaintsOuroPrata() throws Exception {
+        int saintsCriados = Saint.getQtdSaints();
+        
+        Saint seiya = new GoldSaint("Seiya","Sagitario");
+        Saint babel = new SilverSaint("babel","Torre");   
+        
+        saintsCriados = Saint.getQtdSaints() - saintsCriados;            
+        
+        assertEquals(2,saintsCriados);
+    }
+    
+     @Test
+    public void criar1SaintsBronze() throws Exception {
+        int saintsCriados = Saint.getQtdSaints();
+        
+        Saint seiya = new BronzeSaint("Seiya","Pegaso");
+        
+        saintsCriados = Saint.getQtdSaints() - saintsCriados;            
+        
+        assertEquals(1,saintsCriados);
+    }
 }

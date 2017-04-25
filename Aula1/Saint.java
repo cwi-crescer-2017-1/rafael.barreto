@@ -27,6 +27,10 @@ public abstract class Saint{
         this.armadura = armadura;
         qtdSaints ++;
     }
+    
+    public static int getQtdSaints(){
+        return Saint.qtdSaints;
+    }
 
     public String getNome(){
         return this.nome;
