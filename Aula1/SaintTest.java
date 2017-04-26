@@ -327,7 +327,7 @@ public class SaintTest{
     @Test
     public void criar1SaintsBronze() throws Exception {
         int saintsCriados = Saint.getQtdSaints();
-
+        
         Saint seiya = new BronzeSaint("Seiya","Pegaso");
 
         assertEquals(1, Saint.getQtdSaints());

@@ -135,12 +135,18 @@ public abstract class Saint{
         && this.getId() == saintFora.getId();
     }
 
-    public String toString (){        
-        
-        String csv;
-        csv = getNome()+","+getVida()+","+getConstelacao().getNome() + "," + getArmadura().getCategoria() + ","+getStatus() + "," + getGenero()+ "," + getArmaduraVestida();
-        return csv;
-    }
+     public String getCSV(){        
+
+         return String.format(
+            "%s,%s,%s,%s,%s,%s,%s",
+            this.nome,
+            this.vida,
+            this.getConstelacao().getNome(),
+            this.armadura.getCategoria(),
+            this.status,
+            this.genero,
+            this.armaduraVestida);
+     }
     
     public void adicionarMovimento(Movimento movimento){        
         this.movimentos.add(movimento);

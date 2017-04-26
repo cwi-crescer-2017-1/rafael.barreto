@@ -444,7 +444,7 @@ public class ListaSaintsTest
         mu.perderVida(10);
 
         String csv = cavaleiros.getCSV();  
-        String compara = "Shura,100.0,Capricornio,OURO,VIVO,NAO_INFORMADO,false"+System.lineSeparator()+"Mu,90.0,Aries,OURO,VIVO,NAO_INFORMADO,false"+System.lineSeparator();
+        String compara = "Shura,100.0,Capricornio,OURO,VIVO,NAO_INFORMADO,false"+System.lineSeparator()+"Mu,90.0,Aries,OURO,VIVO,NAO_INFORMADO,false";
 
         assertEquals(compara,csv);
     }
@@ -456,7 +456,7 @@ public class ListaSaintsTest
         cavaleiros.adicionar(shura);        
 
         String csv = cavaleiros.getCSV();
-        String compara = "Shura,100.0,Capricornio,OURO,VIVO,NAO_INFORMADO,false"+System.lineSeparator();
+        String compara = "Shura,100.0,Capricornio,OURO,VIVO,NAO_INFORMADO,false";
 
         assertEquals(compara,csv);
        

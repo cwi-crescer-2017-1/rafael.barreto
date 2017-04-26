@@ -171,13 +171,21 @@ public class ListaSaints{
     }
 
     public String getCSV(){
-        String csv = "";
-
-        for(Saint saint : this.listaSaints){
-            csv += saint.toString() + System.lineSeparator();            
+        if(this.listaSaints.isEmpty()){
+            return "";
         }
-        return csv;
-    }
+        
+        String separador = System.lineSeparator();
+        StringBuilder builder = new StringBuilder(512);
+        
+        builder.append(this.listaSaints.get(0).getCSV());
+        for(int i=1; i<listaSaints.size();i++){            
+            Saint saint = this.listaSaints.get(i);
+            builder.append(separador);
+            builder.append(saint.getCSV());
+        }
+        return builder.toString();
+    }   
 
     // METODOS PRIVADOS
 
