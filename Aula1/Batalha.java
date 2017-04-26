@@ -10,37 +10,29 @@ public class Batalha{
     }   
 
     public void iniciar()throws Exception{
-        boolean saint1Vivo= saint1.getStatus().equals(Status.VIVO);
-        boolean saint2Vivo= saint1.getStatus().equals(Status.VIVO);        
-        boolean saint1MaiorCategoria = (saint1.getCategoria()>=saint2.getCategoria());
-        Saint saintEmAcao = null ;
+        int valor1 = this.saint1.getCategoria();
+        int valor2 = this.saint2.getCategoria();
+        final double dano =10;
+        Saint saintEmAcao = null;
         
-        Movimento movimentoSaint1 = new Golpear(saint1,saint2);
-        Movimento movimentoSaint2 = new Golpear(saint2,saint1);
-
-        while(saint1Vivo && saint2Vivo){
+        if(valor1>= valor2){
+             saintEmAcao = saint1;
+             this.saint2.perderVida(dano);
+        }else{
+            saintEmAcao = saint2;
+            this.saint1.perderVida(dano);
+        }
+        
+        boolean saintsVivos = true;
+        while(saintsVivos){
             
-            if(saint1MaiorCategoria ) {                
-                saint1Vivo= saint1.getStatus().equals(Status.VIVO);
-               
-                if(saint1Vivo){ 
-                    movimentoSaint1.executar(); 
-                }
-                saint2Vivo= saint2.getStatus().equals(Status.VIVO); 
-                if(saint2Vivo){
-                    movimentoSaint2.executar(); 
-                }
-            }else{                
-                 saint2Vivo= saint2.getStatus().equals(Status.VIVO);
-                
-                 if(saint2Vivo){
-                    movimentoSaint2.executar(); 
-                }
-                saint1Vivo= saint1.getStatus().equals(Status.VIVO); 
-                if(saint1Vivo){
-                     movimentoSaint1.executar(); 
-                }
-            } 
+            saintEmAcao = saintEmAcao == this.saint1 ? this.saint2 : this.saint1;
+            
+            Movimento proximoMovimento = saintEmAcao.getProximoMovimento();
+            proximoMovimento.executar();
+        
+            saintsVivos = this.saint1.getStatus() != Status.MORTO && this.saint2.getStatus() != Status.MORTO;
+        
         }
     }   
 }
