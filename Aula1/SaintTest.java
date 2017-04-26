@@ -7,7 +7,6 @@ import java.security.InvalidParameterException;
 public class SaintTest{
 
     @After
-
     public void tearDown(){
         System.gc();
     }
