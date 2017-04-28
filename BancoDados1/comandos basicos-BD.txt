@@ -1,0 +1,9 @@
+select * from carro -- seleciona todos os dados da tabela carro.
+
+insert into carro (placa, cor, marca, modelo, proprietario, email, telefone) 
+-- insere na tabela carro nos campos descrito
+
+values ('ABC-3401', 'branco', 'fiat', 'palio', 'carlos da silva', 'carlos.silva@company.com', '9987-0102'); 
+--sao os valores que vao ser inseridos na tabela carro na ordem que foi especificado os campos no insert into.
+
+

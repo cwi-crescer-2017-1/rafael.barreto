@@ -1,0 +1,111 @@
+Create table Pais 
+(
+  IDPais    int         not null,
+  Nome      varchar(30) not null,
+  Sigla     varchar(3)  not null, -- not Null forca a ter que ter um valor no campo
+    constraint PK_Cidade primary key (IDPais) -- define a id cidade como chave primaria o valor da chave primaria nao pode ser repetido
+);	
+
+INSERT INTO Pais (IDPais, Nome, Sigla)
+	VALUES ('1','Brazil','BRA');
+
+-- ALTERANDO A TABELA , ADICIONANDO O CAMPO DDI DO TAMANHO DE 5 CARACTERES
+Alter table Pais add DDI varchar(5);
+
+-- elimina a tabela COMPLETAMENTE
+Drop table Pais;
+
+-- 4 TIPOS DE CONSTRAINT -> primary key, unique, foreign key e check;
+-- unique -> deixa um valor unico na tabela nao podendo ser duplicado 
+-- cheack --> pode determinar os valores que a coluna deve ter ( parecido com ENUM);
+
+
+-- cria tabela com valor auto incrementado.
+-- IDENTITY -> torna o atributo autoincrementado 
+Create table Pais
+    ( IDPais   int  IDENTITY  not null, -- id sempre com mesmo nome da tabela
+      Nome     varchar(50)    not null,
+      Sigla    varchar(3)
+    )
+
+	INSERT INTO Pais (Nome, Sigla)
+	VALUES ('Brazil','BRA');
+
+--alterando tabela para adicionar uma chave primaria OBS:( TODA TABELA PRECISA TER UMA, BOA PRATICA )
+ALTER TABLE Pais
+ADD constraint Pk_Pais/*nome para a primary key*/ 
+primary Key (IDPais) --atributo que vai ser a primary key
+
+-- criando um campo unico na tabela pais.
+drop table Pais
+Create table Pais
+ ( IDPais   int  IDENTITY  not null, 
+   Nome     varchar(50)    not null,
+   Sigla    varchar(3),
+   Situacao char(1),
+   constraint PK_Pais primary key (IDPais),
+   constraint UK_Pais_Nome unique (Nome),
+   constraint CC_Pais_situacao check (Situacao in('A','I')) -- obriga o atributo situacao a ter
+   -- somente os valores especificados no check 
+
+ )  
+
+ INSERT INTO Pais (Nome, Sigla,Situacao)	VALUES ('Brazil','BRA','I');
+
+ INSERT INTO Pais ( Nome, Sigla,Situacao) VALUES ('Peru','PER','A');
+
+ ALTER TABLE produto ALTER COLUMN dataCriacao date; --muda o tipo de dado dataCriacao para date
+
+ CAST --> 
+
+ select getdate(); --> puxa a data e hora atual do sistema(obs: data e hora do servidor )
+
+ select CONVERT( DATE, '13/05/2017' , 103) --> converte para ( TIPO , VALOR A SER CONVERTIDO, CODIGO DO TIPO DE DATA)
+ ex : 103 --> codigo data inglaterra 
+ 
+ select nome_Cidade as nome -- > coloca um apelido na coluna nome_cidade, istoma serve quando for motrado a tabela.
+
+ SELECT - > pode ser colocado calculos dentro do select ex 3*5 as resultado
+           
+ ORDER by <colunm> [ASC|DESC]; --> ordena de forma ascendente ou descendente a tabela a ser projetada.
+				  EX: select nome,uf
+				      from Cidade
+				      order by(nome,salario);
+				   // order by nome ASC;
+
+
+between --> permite trazer um intervalo de valores ex : colunm between 1 and 5 traz todos valores da coluna entre 1 e 5 
+
+in --> 
+
+like --> utilizado para pesquisas vinculados a string  colunm liek "RIO%" -> retornar todas palavras que tenham
+as tres primeiras letras igual a RIO
+
+is null --> pesquisa valores nulos
+is not null --> pesquisa valores nao nulos
+
+and --> usado para ir adicionando condicoes
+or --> usado para colocar mais de um tipo de busca numa pesquisa
+
+HAVING --> filtro utilizando funcao de grupo; ex having COUNT(1);
+
+
+-------------------------- FUNÇOES DE GRUPO --------------------------------------------------------
+Funcoes de grupo ignoram valores nulos.
+sempre que for projetar uma coluna junto com uma funcao de grupo deve se usar GROUP BY;
+
+
+
+coalesce (comissao,0) --> caso o valor da coluna comissao for nulo faz a troca para 0;
+
+COUNT --> contabiliza o total de registros ( obs : somente valores preenchidos );
+MIN --> Busca o menor valor 
+MAX --> busca o maior valor 
+SUM --> soma todas as linhas.
+AVG --> calcula a media sobre todos os valores 
+DISTINCT --> elimina linhas da consulta que sao iguais,
+ISNULL (comissao,o) --> quando o valor da comissao for nulo vai atribuir 0;
+GROUP BY --> usado quando vai se projetar uma funcao de grupo junto com uma coluna; ex: select Cargo,COUNT(1) as totalEmpregado FROM empregado GROUP BY cargo;
+DATEDIFF(YEAR , DataAdmissao, getdate()) --> retorna a diferenca entre dataAdmissao e a data atual do sistema em anos ; obs(pode se usar year,month);
+REPLACE (nome,'çao',cion') --> troca na coluna nome as strings que tem "çao" no nome por "cion" ;
+CASE WHEN --> projeta um valor conforme o valor passado;
