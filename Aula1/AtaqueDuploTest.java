@@ -14,19 +14,17 @@ public class AtaqueDuploTest
         Saint seiya = new BronzeSaint("seiya","pegaso");
         
         ikki.aprenderGolpe(new Golpe("golpe diabolico",5));
-        ikki.aprenderGolpe(new Golpe("ave Fenix",15));        
+        ikki.aprenderGolpe(new Golpe("ave Fenix",15));                
         
-        ikki.golpear(seiya);
-        ikki.adicionarMovimento(new AtaqueDuplo(ikki,seiya));
+        AtaqueDuplo ataque = new AtaqueDuplo(ikki,seiya);
+        ataque.executarTesteGolpeDuploTrue();
         
-        ikki.getProximoMovimento().executar();
-        ikki.getProximoMovimento().executar();
-        ikki.getProximoMovimento().executar();
+       
         
-        assertEquals(50,seiya.getVida(),0.01);
+        assertEquals(90,seiya.getVida(),0.01);
     }
     
-     @Test (expected = NullPointerException.class) 
+     @Test (expected = Exception.class) 
     public void testeAtaqueDuploSemGolpe(){
         Saint ikki = new BronzeSaint("ikki","fenix");
         Saint seiya = new BronzeSaint("seiya","pegaso");  
@@ -34,9 +32,9 @@ public class AtaqueDuploTest
         ikki.golpear(seiya);
         ikki.adicionarMovimento(new AtaqueDuplo(ikki,seiya));
         
-        ikki.getProximoMovimento().executar();
-        ikki.getProximoMovimento().executar();
-        ikki.getProximoMovimento().executar();
+        AtaqueDuplo ataque = new AtaqueDuplo(ikki,seiya);
+        ataque.executarTesteGolpeDuploTrue();
+        
         
         assertEquals(100,seiya.getVida(),0.01);
     }
@@ -45,18 +43,31 @@ public class AtaqueDuploTest
     public void testeAtaqueDuploArmaduraVestida(){
         Saint ikki = new BronzeSaint("ikki","fenix");
         Saint seiya = new BronzeSaint("seiya","pegaso");
-        
-        ikki.aprenderGolpe(new Golpe("golpe diabolico",5));
+                
         ikki.aprenderGolpe(new Golpe("ave Fenix",15));        
         
         ikki.vestirArmadura();
-        ikki.golpear(seiya);        
-        ikki.adicionarMovimento(new AtaqueDuplo(ikki,seiya));
+       
+        AtaqueDuplo ataque = new AtaqueDuplo(ikki,seiya);
+        ataque.executarTesteGolpeDuploTrue();
+                
         
-        ikki.getProximoMovimento().executar();
-        ikki.getProximoMovimento().executar();
-        ikki.getProximoMovimento().executar();
+        assertEquals(40,seiya.getVida(),0.01);
+    }
+    
+      @Test 
+    public void testeAtaqueDuploGolpeadorPerdeDadoLevaDano(){
+        Saint ikki = new BronzeSaint("ikki","fenix");
+        Saint seiya = new BronzeSaint("seiya","pegaso");
+                
+        ikki.aprenderGolpe(new Golpe("ave Fenix",15));        
         
-        assertEquals(60,seiya.getVida(),0.01);
+        ikki.vestirArmadura();
+       
+        AtaqueDuplo ataque = new AtaqueDuplo(ikki,seiya);
+        ataque.executarTesteGolpeDuploFalse();
+                
+        
+        assertEquals(95,ikki.getVida(),0.01);
     }
 }
