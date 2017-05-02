@@ -7,7 +7,7 @@ public abstract class Saint{
     private boolean armaduraVestida;
     private double vida = 100;
     protected int qtdsentidos = 5;
-    private int acumulador = 0;
+    private int acumuladorGolpes = 0;
     private int acumuladorMovimento =0;
     private int id = 0;
     private static int quantidadeDeSaints = 0;
@@ -29,6 +29,10 @@ public abstract class Saint{
         this.armadura = armadura;
         this.id =  ++Saint.quantidadeDeSaints;
         Saint.qtdSaints ++;
+    }
+    
+    public int posicaoGolpe(){
+        return this.acumuladorGolpes;
     }
     
     protected void finalize() throws Throwable {
@@ -117,9 +121,9 @@ public abstract class Saint{
     public Golpe getProximoGolpe(){         
         ArrayList<Golpe> golpesArray = getConstelacao().getGolpe();     
         if(golpesArray.size() > 0){
-            int posicao = this.acumulador % golpesArray.size();
+            int posicao = this.acumuladorGolpes % golpesArray.size();
             Golpe golpe = golpesArray.get(posicao);
-            this.acumulador++;
+            this.acumuladorGolpes++;
             return golpe;  
         }
         return null;                      
