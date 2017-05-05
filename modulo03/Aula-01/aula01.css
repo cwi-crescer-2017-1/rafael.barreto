@@ -1,0 +1,25 @@
+
+body{
+  background: linear-gradient(red,blue);
+  background-size: 100%;
+}
+
+h1 {
+    text-shadow: 2px 0px black;
+    color : green;
+}
+
+h2{
+    color : gray;
+}
+
+h1,h2{
+    text-align: center;
+}
+
+p > strong {
+   color:green;
+   font-size: 20px;
+   background: linear-left(red)
+
+}
