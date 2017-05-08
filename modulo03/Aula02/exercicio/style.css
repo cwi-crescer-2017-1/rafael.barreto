@@ -1,0 +1,47 @@
+*{
+  box-sizing: padding-box,border-box;
+  padding: 0px;
+  margin:0px;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fafafa;
+}
+
+#barra{
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  width: 100%;
+  background: #c4170c ;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#container{
+  min-height: 100vh;
+  border: 3px solid;
+}
+
+#esquerda{
+  float: left;
+  width: 400px;
+  margin-left: 19%;
+}
+
+#direita{
+  margin: 0 0 0 25px;
+  width: 400px;
+  float: left;
+}
+
+.conteudo{
+  height: 100%;
+  margin: 15px 0 0 0;
+  border: 1px solid gray;
+}
+
+.conteudoEsquerdo{
+  margin-left: 6px;
+}

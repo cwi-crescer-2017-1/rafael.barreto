@@ -1,0 +1,49 @@
+*{box-sizing: border-box;}
+
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+#tudo{
+  font-size: 0px;
+  height: 100vh;
+  background: red;
+}
+
+#col01:hover{
+    background: blue;
+}
+
+.linha{
+  height: 25%;
+}
+
+.coluna{
+  border: 2px solid black;
+  font-size: initial;
+  background: red;
+  height: 100%;
+  display: inline-block;
+}
+
+.coluna01{
+  font-size: 12px;
+  border: solid 2px;
+  width: 25%;
+}
+
+.coluna02{
+  width: 50%;
+  background: blue;
+}
+
+.coluna03{
+  width: 100%;
+  background: purple;
+}
+
+.coluna04{
+  width: 10%;
+  background: yellow;
+}
