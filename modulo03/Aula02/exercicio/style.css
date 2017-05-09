@@ -7,6 +7,7 @@
 body{
   font-family: 'Open Sans', sans-serif;
   background-color: #fafafa;
+  max-width: 100vw;
 }
 
 #barra{
@@ -19,29 +20,85 @@ body{
   padding: 20px 0;
 }
 
-#container{
-  min-height: 100vh;
-  border: 3px solid;
+#barra:hover{
+  color: gray;
+  transition: .5s;
 }
 
-#esquerda{
+#container{
+  min-height: 100vh;
+}
+
+#subtitulo01>img{
+   margin-top: -10px;
+}
+
+.esquerda{
   float: left;
   width: 400px;
   margin-left: 19%;
 }
 
-#direita{
-  margin: 0 0 0 25px;
+.direita{
+  margin-left:25px;
   width: 400px;
   float: left;
 }
 
 .conteudo{
+  position:static;
   height: 100%;
-  margin: 15px 0 0 0;
+  margin-top: 20PX;
   border: 1px solid gray;
 }
 
-.conteudoEsquerdo{
+.conteudoInterno{
   margin-left: 6px;
+  margin-right: 6px;
+}
+
+.conteudoInterno>img{
+  margin: 0px 5px 0px 2px;
+  float: right;
+  max-width:180px;
+  max-height:130px;
+  width: auto;
+  height: auto;
+}
+
+.esquerda .conteudoInterno>img{
+  margin-top: -14px;
+}
+
+.conteudoRodape{
+   font-weight: bold;
+   margin-top: 15px;
+   height: 30px;
+   width: 100%;
+}
+
+.direita .conteudoRodape>p{
+   margin-left: 60%;
+}
+
+.primeiraLetra:first-letter{
+   float: left;
+   margin-top: -15px;
+   font-size: 60px;
+   color: #c4170c;
+}
+
+.esquerda .conteudoRodape>p{
+    margin-left: 70%;
+}
+
+.subtitulo{
+  color:#c4170c;
+  margin-left: 2px;
+  margin-bottom: 20px;
+}
+
+.subtitulo>p{
+  font-weight: bold;
+  color:gray;
 }
