@@ -1,0 +1,55 @@
+			DICA : CRIAR UMA CLASSE COM OS DADOS MAIS GENERICOS POSSIVEIS
+
+margin -> espacamento entre objetos ( top,rigth,left,botton) ou somente margin : (top,rigth,bottom,left )
+
+padding -> margem para dentro , funciona como inverso da margem ou seje, margem interna dos objetos.
+	   (padding-top,ppadding-rigth, padding-botton, padding-left.) ou (padding : top,rigth,botton,left)
+
+padding --------------: espacamento interno do elemento.
+display - block ------: ocupa todo bloco, ou seja, toda a linha.
+display - inline -----: coloca as duas divs uma ao lado da outra, porem nao respeita setar width.
+display -inline-block-: seria uma mistura do inline com o block aceitando css das duas classes.
+margin:auto ----------: ele divide o valor das margens automaticamente caso ja tenha uma largura definida no bloco pai
+vh -------------------: view porte heigth - altura da view port
+vw -------------------: view porte width  - largura da view port
+box-sizing: boder-box-: 
+clear ----------------: limpa os elementos que estejam flutuando do lado especificado. 
+display : none -------: retira o elemento da tela
+visibility : hidden --: deixa o elemento invisivel mas o mesmo continua ocupando a posicao tela
+opacity : 0 ----------: deixa o elementeo invisivel , o mesmo permanece na tela
+first-of-type --------: pega o primeiro elemento do tipo.
+first-child() --------: pega o primeiro filho do elemento.
+nth-child(N)----------: pega o filho N do elemento conforme especificado dentre parenteses
+nth-child(odd,even)---: odd pega os elementos impares e o even pega os elementos pares
+position: relative ---: tem algumas opcoes que o static nao tem ex: top, rigth(desloca o conteudo podendo cobrir outros), pega um pai para base desde que nao
+			seja do tipo static
+position: absolute ---: nao ocupa nenhum espaco na nossa pagina, fica flutuando em cima dos outros elementos que pega um pai para base desde que nao
+			seja do tipo static
+transform:translate --: faz a transicao do objeto no eixo x ou y a posicao especificada ex: translaxteX(50%)
+position: fixed-------: faz o elemento ficar fixo na posicao e acompanhar o scroll porem o objeto nao ocupa espaco e sobrepoem outros.
+rgba(255,255,255,opacidade)----> torna uma cor com transparencia.
+.texto:hover>p--------: ao passar o mouse sobre a div de classe .texto ele executa a acao no elemento <p>
+<a href --------------: ancora, utilizado para direcionar para links externos.
+target----------------: direciona a abertura de um link em outra aba (_blank)
+#id do elemento ------: faz a pagina rolar ate o elemento que foi especificado.
+# --------------------: sozinha faz voltar para o topo da pagina.
+<nav> ----------------: elemento de navegacao , utilizado para criar menus.
+list-style:none ------: remove marcacao da lista.
+background-position --: posiciona o background na div
+background-size ------: ajusta o tamanho da imagem do background
+text-align -----------: utilizado para centralizar conteudo
+display : block ------: faz o elemento virar um bloco
+
+
+-------------------------------------------PSEUDO ELEMENTO ------------------------------------------------------
+
+todo psuedo elemento tem que ter um content
+sempre que o pai tem filhos com float tem que ter um clearfix
+
+clearfix adiciona um item no final da div para saber o tamanho dela ex de clearfix:
+
+.clearfix:ater{
+	content:"";
+	display:block;
+	clear:both;
+}
