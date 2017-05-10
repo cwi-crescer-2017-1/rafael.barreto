@@ -4,11 +4,18 @@
    font-family: 'Libre Baskerville', serif;
 }
 
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
 body{
   margin: 0px;
   background-image: url(imagen/background-menu.jpg);
-  background-size:cover;
+  background-size:100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container{
@@ -71,7 +78,7 @@ body{
 
 .container .nome>h1{
   font-size: 20px;
-  color:white;
+  color:#DDDDDD;
   font-weight: bold;
   margin-left: 14px;
 }
