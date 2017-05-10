@@ -39,6 +39,9 @@ background-position --: posiciona o background na div
 background-size ------: ajusta o tamanho da imagem do background
 text-align -----------: utilizado para centralizar conteudo
 display : block ------: faz o elemento virar um bloco
+@media ---------------: media query ex: @media screen and (max-width: 800px){ o que vai ser executado }
+table ----------------: utilizado para tabelar produtos
+
 
 
 -------------------------------------------PSEUDO ELEMENTO ------------------------------------------------------
@@ -53,3 +56,58 @@ clearfix adiciona um item no final da div para saber o tamanho dela ex de clearf
 	display:block;
 	clear:both;
 }
+
+
+------------------------------------------ BOOTSTRAP ------------------------------------------------------------
+
+col-lg ---> tamanho maior de quebra
+col-mdN --> N seria o numero de colunas maximo 12 md= resolucao media-grande;
+col-sm ---> tamanho medio pequeno 
+col-xs----> tamanho pequeno de quebra
+
+
+------------------------------------------ FORMULARIO -----------------------------------------------------------
+
+form -----: tag de formulario
+input ----: elementos de colocar dados e pode ser do tipo (text,button,number,...)
+-----number ---------------------
+step -----: pula os valores conforme especificado
+max-------: estipula o valor maximo aceito no input
+min-------: estipula o valor minimo aceito pelo input
+autofocus-: foca automaticamente em um elemento do formulario
+button ---: usado em formulario  e pode se colocado imagem entre as tags
+------ text ---------------------
+placeholder---: defini um texto dentro do input que some ao ser digitado
+value---------: defini um valor para o input
+textarea------: area de texto
+email --------: usado para campo de email
+submit -------: usado para enviar o formulario
+required -----: obriga  o preenchimento do campo
+minlength-----: tamanho minimo de caracteres do campo
+maxlength-----: tamanho maximo de caracteres do campo
+password -----:
+date----------: faz um campo de data
+reset --------: limpa o formulario todo
+---------------------------------------------------------
+
+select -------: drop down, dentro do select tem <option>
+disable ------: desabilita para selecao.
+selected -----: forca a ser o primeiro selecionado.
+hidden--------: esconde o texto.
+
+----------------------------------------------------------
+
+checkbox -----: caixa de marcacao no formulario 
+<label> ------: usado para colocar texto 
+for ----------: aponta para alguma coisa pelo Id.
+
+-----------------------------------------------------------
+
+radio---------: radio button usado para selecao e nao pode ser desmarcado
+name ---------: coloca nome no elemento do formulario.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
