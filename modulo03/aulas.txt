@@ -64,6 +64,7 @@ col-lg ---> tamanho maior de quebra
 col-mdN --> N seria o numero de colunas maximo 12 md= resolucao media-grande;
 col-sm ---> tamanho medio pequeno 
 col-xs----> tamanho pequeno de quebra
+col-offset-N--> deslocamento da coluna
 
 
 ------------------------------------------ FORMULARIO -----------------------------------------------------------
@@ -88,6 +89,11 @@ maxlength-----: tamanho maximo de caracteres do campo
 password -----:
 date----------: faz um campo de data
 reset --------: limpa o formulario todo
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
 ---------------------------------------------------------
 
 select -------: drop down, dentro do select tem <option>

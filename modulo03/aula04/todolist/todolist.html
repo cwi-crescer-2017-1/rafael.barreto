@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        *{
+          font-family: 'Love Ya Like A Sister', cursive;
+        }
+         .container{
+           width: 30%;
+         }
+
+         .items{
+           margin-top: 120px;
+         }
+
+         input[type="checkbox"]{
+           display: none;
+         }
+
+         input[type="checkbox"] + label:before{
+             content: "";
+             height: 20px;
+             width: 20px;
+             border: 2px solid blue;
+             border-radius: 5px;
+             float: left;
+             margin-right: 15px;
+             transition: .6s;
+         }
+
+         input[type="checkbox"]:checked + label::before{
+             content: "";
+             border-color:red;
+             border-radius: 0px;
+             width: 10px;
+             border:none;
+             transform:rotate(765deg);
+             border-bottom: 2px solid blue;
+             border-right: 2px solid blue;
+         }
+
+         h1{
+           animation: pendulo 5s 2;
+         }
+
+         @keyframes pendulo {
+           0%, 100%{
+             transform: translateY(0);
+
+           }
+           50%{
+             transform: translateY(100%);
+           }
+         }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <h1>To-Do List</h1>
+            </div>
+            <div class="items">
+                <input type="checkbox" id="item1">
+                <label for="item1"> comer bis </label>
+                <hr>
+                <input type="checkbox" id="item2">
+                <label for="item2"> dormir </label>
+                <hr>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
