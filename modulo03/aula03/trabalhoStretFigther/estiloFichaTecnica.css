@@ -1,0 +1,30 @@
+.nome-personagem{
+     font-size: 24px;
+}
+
+.imagen{
+      float: left;
+      display: inline-block;
+      height: auto;
+      width: 43%;
+      margin-top: 10px;
+}
+
+.imagen>img{
+  width: 100%;
+}
+
+.dados-personagem {
+     display: inline-block;
+     width: 56%;
+     margin-bottom: 20px;
+     font-size: 13px;
+}
+
+.dados-personagem .dados-personagem-descricao{
+  margin-left: 5px;
+}
+
+.dados-personagem .dados-personagem-descricao>strong{
+  font-size: 15px;
+}

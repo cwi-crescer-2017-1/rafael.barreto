@@ -1,13 +1,13 @@
 *{
-   box-sizing: padding-box,border-box;
+   box-sizing: border-box;
    padding: 0px;
-
+   font-family: 'Libre Baskerville', serif;
 }
 
 body{
   margin: 0px;
   background-image: url(imagen/background-menu.jpg);
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
 }
 
@@ -16,7 +16,9 @@ body{
   width: 80%;
   margin: 0 auto;
 }
+
 .menu{
+  font-size: 14px;
   height: 50px;
   width: 40%;
   font-weight: bold;
@@ -24,27 +26,38 @@ body{
   border: 1px solid;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
-  border-color: g;
+  border-color: gray;
   margin:0 auto;
   margin-top: 230px;
 }
+
 .menu .menu-item{
   float: left;
   margin-top: 15px;
-  margin-left: 35px;
+  margin-left: 7%;
   color: white;
-
 }
 
 .menu .menu-item>a{
   text-decoration: none;
   color: white;
+  transition: .5s;
+}
+
+.menu .ativo>a{
+    color: black;
+}
+
+.menu .menu-item>a:hover{
+  font-size: 18px;
+  color: black;
+  transition: .5s;
 }
 
 .content{
    position: relative;
    top : 28px;
-   height: 700px;
+   height: auto;
    width: 60%;
    margin: 0px auto;
    background: #EDEDED;
@@ -57,9 +70,10 @@ body{
 }
 
 .container .nome>h1{
+  font-size: 20px;
   color:white;
   font-weight: bold;
-  margin-left: 10px;
+  margin-left: 14px;
 }
 
 .conteudo-geral{
