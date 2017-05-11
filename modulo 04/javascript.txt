@@ -1,0 +1,33 @@
+JAVASCRIPT
+
+o que , porque , e como
+
+
+typeof variavel -> retorna o tipo de valor dentro da variavel.
+shadowcopy--> faz uma copia somente dos atributos e nao copia os objetos internos
+deepcopy --> copia recursiva copia todos valores inclusive objetos.
+=== --> utilizado para comparar valores de variaveis(outras comparacoes seguem a mesma logica)
+parse --> utilizado para conversao de valores de uma variavel.
+console.log --> imprime valores no console do javascript
+alert -> gera um pop-up na tela
+is
+-------------------------------------- funcoes -------------------------------------------------
+cuidado na hora de declarar funcao.
+transpiler-> transforma arrowfunctions em funcoes normais.
+
+nao precisa declarar argumentos na funcao pois os valores ficam armazenados num array arguments,
+basta informar ex.: a=arguments[0] b=arguments[1]
+
+isNaN(undefined + undefined) --> verifica se nao e um numero
+
+array().join() -> junta os valores dentro do array
+
+3 tipos de escopo, global, funcao e de bloco.
+
+for( var funcoes of funcoes) ----> foreach
+
+for(var funcao in funcoes)----> retorna o indice do array, ele percorre as propriedades de um objeto.
+
+arrays sao objetos com uma propriedade chamada length
+
+date = new date() -> funcao que busca dados do sistema. (date.getDate, date.Day, date.getMonth) no dia da semana e no mes o primerio valor e a posicao 0.
