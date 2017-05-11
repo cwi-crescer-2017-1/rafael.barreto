@@ -4,10 +4,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
     <meta charset="utf-8">
-    <title></title>
+    <title> To-Do list </title>
     <style>
         *{
           font-family: 'Love Ya Like A Sister', cursive;
+          box-sizing: border-box;
         }
          .container{
            width: 30%;
@@ -15,6 +16,8 @@
 
          .items{
            margin-top: 120px;
+           width: 100%;
+           position: relative;
          }
 
          input[type="checkbox"]{
@@ -28,7 +31,9 @@
              border: 2px solid blue;
              border-radius: 5px;
              float: left;
+             margin-top: 5px;
              margin-right: 15px;
+             margin-left: 14px;
              transition: .6s;
          }
 
@@ -39,21 +44,65 @@
              width: 10px;
              border:none;
              transform:rotate(765deg);
-             border-bottom: 2px solid blue;
-             border-right: 2px solid blue;
+             border-bottom: 2px solid black;
+             border-right: 2px solid black;
          }
 
          h1{
-           animation: pendulo 5s 2;
+           animation: pendulo 5s 1;
          }
 
-         @keyframes pendulo {
-           0%, 100%{
-             transform: translateY(0);
+          .cortina::before{
+             content: "";
+             height: 100%;
+             width: 50%;
+             position: absolute;
+             border: 3px solid gray;
+             border-radius:0px 0px 20px 0px;
+             background: black;
+             transition: .8s;
+           }
+           .cortina:hover:before{
+              width: 0;
+            }
 
+          .cortina::after{
+             content: "";
+             height: 100%;
+             width: 50%;
+             position: absolute;
+             top: 0%;
+             right: 0%;
+             border: 3px solid gray;
+             border-radius:0px 0px 0px 20px;
+             background: black;
+             transition: .8s;
+           }
+           .cortina:hover::after{
+              width: 0;
+           }
+
+           .bkgray{
+             background: gray;
+           }
+
+          .container .row .teste{
+             height: 200px;
+             width: 200px;
+             background: black;
+           }
+
+           .container .row .teste:hover  {
+                  background: blue;
+                  /*visibility: hidden;*/
+           }
+
+         @keyframes pendulo {
+           0%,100%{
+             transform:translateX(0);
            }
            50%{
-             transform: translateY(100%);
+             transform: translateX(20%);
            }
          }
 
@@ -62,18 +111,26 @@
   <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-12  text-center">
+
+            <div class="col-md-12  text-center ">
                 <h1>To-Do List</h1>
             </div>
-            <div class="items">
+            <div class="items cortina bkgray">
                 <input type="checkbox" id="item1">
                 <label for="item1"> comer bis </label>
                 <hr>
                 <input type="checkbox" id="item2">
                 <label for="item2"> dormir </label>
                 <hr>
+                <input type="checkbox" id="item3">
+                <label for="item3"> acordar </label>
+                <hr>
+                <input type="checkbox" id="item4">
+                <label for="item4"> comer bis denovo </label>
+                <hr>
             </div>
-        </div>
+            <div class="teste"></div>
+        </div>/
     </div>
   </body>
 </html>
