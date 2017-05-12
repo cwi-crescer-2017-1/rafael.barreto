@@ -42,10 +42,68 @@ function imprime(nomes,funcao){
 imprime(nomes,imprimeNomes);
 
 //------------------------- exercicio 04 ------------------------------------
+var total=0;
+
+function adicionar(numero){      
+     function soma (numero2){
+        return numero+numero2
+     }
+     return soma;
+}
 
 
-function adicionar(){ function (numero){
-      return numero;
-    };
+console.log(adicionar(3)(4));
+console.log(adicionar(5642)(8749));
 
-console.log();
+//------------------------ exercicio 05 -------------------------------------
+
+function fiboSum(valor){
+  // 33 (soma dos 7 primeiros números da sequência: 1+1+2+3+5+8+13)
+  var soma = 1;
+  var numero = 0;
+  var numero2 = 1; 
+  var total=1;
+
+  for(var x = 1; x < valor; x++){    
+
+    soma = numero+numero2;
+    numero = numero2;
+    numero2 = soma; 
+
+    total += soma;    
+  }
+  console.log(total);    
+}
+
+fiboSum(7);
+
+//---------------------- Exercicio 06 ---------------------------------------
+
+
+function queroCafe(mascada , precos){
+
+    var troca;
+    var precosAbaixo = [];
+
+    for(var x = 0; x<precos.length;x++){
+
+      if(precos[x] <= mascada){
+        precosAbaixo.push(precos[x]);
+      }
+    }
+
+    for(var i = 0; i < precosAbaixo.length ; i++){
+      for(var j = 0 ; j< precosAbaixo.length; j++){
+
+        if(precosAbaixo[i]<precosAbaixo[j]){              
+          
+          troca = precosAbaixo[j];
+          precosAbaixo[j] = precosAbaixo[i];
+          precosAbaixo[i] = troca
+        }
+      }
+    }    
+    console.log(precosAbaixo);
+}
+
+queroCafe(3.14, [ 5.16, 2.12, 1.15, 3.11, 17.5 ]);
