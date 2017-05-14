@@ -55,7 +55,7 @@ console.log(mediaDeEpisodios(series));
 //------------ exercicio 04 -------------------------------
 
 
-function contemTexto(series,nome){	
+function procurarPorNome(series,nome){	
 
 let nome1="";
 
@@ -69,7 +69,7 @@ let nome1="";
 }
 
 console.log('exercicio 04')	
-console.log( contemTexto(series, "Winona Ryder"));
+console.log( procurarPorNome(series, "Winona Ryder"));
 
 //------------- exercicio 05 -------------------------------
 
@@ -93,11 +93,55 @@ console.log( mascadaEmSerie(series[1]));
 
 
 
-//------------- exercicio 05 -------------------------------
+//------------- exercicio 06 -------------------------------
+
+function queroGenero(series,genero){
+	return series.filter(serie => serie.genero.indexOf(genero)>=0)
+				 .map(series => series.titulo);	
+}
 
 
+function queroTitulo(series,titulo){
+
+	return series.filter(serie => serie.titulo.indexOf(titulo)>=0)				 
+				 .map(series => series.titulo);
+}
+
+console.log('exercicio 06');
+console.log(queroGenero(series,"Caos"));
+console.log(queroTitulo(series,"The"));
+
+//------------- exercicio 07 -------------------------------
+
+function ordenaSobrenome(a,b){  	
+  	var nome = a.split(" ").slice(1).toString();
+    var nome2 = b.split(" ").slice(1).toString()
+
+    if ( nome < nome2 ) {
+      return -1;
+	}	  
+	if (nome > nome2) {
+	  return 1;
+	}  	  
+	return 0;	
+}
 
 
+function creditosIlluminatis(serie){
+
+	let diretores = serie.diretor;
+	let elenco = serie.elenco;
+
+	// ordenaSobrenome(diretores);
+	// ordenaSobrenome(elenco);
+	
+	console.log('-----------------------DIRETORES-------------------------')
+	diretores.forEach(diretor => console.log((diretor)))
+	console.log('-----------------------ELENCO-------------------------')
+	elenco.forEach(elenco => console.log(elenco));
+}
+
+creditosIlluminatis(series[0]);
 
 
-
+//------------- exerccio 08 -----------------------------------
