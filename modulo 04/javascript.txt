@@ -31,3 +31,20 @@ for(var funcao in funcoes)----> retorna o indice do array, ele percorre as propr
 arrays sao objetos com uma propriedade chamada length
 
 date = new date() -> funcao que busca dados do sistema. (date.getDate, date.Day, date.getMonth) no dia da semana e no mes o primerio valor e a posicao 0.
+
+
+
+------------------------------------- functions ----------------------------------------------
+
+
+array.filter(funcao) --> faz um filtro para cada item do array retornando o elemento caso a condicao seja verdadeira obs: filter retorna o objeto
+
+array.map(funcao) --> para cada item do array ele verifica e retorna se o item em questao e verdadeiro ou falso. obs: map retorna o valor.
+
+array.sort(funcao) --> caso o resultado da condicao da funcao seja verdadeiro move o numero. ex.: numerors.sort((a,b) => a>b) isto orderna um vetor.
+
+array.concat(array2) -- > concatena os itens do array com os itens do array2.
+
+array.reduce((acumulador ,arrayIten) => funcao, tipo de dados de saida) --> para cada arrayIten executa a funcao vai para o acumulador. obs.: o tipo de funcao e o tipo de valor que vai retornar tipo 0 retorna numeros  e "" retornar String.
+
+indexOf --> faz busca no array comparando o valor passado com o contigo e caso tenha valor igual 
