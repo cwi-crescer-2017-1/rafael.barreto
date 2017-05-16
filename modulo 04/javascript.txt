@@ -2,6 +2,18 @@ JAVASCRIPT
 
 o que , porque , e como
 
+caminho critico
+
+por regra os scripts dos javascript sao colocados no final do condigo antes de /body e a ordem influencia
+renderizacao de caminho critico.
+
+Expressoes Regulares.
+
+prototypes usar em aquivo separado.
+
+antes de entrar no setInterval salvar a posicao do this em uma variavel.
+
+arrow function tem this lexico ou seja pega o this do campo mais proximo.
 
 typeof variavel -> retorna o tipo de valor dentro da variavel.
 shadowcopy--> faz uma copia somente dos atributos e nao copia os objetos internos
@@ -47,4 +59,26 @@ array.concat(array2) -- > concatena os itens do array com os itens do array2.
 
 array.reduce((acumulador ,arrayIten) => funcao, tipo de dados de saida) --> para cada arrayIten executa a funcao vai para o acumulador. obs.: o tipo de funcao e o tipo de valor que vai retornar tipo 0 retorna numeros  e "" retornar String.
 
-indexOf --> faz busca no array comparando o valor passado com o contigo e caso tenha valor igual 
+indexOf --> faz busca no array comparando o valor passado com o contigo e caso tenha valor igual
+
+every() --> retorna true ou false se todos os valores dentro do array respeitarem os criterios.
+
+some()--> verifica se tem o valor dentro do objeto, array.
+
+trim() -->
+
+find() --> faz a mesma coisa que o filter.
+
+match(/expressao regular/g) --|--> adiciona expressoes regulareso /g faz uma busca global.
+           |                  |
+search(/expressao regular/g)--|
+
+replace(/expressao regular/g, "novo valor ")--> faz a troca na string do resultado achado na expressao regular pelo novo valor.
+
+object.assign({objetonovo}, objeto a ser copiado) --> retorna a copia de um objeto
+
+bind(this) --> adicionado depois do fechamento da funcao e ele manten o valor de this(em arrow function nao precisa).
+
+fetch(url) --> faz uma consulta na url especificada.
+
+//
