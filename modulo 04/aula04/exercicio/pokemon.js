@@ -41,7 +41,7 @@ function pokesearch(){
 			limparCampos();
 
 			imagem.innerText = "";
-			nome.innerText = posicaoPokemon + "   " + json.name;
+			nome.innerText = posicaoPokemon + " -  " + json.name;
 			img.setAttribute('src',json.sprites.front_default);
 			imagem.append(img);
 			dadosTipo.append("Tipo : " + json.types[0].type.name);
