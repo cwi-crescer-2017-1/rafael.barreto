@@ -1,0 +1,19 @@
+view ---------:
+
+model / scope-: e o local que faz a ligacao entre a view e o controller;
+
+controller ---: quando e criada recebe o nome e a  funcao que vai ser executada.
+ex: modulo.controller('nome do modulo',function);
+
+filter recebem uma informacao e transforma ela. ex: --> {{ pokemon.nome | uppercase}} = converte o nome para uppercase
+
+ng-app --> indica aonde vai iniciar a aplicacao Angular.
+
+ng-init -> inicializar uma variavel direto no html;
+
+ng-controller="nome do controller criado " --> chama a controler criada. 
+
+angular.element -> pega um elemento do html.
+
+ng-repeat = "alias in array" --> roda para todos elementos = funciona semelhante ao forEach
+

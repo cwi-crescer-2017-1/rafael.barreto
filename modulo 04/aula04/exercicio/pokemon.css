@@ -1,72 +1,98 @@
 *{
 	box-sizing: border-box;
 }
-
 body{
-	background: #424242;	
+	background: #424242;
 	margin: 0px;
 	padding: 0px;
-
 }
 
-.bkg-white{	
-	background: white;	
-	border-radius: 0px 0px 30px 30px;
+.container{
+	min-width: 500px;
+}
+
+.bkg-white{
+	background: linear-gradient( white, #424242);
+	border-radius: 0px 0px 35px 35px;
+	min-width: 515px;
+	max-width: 101.1vw;
 }
 .bkg-white h3{
 	font-size: 39px;
 }
 
-.barra{	
+.barra{
 	width: 100%;
 	text-align: center;
-	margin-bottom: 5px;	
-	font-size: 16px;	
-	font-family: 'Baloo', cursive;		
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-family: 'Baloo', cursive;
 }
 
 	#texto-busca{
+		font-size: auto;
+		width: 250px;
 		border-radius: 10px;
 		background: #D6D6D6;
-		text-align: center;		
+		text-align: center;
 	}
 
-	#botao{		
-		background-color: #C50102;
-		color: white;	
+	#botao{
+		background: #C50102 ;
+		color: white;
 		border-radius: 8px;
 		margin-left: 5px;
 		transition: .3s;
 	}
-	
+
 	#botao:active{
-		background-color: white;
-		color: #C50102;		
+		background:white;
+		color: #C50102;
+		transition: .5s;
 	}
 
+
 .conteudo{
-	background: linear-gradient(white,#424242); 
+	background: linear-gradient(white,#424242);
 	min-height: 210px;
+	min-width: 270px;
 	width: 50%;
 	margin-top: 30px;
 	margin-bottom: 40px;
 	border-radius: 10px;
-	text-align: center;		
+	text-align: center;
 }
 
 	.conteudo-campo{
 		height: 30px;
 		text-align: left;
-		margin : 6px 3px 8px 3px;		
+		margin : 6px 3px 8px 3px;
 	}
-	
 
-    #imagem-pokemon img{	  
-	    height: 160px;
-	    width: auto;
-	    margin-top: 20px;	    
+    #imagem-pokemon img{
+	    height: 130px;
+			widows: auto;
+	    margin-top: 20px;
 	}
 
 	#nome{
-		margin-top: 20px;
+		margin-top: 10px;
+		font-size: 22px;
+		font-weight: bold;
 	}
+
+	.borda{
+		border: 3px solid;;
+	}
+
+
+	@media screen and (max-width: 991px){
+		.conteudo {
+	    width: 70%;
+			margin-left: 13%;
+			margin-top: 30px;
+	}
+
+  	.row .conteudo-item2{
+			text-align: left;
+		}

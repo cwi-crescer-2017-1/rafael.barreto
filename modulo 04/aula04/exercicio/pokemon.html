@@ -11,34 +11,49 @@
 <body>
 	<div class="row bkg-white">
 		<div id="bar" class="col-md-5 barra">
-			<h3><bkgp>Pokemon</bkgp></h3>	
+			<h3><cite>Pokemon Search</cite></h3>
 		</div>
 		<div class="barra">
 			<form>
 				<input type="text" id="texto-busca" placeholder=" digite o numero do pokemon" >
 				<input type="button" id="botao" value="Poke search" onclick="pokesearch()" >
 			</form>
-		</div>			
+		</div>
 	</div>
-	<div class="container">		
+	<div class="container">
 		<div class="row">
-			<div id="pokemon" class="col-md-6 col-md-offset-3 conteudo">				
-				<div id="nome" class="row" value="nome">
-					nome
+			<div id="pokemon" class="col-md-6 col-md-offset-3 conteudo">
+				<div id="nome" class="row">
+					<p>nome
 				</div>
 				<div id="imagem-pokemon" class="row">
 					<img src="imagen/pokebola.png">
-				</div>				
+				</div>
 			</div>
 			<div class="row">
 				<div id="dados" class="col-md-6 col-md-offset-3 conteudo">
-					<div id="dados-tipo" class="conteudo-campo">tipo :</div>
-					<div id="dados-altura" class="conteudo-campo">Altura :</div>
-					<div id="dados-peso" class="conteudo-campo">peso :</div>
-					<div id="dados-habilidade" class="conteudo-campo">habilidade :  </div>					
+					<div class="row">
+							<div class="col-md-7 conteudo-item1">
+									<div id="dados-tipo" class="conteudo-campo">tipo :</div>
+									<div id="dados-altura" class="conteudo-campo">Altura :</div>
+									<div id="dados-peso" class="conteudo-campo">peso :</div>
+									<div id="dados-habilidade" class="conteudo-campo">habilidade :  </div>
+							</div>
+							<div id="status-pokemon" class="col-md-5 conteudo-item2">
+									vida<br>
+									<progress id="status-pokemon-vida" value="50" max="100"></progress>
+									<br>ataque<br>
+									<progress id="status-pokemon-ataque" value="50" max="100"></progress>
+									<br>defesa<br>
+									<progress id="status-pokemon-defesa" value="50" max="100"></progress>
+									<br>velocidade<br>
+									<progress id="status-pokemon-velocidade" value="50" max="100"></progress>
+							</div>
+					</div>
 				</div>
-			</div>		
+			</div>
 		</div>
+
 	</div>
 	<script type="text/javascript" src="pokemon7.js"></script>
 	<script type="text/javascript" src="pokemon.js"></script>

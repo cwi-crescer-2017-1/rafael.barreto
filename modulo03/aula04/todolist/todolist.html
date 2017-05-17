@@ -14,6 +14,11 @@
            width: 30%;
          }
 
+          .row {
+            display: flex;
+            flex-direction: column-reverse;
+          }
+
          .items{
            margin-top: 120px;
            width: 100%;
@@ -62,7 +67,10 @@
              background: black;
              transition: .8s;
            }
-           .cortina:hover:before{
+           .teste:hover + .cortina:before,
+           .teste:hover + .cortina:after, 
+           .cortina:hover:before,
+           .cortina:hover:after {
               width: 0;
             }
 
@@ -77,9 +85,6 @@
              border-radius:0px 0px 0px 20px;
              background: black;
              transition: .8s;
-           }
-           .cortina:hover::after{
-              width: 0;
            }
 
            .bkgray{
@@ -115,7 +120,8 @@
             <div class="col-md-12  text-center ">
                 <h1>To-Do List</h1>
             </div>
-            <div class="items cortina bkgray">
+              <div class="teste"></div>
+              <div class="items cortina bkgray">
                 <input type="checkbox" id="item1">
                 <label for="item1"> comer bis </label>
                 <hr>
@@ -129,7 +135,6 @@
                 <label for="item4"> comer bis denovo </label>
                 <hr>
             </div>
-            <div class="teste"></div>
         </div>/
     </div>
   </body>
