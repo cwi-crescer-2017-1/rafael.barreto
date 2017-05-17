@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="pokemon.css">
+
+	<title>pokemon</title>
+</head>
+<body>
+	<div class="row bkg-white">
+		<div id="bar" class="col-md-5 barra">
+			<h3><bkgp>Pokemon</bkgp></h3>	
+		</div>
+		<div class="barra">
+			<form>
+				<input type="text" id="texto-busca" placeholder=" digite o numero do pokemon" >
+				<input type="button" id="botao" value="Poke search" onclick="pokesearch()" >
+			</form>
+		</div>			
+	</div>
+	<div class="container">		
+		<div class="row">
+			<div id="pokemon" class="col-md-6 col-md-offset-3 conteudo">				
+				<div id="nome" class="row" value="nome">
+					nome
+				</div>
+				<div id="imagem-pokemon" class="row">
+					<img src="imagen/pokebola.png">
+				</div>				
+			</div>
+			<div class="row">
+				<div id="dados" class="col-md-6 col-md-offset-3 conteudo">
+					<div id="dados-tipo" class="conteudo-campo">tipo :</div>
+					<div id="dados-altura" class="conteudo-campo">Altura :</div>
+					<div id="dados-peso" class="conteudo-campo">peso :</div>
+					<div id="dados-habilidade" class="conteudo-campo">habilidade :  </div>					
+				</div>
+			</div>		
+		</div>
+	</div>
+	<script type="text/javascript" src="pokemon7.js"></script>
+	<script type="text/javascript" src="pokemon.js"></script>
+</body>
+</html>
