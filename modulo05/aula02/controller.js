@@ -1,14 +1,5 @@
 var modulo = angular.module('data',[])
 
-//--------------------- filtro feito no exercicio 02 ----------------
-modulo.filter('mascada',function(){
-    return function(dados){
-        return nomeMascada =  dados.replace(/nunes/i,`$ ${dados} $`);         
-    }
-})
-
-//-------------------------------------------------------------------
-
 modulo.controller('converteData',function($scope){
 
     $scope.converter = converter; 
@@ -18,7 +9,15 @@ modulo.controller('converteData',function($scope){
         var dataFinal = new Date(valoresData[0] + '/' + valoresData[1] +'/' + valoresData[2]);       
         $scope.dataFinal = dataFinal;
     }
-    //------------ exercicio 02 ------------------
+
+
+//--------------------- filtro feito no exercicio 02 ----------------
+modulo.filter('mascada',function(){
+    return function(dados){
+        return nomeMascada =  dados.replace(/(nunes)/i,`$ $1 $`);         
+    }
+})
+
            $scope.instrutores = [{
             nome: 'Bernardo',
             aula: [{
@@ -54,7 +53,7 @@ modulo.controller('converteData',function($scope){
         }
         ];
 
-    // ---------------- fim exercicio 02 ------------------
+    // -----------------------------------------------
     
 })
 

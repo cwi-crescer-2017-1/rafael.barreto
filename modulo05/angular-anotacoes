@@ -23,6 +23,9 @@ ng-filter =
 
 ng-click = 
 
+$1 = coringa utilizado junto com o regext para pegar o valor comparado e utilizar ele.
+
+
 
 ---------------------------------------------------------------------------------------------
 exemplo criar filtro
