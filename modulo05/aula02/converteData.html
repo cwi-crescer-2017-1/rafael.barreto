@@ -20,7 +20,7 @@
      <div class="row tudo">
     <fieldset>
         <legend> Converte Data </legend>
-        <form ng-controller="converteData">
+        <form ng-controller="converteData">            
             <div class="row formulario fora">
                 <div class="row">
                     <div class="col md-4 col-md-ofsset-3 formulario-text">
@@ -34,6 +34,11 @@
                 </div>
                 <div class="row">
                     {{ dataFinal | date : 'shortDate' }}
+                <!-- exercicio 02 -->
+                    <ul ng-repeat="instrutor in instrutores">
+                        <li>{{ instrutor.nome | mascada }}</li>
+                    </ul>
+                <!-- exerecicio 02 fim -->              
                 </div>
             </div>
         </form>

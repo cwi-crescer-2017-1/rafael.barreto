@@ -19,3 +19,11 @@ angular.element -> pega um elemento do html.
 
 ng-repeat = "alias in array" --> roda para todos elementos = funciona semelhante ao forEach
 
+ng-filter =
+
+ng-click = 
+
+
+---------------------------------------------------------------------------------------------
+exemplo criar filtro
+
