@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+       
+    <script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+
+
+</head>
+<body ng-app="app" ng-controller="incluirInstrutor">
+    
+    <form name="formulario" novalidate ng-submit="incluir(nome,sobrenome,idade,email,jaDeuAula,aula)" > 
+        nome<input name="formularioNome" type="text" ng-model="nome" required><br>
+
+        <P ng-show=""> nome nao pode ser vazio </p>
+        
+        <br>sobrenome <input type="text" ng-model="sobrenome" ><br>
+        <br>idade <input type="text" ng-model="idade"><br>
+        <br>email  <input type="email" ng-model="email"><br>
+        <br>ja deu aula  <input type="checkbox" ng-model="jaDeuAula" ><br>
+        <br>qual aula ministra  <select ng-model="aula"> <option> aula 01</option> </select>
+        <button value="enviar"> enviar </button>
+    </form>
+    <ul ng-repeat="instrutor in instrutores">
+        <li>
+            {{instrutor.nome}} {{instrutor.sobrenome}} {{instrutor.idade}} 
+            {{instrutor.email}} {{instrutor.jaDeuAula}} {{instrutor.aula}}
+       </li>
+    </ul>    
+</body>
+</html>

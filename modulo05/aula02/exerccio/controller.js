@@ -3,19 +3,21 @@ var modulo = angular.module('instrutores',[]);
 
 
 modulo.filter('aulaFilter',function(){
-	return function(instrutor){	
-
+	return function(instrutor){
+		
 		let lpad = instrutor.numero > 10 ? '0' : '00'
 		let numero = lpad + instrutor.numero 
 		let aula = instrutor.aula.toUpperCase();
 
 		return `${numero} - ${aula}`
-
 	}
 })
 
-
-
+modulo.filter('mascada',function(){
+    return function(dados){
+        return nomeMascada =  dados.replace(/(nunes)/i,`$ $1 $`);         
+    }
+})
 
 
 modulo.controller('instrutoresController',function($scope){	

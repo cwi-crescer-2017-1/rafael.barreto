@@ -28,7 +28,7 @@
 								</tr>
 								<tr ng-repeat="instrutor in instrutores | orderBy:'numero' "">
 									<td>{{instrutor | aulaFilter}}</td>
-									<td>{{instrutor.nome}}</td>
+									<td>{{instrutor.nome | mascada}}</td>
 								</tr>
 							</tbody>						
 						</table>				
