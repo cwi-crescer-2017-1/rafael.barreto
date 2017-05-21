@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">		
+		<title>Document</title>
+		
+		<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular.js"></script>
+		<script type="text/javascript" src="js/controller.js"></script>
+	
+	</head>
+	<body ng-app="app" ng-controller="instrutores">		
+		<form name="cadastroInstrutores" novalidate ng-submit="cadastro()">
+			<fieldset> 
+
+				<legend> Cadastro Instrutores </legend>
+			
+				nome<input type="text" ng-model = "novoInstrutor.nome" required><br>
+				sobrenome<input type="text" ng-model = "novoInstrutor.sobrenome"><br>	
+				idade <input type="text" name="" ng-model = "novoInstrutor.idade" ><br>
+				email<input name="email" type="email" name="" ng-model = "novoInstrutor.email" ><br>
+				dando aula <input type="checkbox" ng-model = "novoInstrutor.dandoAula" ng-init="novoInstrutor.dandoAula = false"><br>
+				
+				<br><input type="submit">
+
+   			</fieldset>	
+   			{{novoInstrutor.nome}} - {{novoInstrutor.dandoAula}} - {{novoInstrutor.aula}}
+			
+			<ul ng-repeat="instrutor in instrutores | orderBy : 'nome'">
+				<li> {{instrutor.id}} - {{instrutor.nome }} - {{instrutor.sobrenome }} - {{instrutor.dandoAula }} - {{instrutor.email }} </li>
+
+			</ul>
+		</form>
+
+			Id para remover<input type="text" ng-model = "idRemover"><br>
+   			<button ng-click="removerInstrutor()"> Remover </button><br><br>
+	</body>
+</html>
+<!-- Falta fazer o tratamento dos erros -->

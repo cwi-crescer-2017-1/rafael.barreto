@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">		
+		<title>Document</title>
+		
+		<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular.js"></script>
+		<script type="text/javascript" src="js/controller.js"></script>
+	
+	</head>
+	<body ng-app="app" ng-controller="instrutores">		
+
+		<input type="text" ng-model="novaAula.nome">
+		<button ng-click="incluirAula()"> incluir </button>		
+
+
+		<ul ng-repeat="aula in aulas | orderBy:nome">
+			<li>{{aula.id}} - {{aula.nome}}</li>
+		</ul>
+
+		<br>Id <input type="text" ng-model="idDoCampo"><br>
+		<br>novo Nome <input type="text" ng-model="aulaNovoNome">
+		<button type="clear" ng-click="alterarAula()"> atualizar </button>
+
+		<br><br>remover Aula <input type="text" ng-model="aulaRemover" ng-init="aulaRemover = ' ' ">
+		<button ng-click="removerAula()"> Remover </button>
+
+	</body>
+</html>
+
+
+<!-- Falta fazer o tratamento dos erros -->
+
+
+<!-- formulario de cadastro de instrutores.
+<form name="cadastroInstrutores" novalidate ng-submit="cadastro()">
+				<fieldset> 
+					<legend> Cadastro Instrutores </legend>
+				
+					nome<input type="text" ng-model = "novoInstrutor.nome"><br>
+					sobrenome<input type="text" ng-model = "novoInstrutor.sobrenome" ><br>	
+					idade <input type="text" name="" ng-model = "novoInstrutor.idade" ><br>
+					email<input type="email" name="" ng-model = "novoInstrutor.email" ><br>
+					dando aula <input type="checkbox" ng-model = "novoInstrutor.dandoAula"><br>
+					selecione as aulas que o instrutor ira lecionar<br>
+					<m ng-repeat="aula in aulas">
+						<input type="checkbox" value="{{aula}}"  ng-model="verifica" ng-init="verifica=false" >{{ aula }}						
+						<m ng-if="verifica" ng-model="novoInstrutor.aula" ng-init="adicionarAula()"> </m>
+					</m>
+
+					
+
+					<br><input type="submit">
+
+   				</fieldset>	
+		</form> -->
+
+
+
