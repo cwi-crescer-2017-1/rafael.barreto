@@ -3,36 +3,139 @@
 	<head>
 		<meta charset="UTF-8">		
 		<title>Document</title>
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+
 		
 		<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular.js"></script>
-		<script type="text/javascript" src="js/controller.js"></script>
+		<script type="text/javascript" src="js/controller.js"></script>	
 	
 	</head>
-	<body ng-app="app" ng-controller="instrutores">		
-		<form name="cadastroInstrutores" novalidate ng-submit="cadastro()">
-			<fieldset> 
-
-				<legend> Cadastro Instrutores </legend>
+	
+	<body ng-app="app" ng-controller="instrutores">	
+		<div class="row card-topo box-shadow">				
+			<h1> Instrutores </h1>
+			<div class="menu">
+				<ul>
+					<li> Instrutores </li>
+					<li> Aulas </li>
+				</ul>
+			</div>
+		</div>	
+		<div class="container">
 			
-				nome<input type="text" ng-model = "novoInstrutor.nome" required><br>
-				sobrenome<input type="text" ng-model = "novoInstrutor.sobrenome"><br>	
-				idade <input type="text" name="" ng-model = "novoInstrutor.idade" ><br>
-				email<input name="email" type="email" name="" ng-model = "novoInstrutor.email" ><br>
-				dando aula <input type="checkbox" ng-model = "novoInstrutor.dandoAula" ng-init="novoInstrutor.dandoAula = false"><br>
-				
-				<br><input type="submit">
+			<div class="row cards">			
+				<div class="col-md-5 box-shadow card-cadastro">
+					<form name="cadastroInstrutores" novalidate ng-submit="cadastro()">
+						<fieldset>
+						<legend> Cadastro Instrutores </legend>
+							<table class="table table-hover">
+								<tr>
+									<td class="table-campo">nome</td>
+									
+									<td>
+										<input name="cadastroNome" type="text" ng-model = "novoInstrutor.nome" required>
+										<span ng-if="cadastroInstrutores.cadastroNome.$invalid && cadastroInstrutores.cadastroNome.$touched" > campo Obrigatorio </span>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-campo">sobrenome</td>
+									<td><input type="text" ng-model = "novoInstrutor.sobrenome"></td>
+								</tr>
+								
+								<tr>
+									<td class="table-campo">idade</td>
+									<td>
+										<input type="text" name="cadastroIdade" ng-model = "novoInstrutor.idade" required>
+										<span ng-if="cadastroInstrutores.cadastroIdade.$invalid && cadastroInstrutores.cadastroIdade.$touched"> campo obrigatorio</span>
+									</td>
 
-   			</fieldset>	
-   			{{novoInstrutor.nome}} - {{novoInstrutor.dandoAula}} - {{novoInstrutor.aula}}
-			
-			<ul ng-repeat="instrutor in instrutores | orderBy : 'nome'">
-				<li> {{instrutor.id}} - {{instrutor.nome }} - {{instrutor.sobrenome }} - {{instrutor.dandoAula }} - {{instrutor.email }} </li>
+								</tr>
+								
+								<tr>
+									<td class="table-campo">url Foto</td>
+									<td>
+										<input name="urlImagen" type="text" ng-model = "novoInstrutor.urlFoto">										
+									</td>
+								</tr>
+								<tr>
+									<td class="table-campo">email</td>
+									<td>
+										<input name="email" type="email" ng-model = "novoInstrutor.email" required>
+										<span class="mensagemErro" ng-if="cadastroInstrutores.$error.email" >Email invalido</span>
+										<span class="mensagemErro" ng-if="cadastroInstrutores.email.$error.required && cadastroInstrutores.email.$touched" >
+											campo obrigatorio
+										</span>
+										
+									</td>
+								</tr>
+								<tr>									
+								</tr>
+								<tr>
+									<td class="table-campo">dando aula</td>
+									<td><input type="checkbox" ng-model = "novoInstrutor.dandoAula" ng-init="novoInstrutor.dandoAula = false"></td>
+								</tr>							
+								<tr>
+									<td>
+										<input name="botaoSubmit" type="submit" ng-disabled="cadastroInstrutores.$invalid">	
+									</td>
+									<td>
+										<span ng-repeat="aula in aulas">
+											<input type="checkbox" ng-model="valor" ng-checked="selecionaAula">{{aula.nome}}
+										</span>			
+									</td>									
+								</tr>
+			   				</table>
+		   				</fieldset>	
+					</form>					
+				</div>				
 
-			</ul>
-		</form>
+				<div class="col-md-5 box-shadow card-lista-instrutores">
+					<legend> Lista de Instrutores </legend>
+					<table  class="table table-hover">
+						<tr>
+							<th>Foto</th>
+							<th>id</th>
+							<th>nome</th>
+							<th>sobrenome</th>
+							<th>idade</th>
+							<th>email</th>
+							<th>aula(a)</th>
+							<th>ministrando Aula</th>
+						</tr>
+						<tr ng-repeat="instrutor in instrutores | orderBy: 'nome' ">
+							<td>
+								 <img class="imagen-progfile" src="{{instrutor.urlFoto}}" alt="">
+							</td>
+							<td>{{ instrutor.id }}</td>
+							<td >{{ instrutor.nome }}</td>
+							<td>{{ instrutor.sobrenome }}</td>
+							<td>{{ instrutor.idade }}</td>
+							<td>{{ instrutor.email }}</td>
+							<td>{{ instrutor.aula }}</td>							
+							<td>
+								<img class="imagens" src="imagens/positivo.png" ng-if="instrutor.dandoAula" >
+								<img class="imagens" src="imagens/negativo.png" ng-if="!instrutor.dandoAula">
 
-			Id para remover<input type="text" ng-model = "idRemover"><br>
-   			<button ng-click="removerInstrutor()"> Remover </button><br><br>
+							</td>							
+							<td> 
+								<button ng-click="removerInstrutor($index)"> Remover </button>
+								<button ng-click="mostrar = true" ng-model="mostrar" ng-init="mostrar = false"> {{mostrar}} </button>
+							</td>
+
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
 <!-- Falta fazer o tratamento dos erros -->
+
+
+<!-- 
+	Id para remover<input type="text" ng-model = "idRemover"><br>
+		   			<button ng-click="removerInstrutor()"> Remover </button><br><br>
+
+ -->

@@ -9,17 +9,19 @@ modulo.controller('instrutores', function($scope){
 	$scope.cadastro = cadastro;	
 	$scope.removerInstrutor = removerInstrutor;
 
-	$scope.instrutores = [{		    
-		    id: 0,                            // Gerado
-		    nome: 'Nome',                     // Obrigatório (length = min 3, max 20)
-		    sobrenome: 'Sobrenome',           // Opcional (length = max 30)
-		    idade: 25,                        // Obrigatório (max 90)
-		    email: 'email@cwi.com.br',        // Obrigatório (type=email)
-		    dandoAula: true,                  // true ou false
-		    aula: [1, 3],                     // Opcional (array)
-		    urlFoto: 'http://foto.com/3.png'  // Opcional (porém tem uma default de livre escolha)
-	  	}
+	$scope.instrutores = [
 	];
+
+	$scope.novoInstrutor = {
+		id : undefined,
+		nome : undefined,
+		sobrenome : undefined,
+		idade: undefined,
+		email : undefined,
+		dandoAula : false,
+		aula:undefined,
+		urlFoto : undefined
+	}
 
 	$scope.aulas =[{ id:1 , nome : 'OO'},{id : 2, nome : 'HTML e CSS'},{id :3, nome :'Javascript'},{id : 4, nome : 'AngularJS'},{id : 5, nome :'Banco de Dados I'}];
 	
@@ -40,29 +42,33 @@ modulo.controller('instrutores', function($scope){
 	}	
 
 
-	function alterarAula(){		
-
+	function alterarAula(){	
 		$scope.aulas.forEach(a => a.id === parseInt($scope.idDoCampo) ? a.nome = $scope.aulaNovoNome : a.nome);		
 	}
 
 
-	function removerAula(){ ////// OK
+	
+	function removerAula(){ 
 		let eIgual;
 		var	aulaCompara = $scope.aulas.filter(aula => aula.nome.toUpperCase() === $scope.aulaRemover.toUpperCase() ) ;
+		
 		aulaCompara.length > 0 ?  $scope.instrutores.forEach(instrutor => eIgual = instrutor.aula.filter(a => a === aulaCompara[0].id) >0) : false;		
+		
 		if(eIgual){
 			alert(' Aula cadastrada para um Instrutor !!!');
 		}else{
-
 			$scope.aulas = $scope.aulas.filter(aula => aula.nome !== $scope.aulaRemover)
 			$scope.aulaRemover = "";
-		}		
-					
+		}							
 	}
+
 
 	// funcoes de Instrutores
 	
+	
 	function cadastro(){
+
+		console.log($scope.email)
 
 		if($scope.cadastroInstrutores.$valid){
 				
@@ -79,69 +85,23 @@ modulo.controller('instrutores', function($scope){
 				$scope.instrutores.sobrenome = " ";
 			}			
 
-			if(nomesDiferentes || sobrenomesDiferentes && $scope.email.$valid && $scope.email.$not-empty){			
+			if(nomesDiferentes || sobrenomesDiferentes && $scope.email.$valid && $scope.email.$not-empty){
+
+				$scope.novoInstrutor.urlFoto === undefined ? $scope.novoInstrutor.urlFoto = 'imagens/imagenPadrao.png' : $scope.novoInstrutor.urlFoto ;
 				$scope.instrutores.push($scope.novoInstrutor);			
 				$scope.novoInstrutor = {};
+
 			}else {
 				alert('Nome ja Cadastrado');
 			}
 		}				
 	}
 
-	function removerInstrutor(){
-
-		let instrutorNaoDandoAula = !$scope.instrutores[$scope.idRemover].dandoAula;
-		
-		if(instrutorNaoDandoAula){
-			$scope.instrutores = $scope.instrutores.filter(i => i.id !== parseInt($scope.idRemover));
-		}else{
-			alert('instrutor Dando Aula');
-		}
-	}
 
 
+	function removerInstrutor(index){
+		if(!$scope.instrutores[index].dandoAula) $scope.instrutores.splice(index,1);		
+		else alert('Instrutor dando Aula');
+	}	
 
-
-
-
-	
 })// fim da controller
-
-
-
-// eIgual = $scope.instrutores[i].aula[j] === $scope.aulaRemover.toUpperCase() ?  eIgual = true : eIgual = false;
-
-
-
-		// for(let i in $scope.instrutores){
-		// 	for(let j in  $scope.instrutores[i].aula){						
-				
-		// 		eIgual = $scope.instrutores[i].aula[j]
-
-
-		// 		if(eIgual) break;
-		// 	}
-		// }		
-
-// )
-
-// function showMyImage(fileInput) {
-        
-//         var files = fileInput.files;
-//         for (var i = 0; i < files.length; i++) {           
-//             var file = files[i];
-//             var imageType = /image.*/;     
-//             if (!file.type.match(imageType)) {
-//                 continue;
-//             }           
-//             var img=document.getElementById("thumbnil");            
-//             img.file = file;    
-//             var reader = new FileReader();
-//             reader.onload = (function(aImg) { 
-//                 return function(e) { 
-//                     aImg.src = e.target.result; 
-//                 }; 
-//             })(img);
-//             reader.readAsDataURL(file);
-//         }    
-//     }
