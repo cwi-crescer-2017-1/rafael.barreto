@@ -18,21 +18,21 @@
 			<h1> Instrutores </h1>
 			<div class="menu">
 				<ul>
-					<li> Instrutores </li>
-					<li> Aulas </li>
+					<li> <a href="#cadastroInstrutores"> Instrutores </a></li>
+					<li> <a href="#aula"> Aulas </a></li>
 				</ul>
 			</div>
 		</div>	
 		<div class="container">
 			
 			<div class="row cards">			
-				<div class="col-md-5 box-shadow card-cadastro">
-					<form name="cadastroInstrutores" novalidate ng-submit="cadastro()">
+				<div class="col-md-12 box-shadow card-cadastro">
+					<form  id="cadastroInstrutores" name="cadastroInstrutores" novalidate ng-submit="cadastro()">
 						<fieldset>
 						<legend> Cadastro Instrutores </legend>
 							<table class="table table-hover">
 								<tr>
-									<td class="table-campo">nome</td>
+									<td class="table-campo" autofocus>nome</td>
 									
 									<td>
 										<input name="cadastroNome" type="text" ng-model = "novoInstrutor.nome" required>
@@ -47,7 +47,7 @@
 								<tr>
 									<td class="table-campo">idade</td>
 									<td>
-										<input type="text" name="cadastroIdade" ng-model = "novoInstrutor.idade" required>
+										<input type="text" name="cadastroIdade" ng-model = "novoInstrutor.idade" >
 										<span ng-if="cadastroInstrutores.cadastroIdade.$invalid && cadastroInstrutores.cadastroIdade.$touched"> campo obrigatorio</span>
 									</td>
 
@@ -75,58 +75,144 @@
 								<tr>
 									<td class="table-campo">dando aula</td>
 									<td><input type="checkbox" ng-model = "novoInstrutor.dandoAula" ng-init="novoInstrutor.dandoAula = false"></td>
+								</tr>
+								<tr>
+									<td>
+										<span>aulas selecionadas</span>
+									</td>
+									<td>
+										<label ng-repeat="aula in novoInstrutor.aula">{{aula.nome}}-</label>
+									</td>
 								</tr>							
 								<tr>
 									<td>
 										<input name="botaoSubmit" type="submit" ng-disabled="cadastroInstrutores.$invalid">	
 									</td>
 									<td>
-										<span ng-repeat="aula in aulas">
-											<input type="checkbox" ng-model="valor" ng-checked="selecionaAula">{{aula.nome}}
-										</span>			
+										<select ng-model="selecao">
+											<option ng-repeat="aula in aulas" >{{aula.nome}}</option>											
+										</select>
+										<input type="button" value="incluir aula " ng-click="instrutorAdicionarAula()"></button>
 									</td>									
 								</tr>
 			   				</table>
 		   				</fieldset>	
 					</form>					
 				</div>				
-
-				<div class="col-md-5 box-shadow card-lista-instrutores">
+				<!-- lista instrutores -->
+				<div class="col-md-12 box-shadow card-lista-instrutores">
 					<legend> Lista de Instrutores </legend>
-					<table  class="table table-hover">
+					<table  class="table table-hover">					
 						<tr>
-							<th>Foto</th>
-							<th>id</th>
-							<th>nome</th>
-							<th>sobrenome</th>
-							<th>idade</th>
-							<th>email</th>
-							<th>aula(a)</th>
+							<th td class="input-foto" >Foto</th>
+							<th class="input-id">id</th>
+							<th class="input-nome">nome</th>
+							<th class="input-sobrenomenome" >sobrenome</th>
+							<th class="input-idade">idade</th>
+							<th class="input-email">email</th>
+							<th class="input-aulas">aula(a)</th>
 							<th>ministrando Aula</th>
 						</tr>
 						<tr ng-repeat="instrutor in instrutores | orderBy: 'nome' ">
-							<td>
-								 <img class="imagen-progfile" src="{{instrutor.urlFoto}}" alt="">
+							<td class="input-foto" >
+								 <img class="imagen-progfile" src="{{instrutor.urlFoto}}">
 							</td>
-							<td>{{ instrutor.id }}</td>
-							<td >{{ instrutor.nome }}</td>
-							<td>{{ instrutor.sobrenome }}</td>
-							<td>{{ instrutor.idade }}</td>
-							<td>{{ instrutor.email }}</td>
-							<td>{{ instrutor.aula }}</td>							
+							<td  class="input-id">
+								<span>{{ instrutor.id }}</span>
+							</td>
+							<td class="input-nome">								
+								<span>{{ instrutor.nome }}<span>
+								<span ng-show=""><input type="text"></span>
+								
+							</td>
+								
+							<td class="input-sobrenomenome">								
+								<span>{{ instrutor.sobrenome }}</span>
+								<span ng-show=""><input type="text"></span>
+								
+							</td>
+							<td class="input-idade">
+								<span>{{ instrutor.idade }}</span>
+								<span ng-show=""><input type="idade"></span>								
+							</td>
+							<td class="input-email">
+								<span>{{ instrutor.email }}</span>
+								<span ng-show=""><input type="email"></span>								
+							</td>
+							<td class="input-aulas">
+								<span ng-repeat="aula in instrutor.aula">{{aula.nome}}<br></span>
+								<select ng-show=""></select>
+							</td>							
 							<td>
 								<img class="imagens" src="imagens/positivo.png" ng-if="instrutor.dandoAula" >
 								<img class="imagens" src="imagens/negativo.png" ng-if="!instrutor.dandoAula">
 
 							</td>							
 							<td> 
-								<button ng-click="removerInstrutor($index)"> Remover </button>
-								<button ng-click="mostrar = true" ng-model="mostrar" ng-init="mostrar = false"> {{mostrar}} </button>
-							</td>
-
+								<button ng-click = "removerInstrutor($index) "> Remover </button>								
+							</td>							
 						</tr>
+
+
 					</table>
 				</div>
+				<!-- fim da lista instrutores -->
+
+				<div class="col-md-12 box-shadow card-cadastro-aulas">
+					<legend id="aula">  Aulas </legend>
+					<div class="col-md-4">
+						<legend>lista de Aulas</legend>
+						<table class="table table-hover">
+							<tr>
+								<th>Id</th>
+								<th>Aula</th>								
+							</tr>
+							<tr ng-repeat="aula in aulas">
+								<td>
+									{{aula.id}}
+								</td>
+								<td>
+									{{aula.nome}}										
+								</td>
+								<td>
+									<button ng-click="removerAula($index)"> Remover </button>
+								</td>
+							</tr>							
+						</table>
+					</div>
+					<div class="col-md-7">
+						<legend> cadastro/Edicao </legend>
+						<table class="table table-hover">
+							<tr>
+								<td><span> incluir nova Aula </span></td>
+							</tr>							
+							<tr>
+								<td><input type="text" ng-model="novaAula.nome"></td>
+								<td><button ng-click="incluirAula()"> incluir </button></td>
+							</tr>
+							<tr>
+								<td><span> Atualizar aula </span></td>
+							</tr>
+							<tr>								
+								<td>									
+									<select ng-model="nomeDoCampo">
+										<option ng-repeat="aula in aulas">{{aula.nome}}</option>
+									</select>
+								</td>								
+								<td><input type="text" ng-model="aulaNovoNome"></td>
+								<td><input type="button" value="Alterar" ng-click="alterarAula()"></td>								
+							</tr>
+						</table>					
+					</div>
+
+					<!-- <br>Id <input type="text" ng-model="idDoCampo"><br>
+					
+					<button type="clear" ng-click="alterarAula()"> atualizar </button>
+
+					<br><br>remover Aula <input type="text"  ng-init="aulaRemover = ' ' ">
+					<button ng-click="removerAula()"> Remover </button> 
+ -->				</div>
+
 			</div>
 		</div>
 	</body>
@@ -137,5 +223,5 @@
 <!-- 
 	Id para remover<input type="text" ng-model = "idRemover"><br>
 		   			<button ng-click="removerInstrutor()"> Remover </button><br><br>
-
+<! 
  -->

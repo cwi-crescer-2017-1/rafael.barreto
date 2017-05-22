@@ -10,6 +10,10 @@ body{
 
 }
 
+.container{	
+	width: 85vw;
+}
+
 .box-shadow{
 	box-shadow: -3px 4px 3px 3px gray;
 	border-radius: 10px;
@@ -83,12 +87,18 @@ body{
 	}
 
 	.card-lista-instrutores table{
-		width: 100%;
+		width: 100%;		
 	}
 
 	.card-lista-instrutores table tr{
 		height: 60px;
-		width: 100%;
+		width: 100%;		
+	}
+
+	.card-lista-instrutores table td{
+		height: auto ;
+		width: 180px;		
+		
 	}
 
 	.imagens{		
@@ -115,3 +125,53 @@ body{
 		transition: .3s
 		
 	}
+
+	.card-lista-instrutores .input-foto{
+		height: 10px;
+		width: 80px;
+	}
+
+
+	.card-lista-instrutores .input-id{
+		width: 30px;		
+	}
+		.input-id span{
+			width: 30px;
+
+		}
+
+	.input-nome{
+		width: 120px;					
+	}
+		.input-nome span input{
+			width: 120px;			
+		}
+
+	.input-sobrenomenome{
+		height: auto;
+		width: 170px;
+	}
+
+		.input-idade span input{
+			height: auto;
+			width: 35px;
+		
+		}	
+
+	.input-email{
+		height: 
+		width:200px;
+
+	}
+
+	.input-aulas-ministradas{
+		height: auto;
+		width: 50px;
+
+	}
+
+.card-cadastro-aulas{
+	width: 100%;
+	margin: 10px auto 10px;
+	background: white;	
+}

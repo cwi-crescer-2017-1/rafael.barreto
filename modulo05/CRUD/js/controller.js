@@ -8,7 +8,10 @@ modulo.controller('instrutores', function($scope){
 	$scope.removerAula = removerAula;	
 	$scope.cadastro = cadastro;	
 	$scope.removerInstrutor = removerInstrutor;
-
+	$scope.instrutorAdicionarAula = instrutorAdicionarAula;
+	var aulaID=0;
+	
+ 
 	$scope.instrutores = [
 	];
 
@@ -19,7 +22,7 @@ modulo.controller('instrutores', function($scope){
 		idade: undefined,
 		email : undefined,
 		dandoAula : false,
-		aula:undefined,
+		aula: [],
 		urlFoto : undefined
 	}
 
@@ -32,7 +35,7 @@ modulo.controller('instrutores', function($scope){
 		let nomesAulasDiferente = !$scope.aulas.filter(aula => aula.nome.toUpperCase() === $scope.novaAula.nome.toUpperCase()).length>0;
 
 		if(nomesAulasDiferente){
-			let idAula = $scope.aulas.length;			
+			let idAula = $scope.aulas.length +1;
 			$scope.novaAula.id = idAula;		
 			$scope.aulas.push($scope.novaAula);
 			$scope.novaAula = {};
@@ -43,23 +46,20 @@ modulo.controller('instrutores', function($scope){
 
 
 	function alterarAula(){	
-		$scope.aulas.forEach(a => a.id === parseInt($scope.idDoCampo) ? a.nome = $scope.aulaNovoNome : a.nome);		
+		$scope.aulas.forEach(a => a.nome === $scope.nomeDoCampo ? a.nome = $scope.aulaNovoNome : a.nome);
+		console.log($scope.nomeDoCampo)
+
 	}
 
 
 	
-	function removerAula(){ 
-		let eIgual;
-		var	aulaCompara = $scope.aulas.filter(aula => aula.nome.toUpperCase() === $scope.aulaRemover.toUpperCase() ) ;
+	function removerAula(index){ 		
+		let podeRemover
 		
-		aulaCompara.length > 0 ?  $scope.instrutores.forEach(instrutor => eIgual = instrutor.aula.filter(a => a === aulaCompara[0].id) >0) : false;		
-		
-		if(eIgual){
-			alert(' Aula cadastrada para um Instrutor !!!');
-		}else{
-			$scope.aulas = $scope.aulas.filter(aula => aula.nome !== $scope.aulaRemover)
-			$scope.aulaRemover = "";
-		}							
+		if($scope.instrutores.length === 0) podeRemover=true;
+		else $scope.instrutores.forEach(i => podeRemover = i.aula.filter(a => a.nome.toUpperCase() === $scope.aulas[index].nome.toUpperCase()).length===0)
+
+		podeRemover ? $scope.aulas.splice(index,1) : alert('aula sendo ministrada por um instrutor');						
 	}
 
 
@@ -89,7 +89,8 @@ modulo.controller('instrutores', function($scope){
 
 				$scope.novoInstrutor.urlFoto === undefined ? $scope.novoInstrutor.urlFoto = 'imagens/imagenPadrao.png' : $scope.novoInstrutor.urlFoto ;
 				$scope.instrutores.push($scope.novoInstrutor);			
-				$scope.novoInstrutor = {};
+				$scope.novoInstrutor = {aula: []}
+				console.log($scope.Instrutores);
 
 			}else {
 				alert('Nome ja Cadastrado');
@@ -104,4 +105,39 @@ modulo.controller('instrutores', function($scope){
 		else alert('Instrutor dando Aula');
 	}	
 
+	function instrutorAdicionarAula(){	
+
+		$scope.selecao === undefined ? $scope.selecao : $scope.novoInstrutor.aula.push({id: aulaID,nome:$scope.selecao});
+		console.log($scope.selecao);
+		aulaID++;
+	}
 })// fim da controller
+
+
+
+// instrutores = [{         
+//         id: 0,                            // Gerado 
+//         nome: 'Nome',                     // Obrigatório (length = min 3, max 20) 
+//         sobrenome: 'Sobrenome',           // Opcional (length = max 30) 
+//         idade: 25,                        // Obrigatório (max 90) 
+//         email: 'email@cwi.com.br',        // Obrigatório (type=email) 
+//         dandoAula: true,                  // true ou false 
+//         aula: [1, 3],                     // Opcional (array) 
+//         urlFoto: 'http://foto.com/3.png'  // Opcional (porém tem uma default de livre escolha) 
+//      }]
+
+// function removerAula(){ 
+// 		let eIgual;
+// 		var	aulaCompara = $scope.aulas.filter(aula => aula.nome.toUpperCase() === $scope.aulaRemover.toUpperCase() ) ;
+// 		console.log($scope.instrutores)
+// 		console.log(aulaCompara[0].id)
+		
+// 		aulaCompara.length > 0 ?  $scope.instrutores.forEach(instrutor => eIgual = instrutor.aula.filter(a => a.nome.toUpperCase() === aulaCompara[0].nome.toUpperCase()) >0) : false;		
+		
+// 		if(eIgual){
+// 			alert(' Aula cadastrada para um Instrutor !!!');
+// 		}else{
+// 			$scope.aulas = $scope.aulas.filter(aula => aula.nome !== $scope.aulaRemover)
+// 			$scope.aulaRemover = "";
+// 		}							
+// 	}
