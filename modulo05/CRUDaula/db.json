@@ -1,0 +1,62 @@
+{
+  "aula": [
+    {
+      "id": 1,
+      "nome": "HTML e CSS"
+    },
+    {
+      "id": 2,
+      "nome": "Javascript"
+    },
+    {
+      "nome": "AngularJs",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "nome": "Banco de Dados I"
+    },
+    {
+      "nome": "OO",
+      "id": 5
+    }
+  ],
+  "instrutor": [
+    {
+      "aula": [],
+      "nome": "Rafael da Silva Menna Barreto",
+      "sobrenome": "Barreto",
+      "email": "rsmennabarreto@gmail.com",
+      "urlFoto": "imagens/imagenPadrao.png",
+      "id": 1
+    },
+    {
+      "aula": [],
+      "nome": "Rafael da Silva Menna Barreto",
+      "sobrenome": "Barreto",
+      "email": "rsmennabarreto@gmail.com",
+      "urlFoto": "imagens/imagenPadrao.png",
+      "id": 2
+    },
+    {
+      "aula": [
+        3
+      ],
+      "nome": "Rafael da Silva Menna Barreto",
+      "sobrenome": "Barreto",
+      "email": "rsmennabarreto@gmail.com",
+      "urlFoto": "imagens/imagenPadrao.png",
+      "id": 3
+    },
+    {
+      "aula": [
+        3
+      ],
+      "nome": "Rafael da Silva Menna Barreto",
+      "sobrenome": "Barreto",
+      "email": "rsmennabarreto@gmail.com",
+      "urlFoto": "imagens/imagenPadrao.png",
+      "id": 4
+    }
+  ]
+}

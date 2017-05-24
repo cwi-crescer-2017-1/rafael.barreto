@@ -21,12 +21,72 @@ ng-repeat = "alias in array" --> roda para todos elementos = funciona semelhante
 
 ng-filter =
 
-ng-click = 
+ng-click =
+
+ng-class = 
+
+ng-switch = 
+
+ng-view = 
+
+$routeParams=
+
+$http.get = usando para fazer requisicoes API
+
+api.contrato = 
+
+{  -------- RESTful ----------
+	get /aula -> busca -> retornar uma promise
+ 
+	post /aula ->adiciona
+
+	put /aula/1 -> altera (url,objeto);
+
+	delete /aula/1 -> deleta
+
+}
+
+service = serve para centralizar os methodos e informacoes em um unico lugar
+
+modulo.config(function($routeProvider)$routeProvider.when('/pagina/') = 
 
 $1 = coringa utilizado junto com o regext para pegar o valor comparado e utilizar ele.
 
+$scope.variavel --> utilizado para retornar a variavel(colocar ela na model )
 
+angular.copy() --> faz uma copia do objeto
 
 ---------------------------------------------------------------------------------------------
 exemplo criar filtro
+ Ex:
+ modulo.filter('aulaFilter',function(){
+	return function(instrutor){
+		
+		let lpad = instrutor.numero > 10 ? '0' : '00'
+		let numero = lpad + instrutor.numero 
+		let aula = instrutor.aula.toUpperCase();
+
+		return `${numero} - ${aula}`
+	}
+})
+
+-----------------------------------------------------------------------------------------------
+
+trabalhar com form sempre dar um name para ela 
+
+formname.
+
+---------------------------------------------------------------------------------------------
+
+nodejs http-server 
+
+
+
+
+
+
+
+
+
+
 

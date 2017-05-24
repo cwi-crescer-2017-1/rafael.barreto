@@ -1,0 +1,175 @@
+*{
+	box-sizing: border-box;;
+}
+
+body{		
+	background-image: url("imagens/bkg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: fixed;	
+
+}
+
+.container{	
+	width: 85vw;
+}
+
+.box-shadow{
+	box-shadow: -3px 4px 3px 3px gray;
+	border-radius: 10px;
+}
+
+.cards{	
+	width: 80%;
+	margin: 0px auto;
+}
+
+.card-topo{
+	position: fixed;	
+	background: white;	
+	margin: 0px auto;
+	height: 100px;
+	width: 100vw;
+	text-align: center;
+	font-weight: bold;
+	z-index: 1000;
+}
+	.card-topo .menu{
+		height: 30px;
+		width: 266px;
+		margin: 0px auto ;		
+		text-decoration: none;
+
+	}
+
+	.card-topo .menu ul li{
+		float: left;
+		margin-left: 20px;
+		font-size: 16px;
+		list-style: none;
+	}
+
+.card-cadastro{	
+	width: 100%;
+	margin: 130px auto 10px;
+	background: white;	
+}
+	.card-cadastro legend{
+		text-align: center;
+	}
+
+	.imagen-progfile{
+		height: 40px;
+		width: auto;
+	}
+	
+	.table-campo{
+		width: 140px;
+	}
+
+	.ng-touched{
+		border: 2px solid #ff9393;
+	}
+
+
+.card-lista-instrutores{	
+	background:white;
+	margin: 10px auto 50px;
+	width: 100%;
+	height: auto;		
+}
+
+	.card-lista-instrutores legend{
+		text-align: center;
+	}
+
+	.card-lista-instrutores table{
+		width: 100%;		
+	}
+
+	.card-lista-instrutores table tr{
+		height: 60px;
+		width: 100%;		
+	}
+
+	.card-lista-instrutores table td{
+		height: auto ;
+		width: 180px;		
+		
+	}
+
+	.imagens{		
+		height: 20px;
+		width: auto;
+		margin-left: 30%;
+	}
+
+	.imagen-progfile{
+		position: absolute;		
+		height: 40px;
+		width: auto;
+		border-radius: 20px;		
+		transition: .3s		
+	}
+
+	.imagen-progfile:hover{
+		position: absolute;
+		transform: scale(4);
+		transform-origin: top left;
+		transition: .3s;
+		border-radius: 10px;
+		z-index: 1000;		
+		transition: .3s
+		
+	}
+
+	.card-lista-instrutores .input-foto{
+		height: 10px;
+		width: 80px;
+	}
+
+
+	.card-lista-instrutores .input-id{
+		width: 30px;		
+	}
+		.input-id span{
+			width: 30px;
+		}
+
+	.input-nome{
+		width: 120px;					
+	}
+		.input-nome span input{
+			width: 120px;			
+		}
+
+	.input-sobrenomenome{
+		height: auto;
+		width: 170px;
+	}
+
+		.input-idade span input{
+			height: auto;
+			width: 35px;		
+		}	
+
+	.input-email{
+		height: auto;
+		width:200px;
+	}
+
+	.input-aulas-ministradas{
+		height: auto;
+		width: 50px;
+	}
+
+.card-cadastro-aulas{
+	width: 100%;
+	min-width: 250px;
+	margin: 130px auto 10px;
+	background: white;	
+}
+
+	.card-cadastro-aulas .tabelas-cadastro-aula{
+		width: 40%;		
+	}

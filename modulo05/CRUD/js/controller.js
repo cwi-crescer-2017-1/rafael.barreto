@@ -89,7 +89,7 @@ modulo.controller('instrutores', function($scope){
 
 				$scope.novoInstrutor.urlFoto === undefined ? $scope.novoInstrutor.urlFoto = 'imagens/imagenPadrao.png' : $scope.novoInstrutor.urlFoto ;
 				$scope.instrutores.push($scope.novoInstrutor);			
-				$scope.novoInstrutor = {aula: []}
+				$scope.novoInstrutor = {aula: []}				
 				console.log($scope.Instrutores);
 
 			}else {
@@ -106,7 +106,6 @@ modulo.controller('instrutores', function($scope){
 	}	
 
 	function instrutorAdicionarAula(){	
-
 		$scope.selecao === undefined ? $scope.selecao : $scope.novoInstrutor.aula.push({id: aulaID,nome:$scope.selecao});
 		console.log($scope.selecao);
 		aulaID++;
