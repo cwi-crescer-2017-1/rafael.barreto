@@ -13,8 +13,7 @@ modulo.controller('instrutores', function($scope ,$routeParams ,instrutorService
 		if($scope.cadastroInstrutores.$valid){
 			$scope.novoInstrutor.urlFoto === undefined ? $scope.novoInstrutor.urlFoto = 'imagens/imagenPadrao.png' : $scope.novoInstrutor.urlFoto ;				
 			$scope.nomeDaAula ="";
-			criar($scope.novoInstrutor);			
-			debugger
+			criar($scope.novoInstrutor);
 			$scope.novoInstrutor = {aula: []}									
 		}
 							

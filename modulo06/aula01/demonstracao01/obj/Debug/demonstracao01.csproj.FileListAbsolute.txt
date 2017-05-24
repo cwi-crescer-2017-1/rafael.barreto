@@ -1,0 +1,6 @@
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\aula01\demonstracao01\bin\Debug\demonstracao01.exe.config
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\aula01\demonstracao01\obj\Debug\demonstracao01.csprojResolveAssemblyReference.cache
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\aula01\demonstracao01\bin\Debug\demonstracao01.exe
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\aula01\demonstracao01\bin\Debug\demonstracao01.pdb
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\aula01\demonstracao01\obj\Debug\demonstracao01.exe
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\aula01\demonstracao01\obj\Debug\demonstracao01.pdb
