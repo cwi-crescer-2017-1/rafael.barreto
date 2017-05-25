@@ -1,0 +1,5 @@
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.dll
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.pdb
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.dll
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.pdb

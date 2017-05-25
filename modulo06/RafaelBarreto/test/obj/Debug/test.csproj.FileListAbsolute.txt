@@ -1,0 +1,8 @@
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\test\bin\Debug\test.dll
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\test\bin\Debug\test.pdb
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\test\bin\Debug\folhaPagamento.exe
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\test\bin\Debug\folhaPagamento.pdb
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\test\obj\Debug\test.dll
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\test\obj\Debug\test.pdb
