@@ -4,3 +4,9 @@ D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\bin\Debug\folhaP
 D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.csprojResolveAssemblyReference.cache
 D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.exe
 D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.pdb
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\bin\Debug\folhaPagamento.exe.config
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.exe
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.pdb
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.csprojResolveAssemblyReference.cache
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\bin\Debug\folhaPagamento.exe
+C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\bin\Debug\folhaPagamento.pdb

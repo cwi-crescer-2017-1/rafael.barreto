@@ -32,18 +32,14 @@ namespace folhaPagamento.classes
             TotalDescontos = totalDescontos;
             TotalLiquido = totalLiquido;
             Fgts = fgts;
-        }
+        }        
 
-        public void GerarDemonstrativo(double horasCategoria, double salarioBase, double qtdHorasExtras, double qtdHorasDescontadas)
+        internal static double truncar(double valor)
         {
-            HorasExtras = new HorasCalculadas(qtdHorasExtras, horasCategoria);
-            HorasDescontadas = new HorasCalculadas(qtdHorasDescontadas, horasCategoria);
-            TotalProventos = (salarioBase + HorasExtras.CalcularHextra(salarioBase)) - HorasDescontadas.CalcularHDescontadas(salarioBase);
-            Inss = new Desconto(0.08, salarioBase);
-            Irrf = new Desconto(0, salarioBase);
-            TotalDescontos = Inss.CalcularInss() + Irrf.CalcularIrrf();
-            TotalLiquido = salarioBase - TotalDescontos;
-            Fgts = new Desconto(0.11, horasCategoria);          
+            valor = valor * 100;
+            valor = Math.Truncate(valor);
+            valor = valor / 100;
+            return valor;
         }
 
         public double SalarioBase { get; private set; }

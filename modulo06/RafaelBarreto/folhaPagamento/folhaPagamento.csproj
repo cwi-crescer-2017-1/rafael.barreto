@@ -45,9 +45,10 @@
   <ItemGroup>
     <Compile Include="classes\Demonstrativo.cs" />
     <Compile Include="classes\Desconto.cs" />
+    <Compile Include="classes\FolhaPagamento.cs" />
     <Compile Include="classes\HorasCalculadas.cs" />
     <Compile Include="classes\IFolhaPagamento.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
