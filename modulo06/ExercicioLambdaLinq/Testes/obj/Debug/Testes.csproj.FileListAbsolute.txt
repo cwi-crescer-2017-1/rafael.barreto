@@ -8,3 +8,13 @@ C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLamb
 C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\obj\Debug\Testes.csprojResolveAssemblyReference.cache
 C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\obj\Debug\Testes.dll
 C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\obj\Debug\Testes.pdb
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\bin\Debug\Testes.dll
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\bin\Debug\Testes.pdb
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\bin\Debug\Newtonsoft.Json.dll
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\bin\Debug\Repositorio.dll
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\bin\Debug\Repositorio.pdb
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\bin\Debug\Newtonsoft.Json.xml
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\obj\Debug\Testes.csprojResolveAssemblyReference.cache
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\obj\Debug\Testes.dll
+D:\crescer\rafael.barreto\modulo06\ExercicioLambdaLinq\Testes\obj\Debug\Testes.pdb

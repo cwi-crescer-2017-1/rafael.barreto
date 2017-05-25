@@ -86,40 +86,44 @@ namespace Repositorio
 
         
 
-        public IList<Funcionario> BuscarPorCargo(Cargo cargo)
+        public IList<Funcionario> BuscarPorCargo(Cargo cargo)//ok
         {
             return Funcionarios.Where(funcionario => funcionario.Cargo.Equals(cargo)).ToList();
         }
 
-        public IList<Funcionario> OrdenadosPorCargo()
+        public IList<Funcionario> OrdenadosPorCargo()//ok
         {
-            return Funcionarios.OrderBy(funcionario => funcionario.Cargo.Titulo).ToList();
+            return Funcionarios.OrderBy(funcionario => funcionario.Cargo.Titulo)
+                .ThenBy(funcionario => funcionario.Nome).ToList();
         }
 
-        public IList<Funcionario> BuscarPorNome(string nome)
+        public IList<Funcionario> BuscarPorNome(string nome)//ok
         {
             return Funcionarios.Where(funcionario => funcionario.Nome.Contains(nome)).ToList();
         }        
 
-        public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)
+        public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)//ok
         {
-            return Funcionarios.Where();
-            return null;
+            return Funcionarios.Where(funcionario => turnos.Contains(funcionario.TurnoTrabalho)).ToList();
+            
         }        
 
-        public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
+        public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)//ok
         {
-            throw new NotImplementedException();
+            return Funcionarios.Where(funcionario => CalcularIdade(funcionario.DataNascimento) <= idade + 5 &&
+                            CalcularIdade(funcionario.DataNascimento) >= idade - 5).ToList();                                 
         }
 
-        private int CalcularIdade(DateTime dataNascimento)
+        private int CalcularIdade(DateTime dataNascimento)//ok
         {
-            throw new NotImplementedException();
+           return DateTime.Now.Year - dataNascimento.Year;
         }
 
-        public double SalarioMedio(TurnoTrabalho? turno = null)
+        public double SalarioMedio(TurnoTrabalho? turno = null)//ok
         {
-            throw new NotImplementedException();
+            return Funcionarios.Where(funcionario => 
+                         turno.Equals(null) ? true : funcionario.TurnoTrabalho.Equals(turno))
+                        .Select(funcionario => funcionario.Cargo.Salario).Average();
         }
 
         public IList<Funcionario> AniversariantesDoMes()
