@@ -1,0 +1,6 @@
+D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\bin\Debug\folhaPagamento.exe.config
+D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\bin\Debug\folhaPagamento.exe
+D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\bin\Debug\folhaPagamento.pdb
+D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.csprojResolveAssemblyReference.cache
+D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.exe
+D:\crescer\rafael.barreto\modulo06\RafaelBarreto\folhaPagamento\obj\Debug\folhaPagamento.pdb
