@@ -128,17 +128,19 @@ namespace Repositorio
 
         public IList<Funcionario> AniversariantesDoMes()
         {
-            throw new NotImplementedException();
+            return Funcionarios.Where(funcionario => funcionario.DataNascimento.Month == DateTime.Now.Month).ToList();            
         }
 
         public IList<dynamic> BuscaRapida()
         {
-            throw new NotImplementedException();
+           return Funcionarios.Select(funcionario => new { NomeFuncionario = funcionario.Nome , TituloCargo = funcionario.Cargo.Titulo })
+                  .Cast<dynamic>().ToList();    
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
         {
-            throw new NotImplementedException();
+            return Funcionarios.GroupBy(funcionario => funcionario.Cargo)                  
+                .Cast<dynamic>().ToList();
         }
 
         public dynamic FuncionarioMaisComplexo()
