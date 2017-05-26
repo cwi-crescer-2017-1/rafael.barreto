@@ -137,9 +137,10 @@ namespace Repositorio
                   .Cast<dynamic>().ToList();    
         }
 
-        public IList<dynamic> QuantidadeFuncionariosPorTurno()
+        public IList<dynamic> QuantidadeFuncionariosPorTurno() 
         {
-            return Funcionarios.GroupBy(funcionario => funcionario.Cargo)                  
+            return Funcionarios.GroupBy(funcionario => funcionario.TurnoTrabalho)
+                
                 .Cast<dynamic>().ToList();
         }
 
