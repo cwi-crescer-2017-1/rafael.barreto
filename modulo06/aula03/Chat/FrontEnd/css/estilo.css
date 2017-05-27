@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+
+body{
+    background: url("imagens/bkg-body.jpg") no-repeat;    
+    background-size: 100% 100%;
+    background-attachment: fixed;       
+}
+
+.borda{
+    border: 2px solid white;
+}
+
+.titulo{
+    text-align: center;
+    margin: 10px 0px;
+    
+}
+
+.chat{
+    background: black;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 800px;
+    width: 90%;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 50px;    
+    padding-top: 20px;
+    color: white;
+}
+
+.chat-textBox{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    height: 500px;       
+}
+
+.mensagem-box{  
+    height: 110px;    
+    margin: 20px 0px;
+    border-radius: 0px 0px 20px 20px;       
+}
+
+.row .mensagem{    
+    padding: 0px;
+    float: left;    
+    height: 100px;
+    margin:5px 0px;     
+    border-radius: 10px;
+}
+
+.enviar{            
+    margin: 5px 0px 0px;           
+    height: 100px;            
+}
+
+.btn{    
+    margin: 0px 15px;
+    height: 80px;  
+    width: 100%;    
+}
+
+.mensagem .form-control{    
+    float: left;            
+    height: 80px;
+    width: 100%;
+}

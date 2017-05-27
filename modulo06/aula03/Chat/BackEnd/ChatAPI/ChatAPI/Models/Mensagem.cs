@@ -9,6 +9,5 @@ namespace ChatAPI.Models
     {
         public string Mensagen { get; set; }
         public Usuario Usuario { get; set; }
-
     }
 }
