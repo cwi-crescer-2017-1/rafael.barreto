@@ -7,6 +7,10 @@
     border: 2px solid;
 }
 
+.scroll{
+    overflow: auto;
+}
+
 
 body{
     background: url("imagens/bkg-body.jpg") no-repeat;    
@@ -89,7 +93,8 @@ body{
 .chat-textBox{
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
-    height: 500px;       
+    height: 500px;   
+    overflow: auto;    
 }
 
 .mensagem-box{  
@@ -129,19 +134,19 @@ body{
     min-height: 100px;
 }
 .foto img{
-    height: 90px;
+    height: 80px;
     width: auto;
     border-radius: 50%;
 }
 
-.texto-box .texto{         
+.chat-textBox .texto-box .texto{         
     background-color: rgba(0, 0, 0, 0.9);       
     height: 80px;    
     border: 0px solid black;
     border-radius: 0px 20px 0px 20px;    
 }
 
-.texto-box .texto:before {
+.chat-textBox .texto-box .texto:before {
   content: "";
   border: 10px solid transparent;
   border-top: 10px solid rgba(0, 0, 0, 0.9);

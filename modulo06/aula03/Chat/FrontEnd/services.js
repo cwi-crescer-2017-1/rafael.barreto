@@ -3,8 +3,9 @@ modulo.factory('mensagemService',function($http){
 
         url = 'http://localhost:54298/api/mensagem';
 
-        function getMensagem(){
+        function getMensagem(){             
               return $http.get(url); 
+              
         }
 
         function enviarMensagem(mensagem){
@@ -12,7 +13,7 @@ modulo.factory('mensagemService',function($http){
         }
 
         return{
-            enviarMensagem,
-            buscarMensagem: getMensagem    
+            enviarMensagem : enviarMensagem,
+            buscarMensagem: getMensagem   
         }
 })

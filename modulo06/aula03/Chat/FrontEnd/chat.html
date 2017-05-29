@@ -1,15 +1,16 @@
 <div class="col-md-10 col-md-offset-1 chat" ng-controller="chatController">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3 titulo"><h3>------------------- One For All -------------------</div>
+        <div class="col-md-3 foto">  <img src="{{meuUsuarioFoto}}" alt="">  </div>
+        <div class="col-md-6 titulo"><h3>{{meuUsuario}}</div>
         <div class="col-md-10 col-md-offset-1 chat-textBox"> <!-- talvez trocar div por outro elemento -->                    
-            <div class="row texto-box" ng-repeat="mensagem in mensagens"  >
+            <div class="row texto-box scroll" ng-repeat="mensagem in mensagens"  >
                 <div class="col-md-2 foto">
-                    <img src="http://www.smashbros.com/images/og/pikachu.jpg" alt="">
+                    <img src="{{mensagem.Usuario.Foto}}" alt="">
                 </div>
                 <div class="col-md-10 texto">
                     <div class="usuario">
-                        {{Mensagen.usuario.nome}} say:<br>
-                        {{mensagen.Mensagen}}
+                        {{mensagem.Usuario.Nome}} say:<br>
+                        {{mensagem.Mensagen}}
                         <div class="hora"></div>
                     </div>                      
                 </div>
@@ -20,10 +21,10 @@
         <div class="col-md-10 col-md-offset-1 mensagem-box">
             <div class="row">
                 <div class="col-md-10 mensagem">
-                    <input class="form-control" type="text">                            
+                    <input ng-model="mensagenTexto" class="form-control" type="text">                            
                 </div>
                 <div class="col-md-2 enviar">
-                    <input class="btn btn-warning" type="button" value="Enviar">
+                    <input class="btn btn-warning" type="button" ng-click="enviar(mensagenTexto)" value="Enviar">
                 </div>
             </div>
         </div>
