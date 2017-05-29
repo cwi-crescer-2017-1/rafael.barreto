@@ -25,7 +25,7 @@ namespace ChatAPI.Controllers
         public IHttpActionResult Post(Mensagem mensagem)
         {
             lock (mensagemLock) {
-                mensagem.Mensagen = mensagem.Mensagen.Replace("andre nunes","$$$$$ $$$$$");
+                mensagem.Mensagen = mensagem.Mensagen.Replace("andre nunes","$$$$$ $$$$$");                
                 listaMensagens.Add(mensagem);                
                 return Ok("cadastrado com sucesso");
             }
