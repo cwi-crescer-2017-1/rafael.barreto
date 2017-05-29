@@ -1,10 +1,12 @@
 ﻿using ChatAPI.Models;
+using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+
 
 namespace ChatAPI.Controllers
 {  
@@ -23,6 +25,7 @@ namespace ChatAPI.Controllers
         public IHttpActionResult Post(Mensagem mensagem)
         {
             lock (mensagemLock) {
+                mensagem.Mensagen = mensagem.Mensagen.Replace("andre nunes","$$$$$ $$$$$");
                 listaMensagens.Add(mensagem);                
                 return Ok("cadastrado com sucesso");
             }
