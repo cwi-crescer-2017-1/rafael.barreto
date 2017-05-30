@@ -12,9 +12,9 @@ namespace Demo1.Insfraestrutura.Repositorio
     {
         string stringConexao =
                 @"Server=13.65.101.67;
-                  User id=rafael.barizon;
+                  User id=rafael.barreto;
                   Password=123456;
-                  Database=aluno05db";
+                  Database=aluno13db";
 
         public void Criar(Produto produto)
         {
