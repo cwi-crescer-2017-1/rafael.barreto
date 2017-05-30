@@ -1,11 +1,6 @@
 ﻿using Demo1.Insfraestrutura.Repositorio;
 using Demo1.WebApi.Models;
-using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Demo1.WebApi.Controllers
