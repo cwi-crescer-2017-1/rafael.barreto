@@ -50,15 +50,31 @@
     <Compile Include="Entidades\Autor.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="Entidades\Livro.cs" />
+    <Compile Include="Entidades\Revisor.cs" />
     <Compile Include="Mapping\AutorMap.cs" />
     <Compile Include="Mapping\LivroMap.cs" />
+    <Compile Include="Mapping\RevisorMap.cs" />
     <Compile Include="Migrations\201705301954341_CriacaoDoBanco.cs" />
     <Compile Include="Migrations\201705301954341_CriacaoDoBanco.Designer.cs">
       <DependentUpon>201705301954341_CriacaoDoBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705311350433_CriacoTabelaRevisores.cs" />
+    <Compile Include="Migrations\201705311350433_CriacoTabelaRevisores.Designer.cs">
+      <DependentUpon>201705311350433_CriacoTabelaRevisores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705311355564_ArrumarTabelaRevisores.cs" />
+    <Compile Include="Migrations\201705311355564_ArrumarTabelaRevisores.Designer.cs">
+      <DependentUpon>201705311355564_ArrumarTabelaRevisores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705311930043_AdicionarCapaNoLivro.cs" />
+    <Compile Include="Migrations\201705311930043_AdicionarCapaNoLivro.Designer.cs">
+      <DependentUpon>201705311930043_AdicionarCapaNoLivro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Respositorios\AutorRepositorio.cs" />
     <Compile Include="Respositorios\LivroRepositorio.cs" />
+    <Compile Include="Respositorios\RevisoresRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -67,6 +83,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705301954341_CriacaoDoBanco.resx">
       <DependentUpon>201705301954341_CriacaoDoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311350433_CriacoTabelaRevisores.resx">
+      <DependentUpon>201705311350433_CriacoTabelaRevisores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311355564_ArrumarTabelaRevisores.resx">
+      <DependentUpon>201705311355564_ArrumarTabelaRevisores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311930043_AdicionarCapaNoLivro.resx">
+      <DependentUpon>201705311930043_AdicionarCapaNoLivro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
