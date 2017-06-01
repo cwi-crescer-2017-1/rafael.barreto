@@ -22,11 +22,17 @@ namespace EditoraCrescer.Infraesturtura.Respositorios
             return autor;
         }
 
+        public IEnumerable<dynamic> livrosPorAutor(int id)
+        {
+            var livros = contexto.Livros.Where(x => x.IdAutor == id).ToList();
+            return livros;
+        }
+
         public void cadastrar(Autor autor)
         {
             contexto.Autores.Add(autor);
             contexto.SaveChanges();
-        }
+        }        
 
         public void Atualizar(int id, Autor autor)
         {

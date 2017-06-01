@@ -1,0 +1,55 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: #afafaf;
+}
+
+.borda{
+    border: 2px solid;
+}
+
+.corpo{
+    width: 100%
+}
+
+.barra-menu{
+    position: fixed;    
+    height: 80px;
+    z-index: 1000;
+    background: white;
+}
+
+.lancamentos{
+    margin-top: 80px;
+    height: 300px;
+}
+
+.livros{
+    margin-top:5px;
+    height: auto;
+}
+
+    .livro{
+        height: 350px;    
+    }
+
+    .titulo{
+        height: 40px;
+    }
+    
+    .imagem{
+        height: 200px;
+        text-align: center;
+    }
+
+        .imagem img{
+            height: 200px;
+            width: auto;
+        }
+
+    .descricao{
+        height: 110px;
+    }

@@ -1,6 +1,0 @@
-C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\teste\teste\bin\Debug\teste.exe.config
-C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\teste\teste\bin\Debug\teste.exe
-C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\teste\teste\bin\Debug\teste.pdb
-C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\teste\teste\obj\Debug\teste.csprojResolveAssemblyReference.cache
-C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\teste\teste\obj\Debug\teste.exe
-C:\Users\rafael.barreto\Documents\projetos\rafael.barreto\modulo06\teste\teste\obj\Debug\teste.pdb

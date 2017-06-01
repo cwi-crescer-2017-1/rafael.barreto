@@ -12,9 +12,25 @@ namespace EditoraCrescer.Infraesturtura.Respositorios
     {
         private Contexto contexto = new Contexto();
 
-        public List<Livro> Obter()
+        public IEnumerable<dynamic> Obter()
         {
-            return contexto.Livros.ToList();
+            var livros = contexto.Livros.Select(x=> 
+                    new {Isbn = x.Isbn, Titulo = x.Titulo , Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero})
+                    .ToList();
+            return livros;
+        }
+
+        public IEnumerable<dynamic> ObterPorPagina(int pagina)
+        {
+            var pular = pagina - 1;
+            var intervalo = pagina * 8;
+            var livros = contexto.Livros.Select(x =>
+                    new { Isbn = x.Isbn, Titulo = x.Titulo, Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero })
+                    .OrderBy(x => x.Titulo)
+                    .Skip(pular)
+                    .Take(intervalo)
+                    .ToList();
+            return livros;
         }
 
         public Livro ObterPorIsbn(int isbn)
@@ -23,10 +39,21 @@ namespace EditoraCrescer.Infraesturtura.Respositorios
             return Livro;
         }        
 
-        public IEnumerable<Livro> ObterPorGenero(string genero)
+        public IEnumerable<dynamic> ObterPorGenero(string genero)
         {
-            var livro = contexto.Livros.Where(x => x.Genero.Contains(genero));
+            var livro = contexto.Livros.Where(x=> x.Genero.Contains(genero))
+                    .Select(x => new {Isbn = x.Isbn, Titulo = x.Titulo, Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero})
+                    .ToList();
             return livro;
+        }
+
+        public IEnumerable<dynamic> Lancamentos()
+        {
+            var dataUmaSemanaAtraz = DateTime.Now.AddDays(-7);
+            var livros = contexto.Livros.Where(x => x.DataPublicacao >= dataUmaSemanaAtraz)
+                    .Select(x => new { Isbn = x.Isbn, Titulo = x.Titulo, Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero })
+                    .ToList();
+            return livros;
         }
 
         public void Cadastrar(Livro livro)

@@ -16,12 +16,19 @@ namespace EditoraCrescer.api.Controllers
         public IHttpActionResult Get()
         {
             var livros = repositorio.Obter();
-            return Ok(livros); 
+            return Ok(livros);
+        }
+        [HttpGet]
+        [Route("pagina{pagina:int}")]
+        public IHttpActionResult Get(int pagina)
+        {
+            var livros = repositorio.ObterPorPagina(pagina);
+            return Ok(livros);
         }
 
-
+        [HttpGet]
         [Route("{Isbn:int}")]
-        public IHttpActionResult Get(int Isbn)
+        public IHttpActionResult BuscaPorIsbn(int Isbn)
         {
             var livros = repositorio.ObterPorIsbn(Isbn);
             return Ok(livros);
@@ -33,7 +40,15 @@ namespace EditoraCrescer.api.Controllers
             var livros = repositorio.ObterPorGenero(genero);
             return Ok(livros);
         }
-                
+
+        [HttpGet]
+        [Route("lancamentos")]       
+        public IHttpActionResult lancamentos()
+        {
+            var livros = repositorio.Lancamentos();
+            return Ok(livros);
+        }
+
         public IHttpActionResult Post(Livro livro)
         {
             repositorio.Cadastrar(livro);
@@ -55,7 +70,5 @@ namespace EditoraCrescer.api.Controllers
             if (atualizou) return Ok("Livro atualizado com sucesso");
             else return BadRequest("Erro");
         }
-
-
     }
 }
