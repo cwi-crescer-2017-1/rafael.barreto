@@ -7,6 +7,10 @@ body{
     background: #afafaf;
 }
 
+.container{
+    padding-top: 410px;
+}
+
 .borda{
     border: 2px solid;
 }
@@ -23,13 +27,25 @@ body{
 }
 
 .lancamentos{
+    background: red;
     margin-top: 80px;
-    height: 310px;
-    overflow-y: auto;
+    height: 330px;
+    width: 90%;   
+    overflow-y: hidden;
+    position: absolute;
+    top: 0px;
+    transition: .4s;
+}
+
+.lancamentos-aberto {
+    height: initial;
+    background: red;
+    z-index: 999;
 }
 
     .livros-lancamento{
         height: 300px;
+        margin-bottom: 15px;
     }
 
 .livros{
