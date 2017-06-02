@@ -24,8 +24,13 @@ body{
 
 .lancamentos{
     margin-top: 80px;
-    height: 300px;
+    height: 310px;
+    overflow-y: auto;
 }
+
+    .livros-lancamento{
+        height: 300px;
+    }
 
 .livros{
     margin-top:5px;
@@ -33,7 +38,8 @@ body{
 }
 
     .livro{
-        height: 350px;    
+        height: 400px;    
+        width: 380px;
     }
 
     .titulo{
@@ -41,12 +47,12 @@ body{
     }
     
     .imagem{
-        height: 200px;
+        height: 250px;
         text-align: center;
     }
 
         .imagem img{
-            height: 200px;
+            height: 250px;
             width: auto;
         }
 
