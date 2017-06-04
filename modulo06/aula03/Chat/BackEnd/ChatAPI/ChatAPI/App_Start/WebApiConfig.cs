@@ -22,7 +22,6 @@ namespace ChatAPI
             );
 
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
-
         }
     }
 }

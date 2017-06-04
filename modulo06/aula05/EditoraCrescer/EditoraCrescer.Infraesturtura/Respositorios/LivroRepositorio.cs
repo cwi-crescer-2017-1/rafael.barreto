@@ -15,7 +15,7 @@ namespace EditoraCrescer.Infraesturtura.Respositorios
         public IEnumerable<dynamic> Obter()
         {
             var livros = contexto.Livros.Select(x=> 
-                    new {Isbn = x.Isbn, Titulo = x.Titulo , Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero})
+                    new {Isbn = x.Isbn, Titulo = x.Titulo , Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero, Descricao = x.Descricao})
                     .ToList();
             return livros;
         }
@@ -33,7 +33,7 @@ namespace EditoraCrescer.Infraesturtura.Respositorios
             var pular = (pagina * 8)-8;
             var intervalo = pagina * 8;
             var livros = contexto.Livros.Select(x =>
-                    new { Isbn = x.Isbn, Titulo = x.Titulo, Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero })
+                    new { Isbn = x.Isbn, Titulo = x.Titulo, Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero, Descricao = x.Descricao })
                     .OrderBy(x => x.Titulo)
                     .Skip(pular)
                     .Take(intervalo)

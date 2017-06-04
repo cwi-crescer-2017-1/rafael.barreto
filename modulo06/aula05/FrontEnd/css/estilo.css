@@ -27,31 +27,46 @@ body{
 }
 
 .lancamentos{
-    background: red;
+    text-align: center;
+    background: white;
+    border-radius: 0px 0px 20px 20px;
     margin-top: 80px;
     left: 10px;    
     float: left;
-    height: 330px;
+    height: 360px;
     width: 99%;   
     overflow-y: hidden;
     position: absolute;
     top: 0px;
-    transition: .4s;
+    transition: .6s;
 }
 
 .lancamentos-aberto {
     height: initial;
-    background: red;
+    background: white;
     z-index: 999;
 }
 
     .livros-lancamento{
-        height: 300px;
-        margin-bottom: 15px;
+        height: 325px;
+        margin-bottom: 15px;        
+    }
+
+    .livros-lancamento img{
+         height: 300px;         
+         max-width: 300px;
+    }
+
+    .abrir-fechar-lancamentos:hover{
+        background: black;
+        color: white;
+        transition: 0.6s;
+        cursor: pointer;
     }
 
 .livros{
-    margin-top:5px;
+    text-align: center;
+    margin-top:40px;
     height: auto;
 }
 
@@ -61,8 +76,14 @@ body{
     }
 
     .titulo{
+        
         height: 40px;
     }
+
+    .titulo h4{
+        font-weight: bold;
+    }
+
     
     .imagem{
         height: 250px;
