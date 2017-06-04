@@ -29,8 +29,10 @@ body{
 .lancamentos{
     background: red;
     margin-top: 80px;
+    left: 10px;    
+    float: left;
     height: 330px;
-    width: 90%;   
+    width: 99%;   
     overflow-y: hidden;
     position: absolute;
     top: 0px;

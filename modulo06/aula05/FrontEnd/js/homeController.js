@@ -7,4 +7,7 @@ modulo.controller('homeController',function($scope){
         function lancamentosAberto() {  
             $scope.estaFechado = !$scope.estaFechado;
         };
+
+
+        
 })

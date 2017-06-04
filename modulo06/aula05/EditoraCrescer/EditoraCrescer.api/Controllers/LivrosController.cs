@@ -18,6 +18,15 @@ namespace EditoraCrescer.api.Controllers
             var livros = repositorio.Obter();
             return Ok(livros);
         }
+
+        [HttpGet]
+        [Route("quantidade/livros")]
+        public IHttpActionResult ObterNumeroDeLivros()
+        {
+            var numeroLivors = repositorio.ObterNumeroDeLivros();
+            return Ok(numeroLivors);
+        }
+
         [HttpGet]
         [Route("pagina{pagina:int}")]
         public IHttpActionResult Get(int pagina)

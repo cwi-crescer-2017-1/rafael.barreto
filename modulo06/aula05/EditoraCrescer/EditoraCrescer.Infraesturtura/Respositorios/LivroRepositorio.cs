@@ -20,9 +20,17 @@ namespace EditoraCrescer.Infraesturtura.Respositorios
             return livros;
         }
 
+        public int ObterNumeroDeLivros()
+        {
+            var livros = contexto.Livros.Select(x =>
+                    new { Isbn = x.Isbn, Titulo = x.Titulo, Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero })
+                    .ToList();
+            return livros.Count;
+        }
+
         public IEnumerable<dynamic> ObterPorPagina(int pagina)
         {
-            var pular = pagina - 1;
+            var pular = (pagina * 8)-8;
             var intervalo = pagina * 8;
             var livros = contexto.Livros.Select(x =>
                     new { Isbn = x.Isbn, Titulo = x.Titulo, Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero })
