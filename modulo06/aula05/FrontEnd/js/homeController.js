@@ -1,24 +1,36 @@
 
 modulo.controller('homeController',function($scope,$routeParams,LivrosService){
 
-        $scope.estaFechado = false;
+        $scope.estaFechado = false;      
         $scope.livros
         $scope.lancamentosAberto = lancamentosAberto;
-        $scope.Buscar = Buscar;
-        $scope.lancamentos                
-        lancamentos()
-        Buscar(1)
-
+        $scope.buscar = Buscar;        
+        $scope.lancamentos = lancamentos   
+        $scope. ProximaPagina =  ProximaPagina;                    
+        $scope.VoltarPagina = VoltarPagina;           
 
         function lancamentosAberto() {  
             $scope.estaFechado = !$scope.estaFechado;
-        };
+        }
 
-        function Buscar(pagina){
+        function Buscar(pagina){  
+            $scope.paginacao = pagina;          
             LivrosPorPagina(pagina);
-            console.log($scope.livros);
-            
-        }   
+            console.log($scope.livros);            
+        }
+
+        function ProximaPagina(){
+            $scope.paginacao = $scope.paginacao < 1 ? 1 : $scope.paginacao;
+             $scope.paginacao ++;
+             LivrosPorPagina($scope.paginacao);
+        }  
+
+        function VoltarPagina(){
+            debugger;
+             $scope.paginacao --;
+             LivrosPorPagina($scope.paginacao);
+        }    
+
         // Funcoes internas
 
       function LivrosPorPagina(pagina){        

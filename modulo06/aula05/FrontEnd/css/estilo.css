@@ -24,6 +24,7 @@ body{
     height: 80px;
     z-index: 1000;
     background: white;
+    border-radius: 0px 0px 15px 15px;
 }
 
 .lancamentos{
@@ -64,6 +65,10 @@ body{
         cursor: pointer;
     }
 
+    .abrir-fechar-lancamentos{
+        font-weight: bold;
+    }
+
 .livros{
     text-align: center;
     margin-top:40px;
@@ -92,9 +97,14 @@ body{
 
         .imagem img{
             height: 250px;
+            max-width: 250px;
             width: auto;
         }
 
     .descricao{
         height: 110px;
     }
+
+.paginacao{
+    text-align: center;
+}

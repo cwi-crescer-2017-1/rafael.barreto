@@ -30,8 +30,9 @@ namespace EditoraCrescer.Infraesturtura.Respositorios
 
         public IEnumerable<dynamic> ObterPorPagina(int pagina)
         {
-            var pular = (pagina * 8)-8;
-            var intervalo = pagina * 8;
+            pagina = pagina < 1 ?  1 : pagina;
+            var pular = (pagina * 9)-9;
+            var intervalo = pagina * 9;
             var livros = contexto.Livros.Select(x =>
                     new { Isbn = x.Isbn, Titulo = x.Titulo, Capa = x.Capa, Autor = x.Autor.Nome, Genero = x.Genero, Descricao = x.Descricao })
                     .OrderBy(x => x.Titulo)
