@@ -15,8 +15,7 @@ modulo.controller('homeController',function($scope,$routeParams,LivrosService){
 
         function Buscar(pagina){  
             $scope.paginacao = pagina;          
-            LivrosPorPagina(pagina);
-            console.log($scope.livros);            
+            LivrosPorPagina(pagina);            
         }
 
         function ProximaPagina(){
@@ -46,6 +45,4 @@ modulo.controller('homeController',function($scope,$routeParams,LivrosService){
       } 
 
 })
-
-
 // 
