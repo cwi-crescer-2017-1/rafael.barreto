@@ -3,11 +3,11 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Locadora.infraestrutura.Mapping
 {
-    class ProdutoAdicionalMap : EntityTypeConfiguration<ProdutoAdicional>
+    class UsuarioMap : EntityTypeConfiguration<Usuario>
     {
-        public ProdutoAdicionalMap()
+        public UsuarioMap()
         {
-            ToTable("Adicional");
+            ToTable("Usuario");
         }
     }
 }

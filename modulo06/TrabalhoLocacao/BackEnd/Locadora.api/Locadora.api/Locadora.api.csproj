@@ -91,9 +91,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\LocacaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClienteModel.cs" />
+    <Compile Include="Models\LocacaoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -107,8 +111,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Locadora.infraestrutura\Locadora.infraestrutura\Locadora.infraestrutura.csproj">
+      <Project>{8B6A49F1-B17B-4A84-814A-392872132A5D}</Project>
+      <Name>Locadora.infraestrutura</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Locadora.Dominio\Locadora.Dominio.csproj">
+      <Project>{3C9583AB-DF54-44B9-8BC6-D78CAF4D6ED1}</Project>
+      <Name>Locadora.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

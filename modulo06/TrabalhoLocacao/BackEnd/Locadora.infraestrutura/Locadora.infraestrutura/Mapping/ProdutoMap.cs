@@ -1,10 +1,5 @@
-﻿using Locadora.infraestrutura.entidades;
-using System;
-using System.Collections.Generic;
+﻿using Locadora.Dominio;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Locadora.infraestrutura.Mapping
 {

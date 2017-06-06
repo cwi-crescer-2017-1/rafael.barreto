@@ -47,16 +47,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="entidades\Cliente.cs" />
-    <Compile Include="entidades\Genero.cs" />
+    <Compile Include="Contexto.cs" />
+    <Compile Include="Mapping\ClienteMap.cs" />
+    <Compile Include="Mapping\LocacaoMap.cs" />
+    <Compile Include="Mapping\ProdutoAdicionalMap.cs" />
+    <Compile Include="Mapping\ProdutoMap.cs" />
+    <Compile Include="Mapping\ProdutoPacoteMap.cs" />
+    <Compile Include="Mapping\UsuarioMap.cs" />
+    <Compile Include="Migrations\201706061643377_CriacaoDoBanco.cs" />
+    <Compile Include="Migrations\201706061643377_CriacaoDoBanco.Designer.cs">
+      <DependentUpon>201706061643377_CriacaoDoBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706061701472_CriacaoTabelaUsuario.cs" />
+    <Compile Include="Migrations\201706061701472_CriacaoTabelaUsuario.Designer.cs">
+      <DependentUpon>201706061701472_CriacaoTabelaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706061704169_CriacaoTabelaUsuario1.cs" />
+    <Compile Include="Migrations\201706061704169_CriacaoTabelaUsuario1.Designer.cs">
+      <DependentUpon>201706061704169_CriacaoTabelaUsuario1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706062007119_Teste.cs" />
+    <Compile Include="Migrations\201706062007119_Teste.Designer.cs">
+      <DependentUpon>201706062007119_Teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\ClienteRepositorio.cs" />
+    <Compile Include="Repositorio\LocacaoRepositorio.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="repositorio\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706061643377_CriacaoDoBanco.resx">
+      <DependentUpon>201706061643377_CriacaoDoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061701472_CriacaoTabelaUsuario.resx">
+      <DependentUpon>201706061701472_CriacaoTabelaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061704169_CriacaoTabelaUsuario1.resx">
+      <DependentUpon>201706061704169_CriacaoTabelaUsuario1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706062007119_Teste.resx">
+      <DependentUpon>201706062007119_Teste.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Locadora.api\Locadora.Dominio\Locadora.Dominio.csproj">
+      <Project>{3C9583AB-DF54-44B9-8BC6-D78CAF4D6ED1}</Project>
+      <Name>Locadora.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

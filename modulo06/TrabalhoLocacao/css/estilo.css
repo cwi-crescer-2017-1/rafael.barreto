@@ -53,6 +53,15 @@
 
 .template{    
     margin-top: 22vh;
-    margin-left: 17%;         
-    background: red;        
+    margin-left: 17%;               
+}
+
+.fomulario-login{
+    border: 2px solid;
+    height: 500px;
+}
+
+.botao-login{
+    margin-top: 10px;
+    width: 150px;
 }
