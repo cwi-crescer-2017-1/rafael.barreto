@@ -10,7 +10,7 @@ namespace Locadora.infraestrutura.Repositorio
     public class ClienteRepositorio
     {
         private Contexto contexto = new Contexto();
-
+            
         public void AdicionarCliente(Cliente cliente)
         {
             contexto.Cliente.Add(cliente);

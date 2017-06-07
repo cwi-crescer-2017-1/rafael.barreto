@@ -1,0 +1,26 @@
+<div class="formulario-cadastro-cliente">
+    <form name="cadastroCliente" class="form-group" novalidate>
+        <label> Nome Do cliente</label>
+        <input type="text" class="form-control" ng-model="cliente.Nome" required>        
+        <label> Cpf</label>
+        <input type="text" class="form-control" ng-model="cliente.Cpf" required>
+        <br><input type="Radio" ng-value="0" ng-model="cliente.Sexo" required>
+        <label> masculino</label>
+        <input type="Radio" ng-value="1" ng-model="cliente.Sexo" required>        
+        <label> feminino</label>
+        <br><br><label> data Nascimento</label>
+        <input type="date" class="form-control" ng-model="cliente.DataNascimento" required>
+        <br><label> rua</label>
+        <input type="text" class="form-control" ng-model="cliente.Rua" required>
+        <label> numero</label>
+        <input type="text" class="form-control" ng-model="cliente.Numero" required>
+        <label> Cidade </label>
+        <input type="text" class="form-control" ng-model="cliente.Cidade" required>
+        <button type="submit" class="btn btn-success botao-login" ng-click="cadastrarcliente(cliente)" ng-disabled="cadastroCliente.$invalid">  
+            Cadastrar 
+        </button>      
+        <span class="mensagen-cadastrado">
+            {{mensagem}} 
+        </span>
+    </form>
+</div>

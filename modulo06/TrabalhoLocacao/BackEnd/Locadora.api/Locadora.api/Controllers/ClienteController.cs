@@ -5,16 +5,17 @@ using System.Web.Http;
 
 namespace Locadora.api.Controllers
 {
-    [RoutePrefix("api/cliente")]
+    [RoutePrefix("api/clientes")]
     public class ClienteController : ApiController
     {
         ClienteRepositorio repositorio = new ClienteRepositorio();
 
         [HttpGet]
+        [Route("listar")]
         public IHttpActionResult ListarClientes()
         {
             var clientes = repositorio.BuscarCliente();
-            return Ok(clientes);
+            return Ok(new { dados = clientes });
         }
 
         [HttpPost]
@@ -23,8 +24,7 @@ namespace Locadora.api.Controllers
         {
             var cliente = new Cliente(model.Nome, model.Cpf, model.Genero, model.DataNascimento, model.Rua, model.Numero, model.Cidade);
             repositorio.AdicionarCliente(cliente);                
-            return Ok("cadastrado com sucesso");
+            return Ok(new { mensagem = "cadastrado com sucesso" });
         }
-
     }
 }

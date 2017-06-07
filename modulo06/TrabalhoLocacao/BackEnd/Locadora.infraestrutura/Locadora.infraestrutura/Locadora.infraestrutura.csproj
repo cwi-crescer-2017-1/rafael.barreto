@@ -70,6 +70,18 @@
     <Compile Include="Migrations\201706062007119_Teste.Designer.cs">
       <DependentUpon>201706062007119_Teste.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706071749330_AdicionarColunaPrecoNaTabelaProduto.cs" />
+    <Compile Include="Migrations\201706071749330_AdicionarColunaPrecoNaTabelaProduto.Designer.cs">
+      <DependentUpon>201706071749330_AdicionarColunaPrecoNaTabelaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706071837583_removerColunaPrecotabelaProduto.cs" />
+    <Compile Include="Migrations\201706071837583_removerColunaPrecotabelaProduto.Designer.cs">
+      <DependentUpon>201706071837583_removerColunaPrecotabelaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706072011184_arrumandoIdsTabelaLocacao.cs" />
+    <Compile Include="Migrations\201706072011184_arrumandoIdsTabelaLocacao.Designer.cs">
+      <DependentUpon>201706072011184_arrumandoIdsTabelaLocacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\ClienteRepositorio.cs" />
@@ -92,6 +104,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706062007119_Teste.resx">
       <DependentUpon>201706062007119_Teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071749330_AdicionarColunaPrecoNaTabelaProduto.resx">
+      <DependentUpon>201706071749330_AdicionarColunaPrecoNaTabelaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071837583_removerColunaPrecotabelaProduto.resx">
+      <DependentUpon>201706071837583_removerColunaPrecotabelaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706072011184_arrumandoIdsTabelaLocacao.resx">
+      <DependentUpon>201706072011184_arrumandoIdsTabelaLocacao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,34 @@
+<div class="formulario-vendas">
+    <legend>Vendas</legend>
+     <form name="cadastroCliente" class="form-group" novalidate>
+         <label> Selecione o Cliente </label>
+        <select class="form-control" ng-model="novaLocacao.Cliente" ng-options="cliente.Nome for cliente in Clientes" required>
+            <option value=""> ---- Selecione o usuario ----</option>											
+        </select>
+         <label> Selecione o produto </label>  
+        <select class="form-control" ng-model="novaLocacao.Produto" ng-options="produto.Nome for produto in produtos" required>
+            <option value=""> ---- Selecione o Produto ----</option>											
+        </select>
+        <label> Selecione o pacote </label>
+        <select class="form-control" ng-model="novaLocacao.Pacote" ng-options="pacote.Nome for pacote in pacotes" required>
+            <option value=""> ---- Selecione o Pacote ----</option>	                     										
+        </select>     
+        <div>Descricao : {{novaLocacao.Pacote.Descricao}}</div>
+        <div>Valor : {{novaLocacao.Pacote.Preco}}</div>  
+        <br><label> Selecione o Adicional </label>
+        <select class="form-control" ng-model="novaLocacao.Adicional" ng-options="adicional.Nome for adicional in Adicionais">
+            <option value=""> ---- Selecione o Adicional ----</option>	                     										
+        </select>         
+        <div>Valor : {{novaLocacao.Adicional.Preco}}</div>      
+        <hr>  
+        <br>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success botao-login" ng-click="" ng-disabled="cadastroCliente.$invalid">  
+                Finalizar Venda 
+            </button> 
+        </div>
+        <div class="col-md-4 col-md-offset-4 valo-total"> 
+            Valor Total : {{0 + novaLocacao.Adicional.Preco + novaLocacao.Pacote.Preco}}
+        </div>            
+     </form>
+</div>

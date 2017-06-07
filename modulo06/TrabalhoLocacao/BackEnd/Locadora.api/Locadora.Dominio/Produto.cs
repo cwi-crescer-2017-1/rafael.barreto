@@ -9,7 +9,7 @@ namespace Locadora.Dominio
     public class Produto
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string Nome { get; set; }        
 
         private Produto() { }
 

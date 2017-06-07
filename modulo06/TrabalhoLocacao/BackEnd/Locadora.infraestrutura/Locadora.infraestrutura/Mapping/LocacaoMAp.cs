@@ -7,14 +7,17 @@ namespace Locadora.infraestrutura.Mapping
     {
         public LocacaoMap()
         {
-            HasRequired(x => x.Cliente);
-            //.HasForeignKey(x => x.IdCliente);
+            HasRequired(x => x.Cliente)
+                .WithMany()
+                .Map(x => x.MapKey("IdCliente"));
 
-            HasRequired(x => x.Produto);
-            //.HasForeignKey(x => x.IdProduto);                
+            HasRequired(x => x.Produto)
+                .WithMany()
+                .Map(x => x.MapKey("IdProduto"));
 
-            HasRequired(x => x.Pacote);            
-            //.HasForeignKey(x => x.IdPacote);
+            HasRequired(x => x.Pacote)
+                .WithMany()
+                .Map(x => x.MapKey("IdPacote"));
              
 
             ToTable("Locacao");

@@ -4,12 +4,17 @@
 
 .menu-global{
     position: fixed;
-    background: #e0dede;
+    background-image:url(http://downloads.open4group.com/wallpapers/festa-galera-vetores-bb3fd.jpg);
+    background-position: 2px;
+    background-size: cover;
     width: 100%;
-    height: 137px;
+    height: 136px;
     text-align: center;
+    color: gray;
+    font-weight: bold;
     font-size: 58px;
     font-family: 'Vibur', cursive;
+    text-shadow: 2px -2px lime;    
 }
 
     .menu-global span{
@@ -64,4 +69,13 @@
 .botao-login{
     margin-top: 10px;
     width: 150px;
+}
+
+.mensagen-cadastrado{
+    float: right;
+    margin-top: 5px;
+}
+
+.valo-total{
+    font-size: 30px;
 }

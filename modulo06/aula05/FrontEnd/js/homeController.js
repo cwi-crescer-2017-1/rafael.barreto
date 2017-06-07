@@ -45,4 +45,4 @@ modulo.controller('homeController',function($scope,$routeParams,LivrosService){
       } 
 
 })
-// 
+//  
