@@ -12,6 +12,6 @@ namespace Locadora.api.Models
         public Cliente Cliente { get; set; }
         public ProdutoPacote Pacote { get; set; }
         public Produto Produto { get; set; }
-        public List<ProdutoAdicional> Adicional { get; private set; }
+        public List<ProdutoAdicional> Adicional { get; set; }
     }   
 }

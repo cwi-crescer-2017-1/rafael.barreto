@@ -8,7 +8,7 @@ namespace Locadora.Dominio
 {
     public class Cliente
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public Genero Genero { get; set; }
@@ -28,6 +28,6 @@ namespace Locadora.Dominio
             this.Rua = rua;
             this.Numero = numero;
             this.Cidade = cidade;
-        }
+        }       
     }
 }

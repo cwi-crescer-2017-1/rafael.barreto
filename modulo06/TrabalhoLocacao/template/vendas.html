@@ -16,19 +16,21 @@
         <div>Descricao : {{novaLocacao.Pacote.Descricao}}</div>
         <div>Valor : {{novaLocacao.Pacote.Preco}}</div>  
         <br><label> Selecione o Adicional </label>
-        <select class="form-control" ng-model="novaLocacao.Adicional" ng-options="adicional.Nome for adicional in Adicionais">
-            <option value=""> ---- Selecione o Adicional ----</option>	                     										
+        <select class="form-control" ng-model="novaLocacao.Adicional" ng-options="adicional.Nome for adicional in Adicionais" multiple>	                     										
         </select>         
         <div>Valor : {{novaLocacao.Adicional.Preco}}</div>      
+        <br>
+        <label> Data de Entrega </label>
+        <input type="Date" class="form-control" ng-model="novaLocacao.DataEntrega" required>
         <hr>  
         <br>
         <div class="col-md-4">
-            <button type="submit" class="btn btn-success botao-login" ng-click="" ng-disabled="cadastroCliente.$invalid">  
+            <button type="submit" class="btn btn-success botao-login" ng-click="NovaLocacao(novaLocacao)" ng-disabled="cadastroCliente.$invalid">  
                 Finalizar Venda 
             </button> 
         </div>
         <div class="col-md-4 col-md-offset-4 valo-total"> 
-            Valor Total : {{0 + novaLocacao.Adicional.Preco + novaLocacao.Pacote.Preco}}
-        </div>            
-     </form>
+            Valor Total : {{valorTotal(novaLocacao.Adicional,novaLocacao.Pacote.Preco)}}
+        </div> 
+     </form>     
 </div>

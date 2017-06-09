@@ -16,6 +16,9 @@ modulo.config(function($routeProvider){
                 controller : 'vendasController',
                 templateUrl : 'template/vendas.html'
             })
-
+            .when('/relatorio',{
+                controller : 'relatoioController',
+                templateUrl : 'template/relatorio.html'
+            })
             .otherwise('/login')
 })

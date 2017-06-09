@@ -13,6 +13,11 @@ modulo.factory('clienteService',function($http){
         }
         
         //--------- locacao ------------------------
+
+        function CadastraLocacao(locacao){
+            return $http.post(`${urlLocacoes}cadastrar`,locacao);
+        }
+
         function BuscarProduto(){
             return $http.get(`${urlLocacoes}produtos`)
         }   
@@ -24,6 +29,10 @@ modulo.factory('clienteService',function($http){
         function BuscarAdicionais(){
             return $http.get(`${urlLocacoes}Adicionais`)
         }
+
+        function RelatorioMensal(data){
+            return $http.get(`${urlLocacoes}relatorios/${data.toISOString().split('T')[0]}`);
+        }
         
         return{
             cadastrar : CadastraCliente,
@@ -31,5 +40,6 @@ modulo.factory('clienteService',function($http){
             BuscarProduto,
             BuscarPacote,
             BuscarAdicionais,
+            CadastraLocacao,
         }
 })

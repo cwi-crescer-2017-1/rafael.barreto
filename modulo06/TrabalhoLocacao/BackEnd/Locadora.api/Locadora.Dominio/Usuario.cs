@@ -10,6 +10,7 @@ namespace Locadora.Dominio
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+        public string Senha { get; set; }
         public bool Gerente { get; set; }
 
         private Usuario() { }

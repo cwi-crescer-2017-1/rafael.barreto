@@ -21,7 +21,7 @@ namespace Locadora.infraestrutura.Repositorio
         {
             var listaCliente = contexto.Cliente.ToList();
             return listaCliente;
-        }
+        }       
         
     }
 }

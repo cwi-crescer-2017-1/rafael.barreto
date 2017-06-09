@@ -82,10 +82,23 @@
     <Compile Include="Migrations\201706072011184_arrumandoIdsTabelaLocacao.Designer.cs">
       <DependentUpon>201706072011184_arrumandoIdsTabelaLocacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706081503552_adicionarColunaValorTotalNaLocacao.cs" />
+    <Compile Include="Migrations\201706081503552_adicionarColunaValorTotalNaLocacao.Designer.cs">
+      <DependentUpon>201706081503552_adicionarColunaValorTotalNaLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081656465_locacaoTornarDataEntregueParaPoderSerNula.cs" />
+    <Compile Include="Migrations\201706081656465_locacaoTornarDataEntregueParaPoderSerNula.Designer.cs">
+      <DependentUpon>201706081656465_locacaoTornarDataEntregueParaPoderSerNula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706090016189_AdicionarCampoSenha.cs" />
+    <Compile Include="Migrations\201706090016189_AdicionarCampoSenha.Designer.cs">
+      <DependentUpon>201706090016189_AdicionarCampoSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\ClienteRepositorio.cs" />
     <Compile Include="Repositorio\LocacaoRepositorio.cs" />
+    <Compile Include="Repositorio\UsuarioRepositorio.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -113,6 +126,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706072011184_arrumandoIdsTabelaLocacao.resx">
       <DependentUpon>201706072011184_arrumandoIdsTabelaLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081503552_adicionarColunaValorTotalNaLocacao.resx">
+      <DependentUpon>201706081503552_adicionarColunaValorTotalNaLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081656465_locacaoTornarDataEntregueParaPoderSerNula.resx">
+      <DependentUpon>201706081656465_locacaoTornarDataEntregueParaPoderSerNula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706090016189_AdicionarCampoSenha.resx">
+      <DependentUpon>201706090016189_AdicionarCampoSenha.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

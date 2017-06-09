@@ -2,7 +2,10 @@
 modulo.controller('vendasController',function($scope,$routeParams,$rootScope,clienteService){
 
          $rootScope.mostrar = true;
-         $scope.ListarClientes = ListarClientes
+         $scope.ListarClientes = ListarClientes;
+         $scope.NovaLocacao = NovaLocacao;
+         $scope.valorTotal = valorTotal;         
+
          ListarClientes();
          buscarProdutos();
          buscarPacotes();
@@ -10,8 +13,21 @@ modulo.controller('vendasController',function($scope,$routeParams,$rootScope,cli
 
         function ListarClientes(){
             buscarClientes();
+        }   
+
+        function NovaLocacao(NovaLocacao){
+            criarLocacao(NovaLocacao);
+        }     
+
+        function valorTotal(adicionais,preco){
+            let total = preco || 0;
+            if(!angular.isArray(adicionais))
+                return total;
+            
+            adicionais.forEach( item => total += item.Preco);
+            return total;
+
         }
-        
 
          //funcoes internas
 
@@ -40,4 +56,9 @@ modulo.controller('vendasController',function($scope,$routeParams,$rootScope,cli
              })
          }
 
+         function criarLocacao(locacao){
+             clienteService.CadastraLocacao(locacao).then(function(response){
+                 $scope.mensagem = response.data.dados;
+             })
+         }
 })

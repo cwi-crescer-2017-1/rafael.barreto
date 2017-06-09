@@ -6,6 +6,7 @@ using System.Web.Http;
 namespace Locadora.api.Controllers
 {
     [RoutePrefix("api/clientes")]
+    [BasicAuthorization]
     public class ClienteController : ApiController
     {
         ClienteRepositorio repositorio = new ClienteRepositorio();
