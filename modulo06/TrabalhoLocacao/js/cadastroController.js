@@ -1,8 +1,9 @@
 
 
-modulo.controller('cadastroController',function($scope,$rootScope,$routeParams,clienteService){
+modulo.controller('cadastroController',function($scope,$rootScope,$routeParams,$localStorage,clienteService,authService){
 
         $rootScope.mostrar = true;
+        $scope.auth = authService;
         $scope.cadastrarcliente = cadastrarcliente
         $scope.cliente;
 
@@ -15,9 +16,8 @@ modulo.controller('cadastroController',function($scope,$rootScope,$routeParams,c
         //funcoes internas
         
         function cadastrar(cliente){
-            clienteService.cadastrar(cliente).then(function(response){
+            clienteService.cadastrar(cliente,localStorage).then(function(response){
                 $scope.mensagem = response.data.mensagem;
             })
         }
-
 })

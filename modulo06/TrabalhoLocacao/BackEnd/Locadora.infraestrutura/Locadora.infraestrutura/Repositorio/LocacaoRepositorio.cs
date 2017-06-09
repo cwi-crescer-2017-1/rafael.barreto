@@ -17,14 +17,59 @@ namespace Locadora.infraestrutura.Repositorio
             }
             contexto.Entry(locacao.Pacote).State = System.Data.Entity.EntityState.Unchanged;
             contexto.Entry(locacao.Produto).State = System.Data.Entity.EntityState.Unchanged;           
-            contexto.Entry(locacao.Cliente).State = System.Data.Entity.EntityState.Unchanged;
+            contexto.Entry(locacao.Cliente).State = System.Data.Entity.EntityState.Unchanged;            
             contexto.Locacao.Add(locacao);
             contexto.SaveChanges();            
         }
 
-        public void ObterLocacoesPorData(DateTime data)
+        public IEnumerable<dynamic> ObterLocacoesPorData(DateTime data)
         {
-            
+            var dataCalculo = data.AddDays(-30);
+            return contexto.Locacao
+                    .Where(c => c.DataLocacao >= dataCalculo && c.DataLocacao < data && c.DataEntregue != null)
+                    .Select(x => new
+                        {
+                            id = x.Id,
+                            nome = x.Cliente.Nome,
+                            pacote = x.Pacote.Nome,
+                            cidade = x.Cliente.Cidade,
+                            rua = x.Cliente.Rua,
+                            numero = x.Cliente.Numero,
+                            dataLocacao = x.DataLocacao,
+                            dataEntrega = x.DataEntrega,
+                            dataEtregue = x.DataEntregue,
+                            juros = x.Juros,
+                            valorTotal = x.ValorComJuros,
+                            preco = x.ValorTotal
+                        }).ToList();
+        }
+
+        public object naoEntregue()
+        {
+            return contexto.Locacao
+                    .Where(c => c.DataEntregue == null)
+                    .Select(x => new
+                    {
+                        id = x.Id,
+                        nome = x.Cliente.Nome,
+                        pacote = x.Pacote.Nome,
+                        cidade = x.Cliente.Cidade,
+                        rua = x.Cliente.Rua,
+                        numero = x.Cliente.Numero,
+                        dataLocacao = x.DataLocacao,
+                        dataEntrega = x.DataEntrega,
+                        dataEtregue = x.DataEntregue,
+                        juros = x.Juros,
+                        valorTotal = x.ValorComJuros,
+                        preco = x.ValorTotal
+                    }).ToList();
+
+        }
+
+        public void DevolverPedido(Locacao locacao)
+        {
+            contexto.Entry(locacao).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
         }
 
         public IEnumerable<dynamic> ObterLocacoes()
@@ -43,13 +88,34 @@ namespace Locadora.infraestrutura.Repositorio
             return locacao;
         }
 
+        public void DevolverAdicionais(Locacao locacao)
+        {
+            foreach(var l in locacao.Adicional)
+            {
+                foreach(var c in contexto.Adicional)
+                {
+                   if(c.Id == l.Id)
+                    {
+                        c.Quantidade += l.Quantidade;
+                    }
+                }
+            }
+        }
+
+        public Locacao ObterLocacaoPorId(int id)
+        {
+            var locacao =  contexto.Locacao.Where(l => l.Id == id).FirstOrDefault();
+            return locacao;
+        }
+
         //-------------- pacotes metodo -----------------
-        
+
         public IEnumerable<ProdutoAdicional> BuscarAdicionais()
         {
             var adicional = contexto.Adicional.ToList();
             return adicional;
         }
+
 
         #region metodos cliente
         public Cliente BuscarClientePorId(int id)

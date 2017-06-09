@@ -1,10 +1,12 @@
 <div class="col-md-7 col-md-offset-2 formulario-login">
     <form class="form-group">
         <legend>Login</legend>
-        <label> Usuario </label>
-        <input type="text"  class="form-control">
-        <label> Senha </label>
-        <input type="text"  class="form-control">
-        <input type="button" class="btn btn-success botao-login" value="logar">
+        <label > Usuario </label>
+        <input ng-model = "usuario.email" type="text"  class="form-control">
+        <label  > Senha </label>
+        <input ng-model="usuario.senha" type="password"  class="form-control">
+        <button class="btn btn-success botao-login" ng-click="login(usuario)">
+            logar
+        </button>
     </form>
 </div>

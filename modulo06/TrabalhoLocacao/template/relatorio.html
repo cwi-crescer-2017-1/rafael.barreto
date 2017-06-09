@@ -1,15 +1,31 @@
 <form class="form-group" novalidate>
     <input type="Date" class="form-control" ng-model="dataBusca" required>
-    <button type="submit" class="btn btn-success botao-login" ng-click="" ng-disabled="cadastroCliente.$invalid">
+    <button type="submit" class="btn btn-success botao-login" ng-click="RelatorioPorData(dataBusca)" ng-disabled="cadastroCliente.$invalid">
         Buscar
     </button>   
-    <table class="table">
+    <button class="btn btn-success botao-login" ng-click="listarEmAberto()" >
+        buscar em aberto
+    </button>
+    <br>
+    <br>
+    <table class="table relatorio-tabela">
         <tr>
-            <td>cliente</td>
-            <td>pedido</td>
-            <td>data retirada</td>
-            <td>data entrega</td>
-            <td>data entregue</td>
+            <td>Cliente</td>
+            <td>Pacote</td>
+            <td>Data Locacao</td>
+            <td>Data a ser entregue</td>
+            <td>Data Entregue</td>
+            <td>Valor </td>  
+            <td></td>        
         </tr>
-    </table>
+        <tr ng-repeat="relatorio in relatorios">
+            <td>{{relatorio.nome}}</td>
+            <td>{{relatorio.pacote}}</td>
+            <td>{{relatorio.dataLocacao}}</td>
+            <td>{{relatorio.dataEntrega}}</td>
+            <td>{{relatorio.dataEntregue}}</td>
+            <td>{{relatorio.preco}}</td>            
+            <td><button ng-click="Devolver(relatorio)"> Devolver </button></td>            
+        </tr>
+    </table>     
 </form>

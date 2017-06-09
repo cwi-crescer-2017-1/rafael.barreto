@@ -15,7 +15,12 @@ modulo.factory('clienteService',function($http){
         //--------- locacao ------------------------
 
         function CadastraLocacao(locacao){
+            debugger
             return $http.post(`${urlLocacoes}cadastrar`,locacao);
+        }
+
+        function Devolucao(locacao){
+            return $http.put(`${urlLocacoes}devolucao/${locacao.id}`,locacao);
         }
 
         function BuscarProduto(){
@@ -30,8 +35,13 @@ modulo.factory('clienteService',function($http){
             return $http.get(`${urlLocacoes}Adicionais`)
         }
 
-        function RelatorioMensal(data){
+        function RelatorioMensal(data){           
             return $http.get(`${urlLocacoes}relatorios/${data.toISOString().split('T')[0]}`);
+        } 
+
+        function relatorioEmaberto(){
+            debugger
+            return $http.get(`${urlLocacoes}/relatorios/naoentregue`);
         }
         
         return{
@@ -41,5 +51,8 @@ modulo.factory('clienteService',function($http){
             BuscarPacote,
             BuscarAdicionais,
             CadastraLocacao,
+            RelatorioMensal,
+            Devolucao,
+            relatorioEmaberto
         }
 })

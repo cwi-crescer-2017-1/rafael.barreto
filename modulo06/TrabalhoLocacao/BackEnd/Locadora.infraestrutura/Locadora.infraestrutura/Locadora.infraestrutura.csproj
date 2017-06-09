@@ -94,6 +94,14 @@
     <Compile Include="Migrations\201706090016189_AdicionarCampoSenha.Designer.cs">
       <DependentUpon>201706090016189_AdicionarCampoSenha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706091344286_adicionarColunaJurosEPrecoComJuros.cs" />
+    <Compile Include="Migrations\201706091344286_adicionarColunaJurosEPrecoComJuros.Designer.cs">
+      <DependentUpon>201706091344286_adicionarColunaJurosEPrecoComJuros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706091834378_arrumandoNomeDaColunaValorTotal.cs" />
+    <Compile Include="Migrations\201706091834378_arrumandoNomeDaColunaValorTotal.Designer.cs">
+      <DependentUpon>201706091834378_arrumandoNomeDaColunaValorTotal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\ClienteRepositorio.cs" />
@@ -135,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706090016189_AdicionarCampoSenha.resx">
       <DependentUpon>201706090016189_AdicionarCampoSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706091344286_adicionarColunaJurosEPrecoComJuros.resx">
+      <DependentUpon>201706091344286_adicionarColunaJurosEPrecoComJuros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706091834378_arrumandoNomeDaColunaValorTotal.resx">
+      <DependentUpon>201706091834378_arrumandoNomeDaColunaValorTotal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

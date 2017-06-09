@@ -1,5 +1,5 @@
 
-modulo.controller('vendasController',function($scope,$routeParams,$rootScope,clienteService){
+modulo.controller('vendasController',function($scope,$routeParams,$rootScope,clienteService,$localStorage){
 
          $rootScope.mostrar = true;
          $scope.ListarClientes = ListarClientes;
@@ -15,7 +15,7 @@ modulo.controller('vendasController',function($scope,$routeParams,$rootScope,cli
             buscarClientes();
         }   
 
-        function NovaLocacao(NovaLocacao){
+        function NovaLocacao(NovaLocacao){           
             criarLocacao(NovaLocacao);
         }     
 
