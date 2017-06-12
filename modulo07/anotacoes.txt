@@ -1,0 +1,68 @@
+erro  12514
+C:\Oracle\oraclexe\app\oracle\product\11.2.0\server\network\ADMIN
+abrir tnsnames.ora
+(ADDRESS = (PROTOCOL = TCP)(HOST = 127.0.0.1)(PORT = 1521)) 
+mudar o hots 127.0.0.1 -> para nome do pc ex : NB-002683
+sqlnet.ora
+mudar o NTS para none.
+-------------------------------------------------------------------
+criar um tablespace para usuario antes de comecar a usar.
+ex:
+    sql 
+    Create tablespace CRESCER17DAT
+    datafile 'C:\oracle\oraclexe\app\oracle\oradata\XE\crescer17dat01.dbf'
+    size 100m
+    autoextend on
+    next 100m
+    maxsize 2048m
+
+--------------------------------------------------------------------
+
+criar usuario 
+Create user CRESCER2017 identified by CRESCER2017 default tablespace CRESCER17DAT;
+                                                                        aponta para esta tablespace
+Create user CRESCER2017 identified by CRESCER2017;
+            usuario                     senha
+
+
+permissoes para usuario
+grant connect, resource, create view to CRESCER2017
+
+apontar usuario para um tablespace
+alter user CRESCER2017 default tablespace CRESCER17DAT;
+--------------------------------------------------------------------
+
+oracle nao e autocommit, ou seje sepre apos executar algo tem que commitar as alteracoes;
+comandos em cima de tabela tem autocommit;
+
+comandos oracle
+
+oracle so usa sequencia , nao contem autoincremento;
+create sequence SQPessoa; --> cira um campo para ser usado como sequencia 
+
+insert into pessoa(IDPessoa,nome)
+values(SQPessoa.nextval, '$$$$'); --> inserir dados usando a sequencia.
+
+commit, rollback, 
+
+restaurar backup --> 
+
+------------- exemplo comandos ----------------------
+CREATE TABLE Pessoa(
+  IDPessoa integer not null,
+  Nome varchar2(30) not null,
+  constraint PK_Pessoa primary key(IDPessoa)
+);
+
+create sequence SQPessoa;
+
+insert into pessoa(IDPessoa,nome)
+values(SQPessoa.nextval, '$$$$');
+
+select * from Pessoa;
+
+commit;
+
+----------- comandos para importar backup ---------------------
+
+create directory ORACLE_DUMP as 'c:\oracle\DATAPUMP'; --> cria o diretorio virtual.
