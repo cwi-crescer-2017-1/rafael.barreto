@@ -78,3 +78,26 @@ grant select on Tabela To tabela que vai ter permissao para fazer consulta;
 
 CREATE VIEW nome da view As -> aqui vai a consulta.
 CREATE OR REPLACE --> usado para atualizar uma view
+
+--------------------- pl/sql usado para processar dados em tabelas ---------------------------
+
+select 
+into
+from
+
+if
+elsif
+else
+end if
+
+while condicao LOOP
+END LOOP
+
+FOR variavel indice IN condiacao LOOP
+END LOOP
+
+EXCEPTION
+  when tipo de erro   
+
+FOR variavel IN cursor LOOP  
+ENDLOOP
