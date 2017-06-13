@@ -66,3 +66,15 @@ commit;
 ----------- comandos para importar backup ---------------------
 
 create directory ORACLE_DUMP as 'c:\oracle\DATAPUMP'; --> cria o diretorio virtual.
+
+----------------------------------------------------------------
+user_tables -> last analized , estatiticas do banco, pode afetar no tempo de resposta de consulta.
+EXEC dbms_stats.gather_schema_stats( USER); --> atualiza a estatitica do oracle, ajudando a otimizar as query;
+
+add_months(trunc(sysdate), -4) para pegar 4meses atras
+sysdate --> busca a data no sistema.
+trunc --> trunca o valor arredondando para baixo sempre.
+grant select on Tabela To tabela que vai ter permissao para fazer consulta;
+
+CREATE VIEW nome da view As -> aqui vai a consulta.
+CREATE OR REPLACE --> usado para atualizar uma view
