@@ -79,7 +79,15 @@ grant select on Tabela To tabela que vai ter permissao para fazer consulta;
 CREATE VIEW nome da view As -> aqui vai a consulta.
 CREATE OR REPLACE --> usado para atualizar uma view
 
+initcap -> coloca em maiusculo somente a primeira letra de cada palavra;
+
 --------------------- pl/sql usado para processar dados em tabelas ---------------------------
+
+toda chave estrangeira deve ter indice ;
+todas colunas de consulta devem ter indices;
+como regra na criacao do banco sempre criar indices para as chaves estrangeiras;
+verificar tabelas se vai ter mais consultas ou insercoes pois com o tempo o indice pesa na insercao de dados;
+nomalmente commit nao fica dentro das rotinas;
 
 select 
 into
@@ -101,3 +109,34 @@ EXCEPTION
 
 FOR variavel IN cursor LOOP  
 ENDLOOP
+
+
+---------------------------------------------- procedure ---------------------------------------------
+utilizada quando for feito manipulacao de dados, insercao , search.......
+
+exemplo : 
+CREATE PROCEDURE PRIMEIRA_PROC AS
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Minha primeira PROCEDURE!!!');
+END;
+
+exec PRIMEIRA_PROC; --> executa procedure;
+
+BEGIN 
+  PRIMEIRA_PROC
+END --> tbm executa uma procedure;
+
+------------------------------------------------ function -----------------------------------------------
+
+sempre retorna uma valor
+
+CREATE FUNCTION PRIMEIRA_FUNC RETURN varchar2 AS
+BEGIN
+
+
+
+------------------------------------------------ package ------------------------------------------------
+
+utilizado para fazer pacotes com varias procedures ou codigos.
+
+
