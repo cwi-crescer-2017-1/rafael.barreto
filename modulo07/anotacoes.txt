@@ -63,9 +63,14 @@ select * from Pessoa;
 
 commit;
 
+desc nome da tabela --> descricao da tabela;
+
+with (nolock) --> utilizado caso tenha lock
+
 ----------- comandos para importar backup ---------------------
 
 create directory ORACLE_DUMP as 'c:\oracle\DATAPUMP'; --> cria o diretorio virtual.
+Impdp system/oracle@xe schemas=MEGASENA directory=ORACLE_DUMP dumpfile=MEGASENA logfile=ImportMEGASENA-2017 --> comando para importar o banco 
 
 ----------------------------------------------------------------
 user_tables -> last analized , estatiticas do banco, pode afetar no tempo de resposta de consulta.
@@ -132,8 +137,6 @@ sempre retorna uma valor
 
 CREATE FUNCTION PRIMEIRA_FUNC RETURN varchar2 AS
 BEGIN
-
-
 
 ------------------------------------------------ package ------------------------------------------------
 
