@@ -1,0 +1,18 @@
+
+.substring
+
+.replace --> tentar usar primeiro antes de usar substring;
+
+.split
+
+stringbuilder --> thread safe,
+
+stringbuilder.append --> adiciona string ao final 
+    insert --> insere numa posicao especifica
+
+stringbuffer --> igual ao stringbuilder porem sincronizado (thread safe);
+
+simpleDataFormat --> usado para criar data
+
+Calendar --> classe para manipulacao de tempo
+

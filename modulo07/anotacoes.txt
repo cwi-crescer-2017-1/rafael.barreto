@@ -70,6 +70,7 @@ with (nolock) --> utilizado caso tenha lock
 ----------- comandos para importar backup ---------------------
 
 create directory ORACLE_DUMP as 'c:\oracle\DATAPUMP'; --> cria o diretorio virtual.
+
 Impdp system/oracle@xe schemas=MEGASENA directory=ORACLE_DUMP dumpfile=MEGASENA logfile=ImportMEGASENA-2017 --> comando para importar o banco 
 
 ----------------------------------------------------------------
