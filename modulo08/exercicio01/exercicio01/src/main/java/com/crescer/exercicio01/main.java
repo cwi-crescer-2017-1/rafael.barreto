@@ -18,7 +18,7 @@ public class main {
         Calendario calendario = new Calendario();
         Date data = new Date();        
         Date data2 = new Date(89,0,04);        
-        System.out.println("string vazia : " + teste.isEmpty(""));
+        System.out.println("string vazia : " + teste.isEmpty(null));
         System.out.println("string invertida : " + teste.inverter("rafael"));
         System.out.println("numero de vogais : " + teste.contaVogais("Rafael"));
         System.out.println("e palindromo : " + teste.isPalindromo("rafael"));

@@ -14,7 +14,7 @@ public class Exercicio01 implements StringUtils {
     @Override
     public boolean isEmpty(String string) {
        
-        if(string.trim().isEmpty() || string == null){
+        if(string == null || string.trim().isEmpty()){
             return true;
         }
         else{
@@ -49,7 +49,7 @@ public class Exercicio01 implements StringUtils {
     @Override
     public boolean isPalindromo(String string) {       
         String palavraInvertida = inverter(string);
-        boolean palindromo = palavraInvertida.equals(string);            
+        boolean palindromo = palavraInvertida.equalsIgnoreCase(string);            
         return palindromo;
     }
     

@@ -16,3 +16,27 @@ simpleDataFormat --> usado para criar data
 
 Calendar --> classe para manipulacao de tempo
 
+optional.ofNullable.
+
+stream() -->
+
+
+---------  file writer -----------
+fileWriter("ajsdjsd",true) --> apenda arquivo no final.
+
+append --> adiciona texto ao buffer
+
+newlline --> adiciona sempre em uma nova linha
+
+flush --> gravar
+------------------------- manipulacao de arquivo ------------------------------------
+
+adicionar Dependencia
+
+    <dependencies>
+        <dependency>
+            <groupId></groupID>
+            <artifactId></artifactID>
+            <version></version>
+        </dependency>
+    </dependencies>
