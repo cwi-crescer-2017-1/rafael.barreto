@@ -29,6 +29,8 @@ public class ReaderUtilsImp implements ReaderUtils {
                 while((linhaAtual = buffer.readLine()) != null){
                     texto.append(linhaAtual+"\n");
                 }
+                buffer.close();
+                file.close();
             }catch(Exception e){
                 System.out.println(e);
             }
