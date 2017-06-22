@@ -6,23 +6,18 @@ mudar o hots 127.0.0.1 -> para nome do pc ex : NB-002683
 sqlnet.ora
 mudar o NTS para none.
 -------------------------------------------------------------------
-criar um tablespace para usuario antes de comecar a usar.
-ex:
-    sql 
-    Create tablespace CRESCER17DAT
-    datafile 'C:\oracle\oraclexe\app\oracle\oradata\XE\crescer17dat01.dbf'
-    size 100m
-    autoextend on
-    next 100m
-    maxsize 2048m
-
---------------------------------------------------------------------
 
 criar usuario 
-Create user CRESCER2017 identified by CRESCER2017 default tablespace CRESCER17DAT;
-                                                                        aponta para esta tablespace
-Create user CRESCER2017 identified by CRESCER2017;
-            usuario                     senha
+
+  Create tablespace AULAJAVADAT 
+  datafile 'C:\oracle\oraclexe\app\oracle\oradata\XE\aulajavadat.dbf' 
+  size 100m 
+  autoextend on 
+  next 100m 
+  maxsize 2048m;
+
+  Create user AULAJAVA identified by AULAJAVA default tablespace AULAJAVADAT;
+  grant connect, resource, create view to AULAJAVA;
 
 
 permissoes para usuario
