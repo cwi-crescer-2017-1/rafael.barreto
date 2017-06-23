@@ -20,6 +20,15 @@ optional.ofNullable.
 
 stream() -->
 
+metadata -->
+
+getObject-->
+
+resultSet-->
+
+em.find(classe,id) --> busca no banco na onde a tabela e do nome da classe e o id;
+
+
 
 ---------  file writer -----------
 fileWriter("ajsdjsd",true) --> apenda arquivo no final.
