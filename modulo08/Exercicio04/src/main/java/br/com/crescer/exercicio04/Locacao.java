@@ -5,15 +5,34 @@
  */
 package br.com.crescer.exercicio04;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 /**
  *
  * @author usuario
  */
 public class Locacao {
+    @Id
+    @Basic(optional = false)
+    @Column(name = "ID")
     int Id;
-    long ValorTotal;
+    
+    @Basic(optional = false)
+    @Column(name = "VALOR_TOTAL")
+    long ValorTotal;    
+    
+    @Basic(optional = false)
+    @Column(name = "ID_FUNCIONARIO")
     int FuncionarioId;
+    
+    @Basic(optional = false)
+    @Column(name = "ID_CLIENTE")
     int ClienteId;
+    
+    @Basic(optional = false)
+    @Column(name = "ID_VIDEO")
     int VideId;
 
     public Locacao(int Id, long ValorTotal, int FuncionarioId, int ClienteId, int VideId) {
