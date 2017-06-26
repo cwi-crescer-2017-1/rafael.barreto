@@ -22,7 +22,8 @@ public class CidadeImp implements CidadeDao {
 
     @Override
     public void insert(Cidade cidade) {
-        try (final PreparedStatement preparedStatement = ConnectionsUtils.getConnection().prepareStatement(INSERT_CIDADE)) {
+        try (final PreparedStatement preparedStatement 
+                = ConnectionsUtils.getConnection().prepareStatement(INSERT_CIDADE)) {
             preparedStatement.setInt(1, cidade.getId());
             preparedStatement.setString(2, cidade.getNome());
             preparedStatement.setInt(3, cidade.getEstado());
