@@ -1,3 +1,14 @@
+javaFX - desktop
+electron - javascript
+reroko -- verificar.
+spark -- java
+
+-------------------------- atalhos --------------------------
+Cntrl + Espaco --> mostra overrides.
+
+
+-------------------------/ atalhos ---------------------------
+
 
 .substring
 
@@ -54,3 +65,18 @@ adicionar Dependencia
 ---------------------------------------------------------------------------------
 
 ACID --> pesquisar;
+
+java H2 --> teste;
+------------------------------ glassfish ----------------------------------------
+
+servidor de aplicacoes
+
+----------------------------- servlet -------------------------------------------
+
+melhor utilizacao em upload de arquivo ou download de arquivo com tempo de resposta alto.
+servlet mantem sempre o estado do objeto.
+
+--------------------------- stateless --------------------------------------------
+@stateless
+@EJB
+@persistenceContext
