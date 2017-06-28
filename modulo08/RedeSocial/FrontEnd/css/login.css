@@ -1,0 +1,30 @@
+
+.login{
+    position: relative;
+    top: 140px;
+    background: rgba(0,0,0, 0.9);
+    height: 400px;
+    border-radius: 10px;
+    text-align: center;
+    color: yellow;
+}
+
+.usuario-login{
+    margin: 60px 0 10px 0;
+}
+
+.senha-login{
+    margin: 10px 0;
+}
+
+.botao-login{    
+    margin-top: 30px;    
+}
+
+    .botao-login .btn-login{
+        width: 100%;
+    }
+
+.cadastrar{    
+    margin: 20px 0 0 0;
+}

@@ -1,0 +1,26 @@
+*{
+
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: url(http://greywolf-graphics.com/images/boku-no-hero-academia-wallpaper/boku-no-hero-academia-wallpaper-6.jpg);    
+    background-size: cover;
+}
+
+.navegacao{
+    position: fixed;
+    height: 80px;
+    width: 100vw;
+    background:rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+.navegacao h1{    
+    color: yellow;  
+    font-family: 'Frijole', cursive;  
+    font-size: 48px;  
+    margin-top: 5px;
+    text-shadow: 4px 2px black;  
+}
