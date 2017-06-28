@@ -2,6 +2,10 @@ javaFX - desktop
 electron - javascript
 reroko -- verificar.
 spark -- java
+flyway
+liquidbase
+
+
 
 -------------------------- atalhos --------------------------
 Cntrl + Espaco --> mostra overrides.
@@ -80,3 +84,194 @@ servlet mantem sempre o estado do objeto.
 @stateless
 @EJB
 @persistenceContext
+
+------------------------------ exemplo mapeamento many to many ----------------------------------------
+
+ @ManyToMany
+    @JoinTable(name = "grupo_usuario", 
+            joinColumns = {
+                @JoinColumn(name = "id_grupo")
+            }, 
+            inverseJoinColumns = {
+                @JoinColumn(name = "id_usuario")
+            }
+    )
+    private Set<Usuario> usuarios;
+
+--------------------------------------------------------------------------------------------------------
+
+managed bean --> e o cara que gerencia tela no jsf;
+viewScoped --> enquanto a tela estiver aberta no lado do cliente mantem a tela aberta no servidor tbm;
+sessionScoped --> enquanto tiver uma sessao ativa tem uma estancia para a sessao
+aplicationScoped --> enquanto tiver uma aplicacao ativa tem uma estancia para cada aplication;
+
+
+
+---------------------------------------------------------------------------------------------------------
+dao
+dto
+
+process validations
+
+toda comunicacao entre cliente e servicor e feito pelo metodo post
+
+filtro de seguranca.
+
+herokuapp.com
+
+---------------------------------------- Spring BOOT------------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.4.RELEASE</version>
+    </parent>
+
+    <groupId>br.com.crescer</groupId>
+    <artifactId>spring-crescer-web</artifactId>
+    <version>1.0.0.0</version>
+
+    <!--<packaging>war</packaging>-->
+    <name>spring-crescer-web</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.3</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories> 
+        <repository>
+            <id>codelds</id>
+            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+        </repository>
+    </repositories>
+
+</project>
+
+--------------------------------------------------------------------------------------------------------
+
+Criando uma classe para iniciar o projeto.
+package br.com.crescer.aula7;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * @author Carlos H. Nonnemacher
+ */
+@SpringBootApplication --> utilizado para dizer que e uma aplicacao spring
+public class Run {
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(AppRun.class, args);
+    }
+
+}
+
+--------------------------------------application properties-----------------------------------------------------
+
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.username=crescer
+spring.datasource.password=crescer
+# definições do hibernate
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.datasource.initialize=false
+spring.jpa.hibernate.show_sql=true
+spring.jpa.hibernate.format_sql=true
+
+------------------------------------------- Controller ----------------------------------------------------
+
+restcontroller e controller sao os beans --> controller serve para mapeamento de url e a rest controller
+para mapeamento de API;
+
+diferenca entre controller e restcontroller e que a restcontroller nao precisa do @responsebody
+quando for uma controller precisa colocar o @responsebody
+
+pode se delegar uma url especifica para a controller inteira usando o @requestMapping logo abaixo de
+@controller
+
+
+
+--------------------------------------------- Autowired ----------------------------------------------------------
+
+injecao de Dependencia
+
+----------------------------------------------Service --------------------------------------------------------
+
+É outro esteriótipo do spring que no permite criar classes para definir nelas regras do negocio.
+
+--------------------------------------------component --------------------------------------------------------
+
+É outro esteriótipo do spring que no permite criar classes para definir nelas regras do negocio.
+
+
+---------------------------------------- application.properties --------------------------------------------
+
+pode conter varios profiles, mesclando quando e chamado.
+
+-----------------------------------------messages.properties-----------------------------------------------------
+
+Arquivo contem as definições da internacionalização, similar ao do JSF.
+
+--------------------------------------------repositorio ----------------------------------------------------
+
+camada de banco para salvar os dados.
+
+-------------------------------------------Spring Data -----------------------------------------------------
+
+------------------------------------------ Repository ------------------------------------------------------
+
+Repository é um interface que por magia cria mantem um transação para cada metódo definido.
+
+---------------------------------------- CrudRepository ----------------------------------------------------
+
+Assim com o Repository o crud também é uma interface mas que nos traz métodos 
+basicos para inclusão, exclusão, listar
+
+------------------------------------------ @Query -----------------------------------------------------------
+
+Anotação onde podemos definir nossa query.
+
+---------------------------------- PagingAndSortingRepository ----------------------------------------------
+
+Para usarmos paginação assim como um repositório o spring data prove uma interface 
+que estende o CrudRepository.
