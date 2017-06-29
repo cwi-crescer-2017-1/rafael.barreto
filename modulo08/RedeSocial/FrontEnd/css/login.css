@@ -8,6 +8,9 @@
     text-align: center;
     color: yellow;
 }
+    .login form input{
+        text-align: center;
+    }
 
 .usuario-login{
     margin: 60px 0 10px 0;

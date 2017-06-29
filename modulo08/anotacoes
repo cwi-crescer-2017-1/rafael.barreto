@@ -275,3 +275,12 @@ Anotação onde podemos definir nossa query.
 
 Para usarmos paginação assim como um repositório o spring data prove uma interface 
 que estende o CrudRepository.
+
+--------------------------------------------------------------------------------------------------------
+mapear o banco;
+
+nova classe -> classes de entidades de banco.
+
+aba debugge -> pontos de interrupcao -> tipo de interrupcao -> nome da classe de excessao
+
+httpRendler --> tratar exception do banco
