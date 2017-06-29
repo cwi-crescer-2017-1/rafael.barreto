@@ -5,15 +5,14 @@
  */
 package br.com.crescer.exerciciocrud.Repositorio;
 
-import br.com.crescer.exerciciocrud.entidades.Genero;
+import br.com.crescer.exerciciocrud.entidades.Video;
 import java.io.Serializable;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author rafael.barreto
  */
-public interface GeneroRepositorio extends CrudRepository<Genero, Long>{ 
+public interface VideoRepositorio extends CrudRepository<Video, Long>{
     
 }

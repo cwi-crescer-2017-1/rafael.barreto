@@ -19,16 +19,7 @@ public class Video {
     int Idgenero;
     int QuantidadeEstoque;
     Date DataLancamento;
-
-    public Video(String nome, int Id, long Valor, String Duracao, int Idgenero, int QuantidadeEstoque, Date DataLancamento) {
-        this.nome = nome;
-        this.Id = Id;
-        this.Valor = Valor;
-        this.Duracao = Duracao;
-        this.Idgenero = Idgenero;
-        this.QuantidadeEstoque = QuantidadeEstoque;
-        this.DataLancamento = DataLancamento;
-    }
+   
 
     public String getNome() {
         return nome;

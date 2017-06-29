@@ -5,9 +5,8 @@
  */
 package br.com.crescer.exerciciocrud.services;
 
-
-import br.com.crescer.exerciciocrud.Repositorio.GeneroRepositorio;
-import br.com.crescer.exerciciocrud.entidades.Genero;
+import br.com.crescer.exerciciocrud.Repositorio.VideoRepositorio;
+import br.com.crescer.exerciciocrud.entidades.Video;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,18 +15,16 @@ import org.springframework.stereotype.Service;
  *
  * @author rafael.barreto
  */
-
 @Service
-public class GeneroService {
-
-    @Autowired            
-    GeneroRepositorio generoRepositorio;    
-
-    public List<Genero> ListarGenero() {        
-        return (List<Genero>) generoRepositorio.findAll();
+public class VideoService {
+    @Autowired
+    VideoRepositorio repositorio;
+    
+    public List<Video> listarVideos(){        
+        return (List)repositorio.findAll();
     }
     
-    public Genero NovoGenero(Genero g){
-       return generoRepositorio.save(g);        
+    public void Cadastrar(Video v){
+        repositorio.save(v);
     }    
 }

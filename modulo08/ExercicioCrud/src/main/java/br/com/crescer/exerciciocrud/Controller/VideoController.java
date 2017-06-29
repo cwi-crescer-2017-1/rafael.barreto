@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 package br.com.crescer.exerciciocrud.Controller;
-
-
-import br.com.crescer.exerciciocrud.entidades.Genero;
-import br.com.crescer.exerciciocrud.services.GeneroService;
+import br.com.crescer.exerciciocrud.entidades.Video;
+import br.com.crescer.exerciciocrud.services.VideoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,19 +20,19 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/genero")
-public class GeneroController {
+@RequestMapping("/video")
+public class VideoController {   
     
     @Autowired
-    GeneroService service;
+    VideoService service;
     
     @GetMapping
-    public List<Genero> ListarGenero(){
-       return service.ListarGenero();
-    }
+    public List<Video> getVideos(){
+        return service.listarVideos();
+    } 
     
-    @PostMapping("/novo")
-    public void CadastrarGenero(@RequestBody Genero genero){
-      service.NovoGenero(genero);        
-    }
+    @PostMapping("/cadastrar")
+    public void cadastrar(@RequestBody Video video){
+        service.Cadastrar(video);
+    }    
 }

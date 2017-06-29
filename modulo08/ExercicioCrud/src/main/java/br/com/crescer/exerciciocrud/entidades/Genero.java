@@ -5,12 +5,15 @@
  */
 package br.com.crescer.exerciciocrud.entidades;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 /**
  *
@@ -18,29 +21,26 @@ import javax.persistence.SequenceGenerator;
  */
 
 @Entity
-public class Genero {
+@Table(name="GENERO")
+public class Genero implements Serializable {
 
+    private static final String SQ_NAME = "SQGENERO";
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQGENERO")
-    @SequenceGenerator(name = "SQGENERO", sequenceName = "SEQ_GENERO", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SQ_NAME)
+    @SequenceGenerator(name = SQ_NAME, sequenceName = SQ_NAME, allocationSize = 1)
     @Basic(optional = false)
+    @Column(name = "ID_GENERO")
     private long id;
 
     @Basic(optional = false)
-    private String descricao;    
+    @Column(name = "DESCRICAO")
+    private String descricao;  
+
+    public long getId() {
+        return id;
+    }
     
-    public Genero() {        
-    }
-
-    public Genero(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public Genero(Long id, String descricao) {
-        this.id = id;
-        this.descricao = descricao;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
