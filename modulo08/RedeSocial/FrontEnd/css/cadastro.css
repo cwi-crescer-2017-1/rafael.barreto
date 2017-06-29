@@ -5,6 +5,11 @@
     color: yellow;
 }
 
+.container .tela-cadastro{
+    margin-top: -40px;
+    height: 540px;
+}
+
 .cadastro{    
     margin-top: 20px;    
 }
