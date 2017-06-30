@@ -1,27 +1,36 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
-body{
-    background: url(http://greywolf-graphics.com/images/boku-no-hero-academia-wallpaper/boku-no-hero-academia-wallpaper-6.jpg);    
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1;}
+}
+
+.fadeIn {
+    animation: fadeIn 3s ease-in-out;
+}
+
+body {
+    background: url(http://greywolf-graphics.com/images/boku-no-hero-academia-wallpaper/boku-no-hero-academia-wallpaper-6.jpg);
     background-size: cover;
 }
 
-.navegacao{
+.navegacao {
     position: fixed;
     top: 0px;
     height: 80px;
     width: 100vw;
-    background:rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
 
-.navegacao h1{    
-    color: yellow;  
-    font-family: 'Frijole', cursive;  
-    font-size: 48px;  
+.navegacao h1 {
+    color: yellow;
+    font-family: 'Frijole', cursive;
+    font-size: 48px;
     margin-top: 10px;
-    text-shadow: 4px 2px black;  
+    text-shadow: 4px 2px black;
 }

@@ -1,9 +1,9 @@
-var modulo = angular.module("plusUltra",[]);
+var modulo = angular.module("plusUltra",['ngRoute']);
 
 
-modulo.config(function($routerProvider){
+modulo.config(function($routeProvider){
 
-        $routerProvider
+        $routeProvider
             .when('/login',{
                 templateUrl : 'template/login.html'
             })
