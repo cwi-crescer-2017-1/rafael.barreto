@@ -1,0 +1,21 @@
+usuario
+id
+nome
+email
+data nascimento
+sexo
+senha
+amigos
+
+--------------------------------------
+post
+
+id
+texto
+likes --> objeto
+id_Usuario
+
+--------------------------------------
+like
+id 
+id_usuario

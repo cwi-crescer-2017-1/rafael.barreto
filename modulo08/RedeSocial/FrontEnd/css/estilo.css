@@ -10,11 +10,11 @@
 }
 
 .fadeIn {
-    animation: fadeIn 3s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 body {
-    background: url(http://greywolf-graphics.com/images/boku-no-hero-academia-wallpaper/boku-no-hero-academia-wallpaper-6.jpg);
+    background: url(../imagen/bkg.jpg);
     background-size: cover;
 }
 
@@ -27,10 +27,14 @@ body {
     text-align: center;
 }
 
-.navegacao h1 {
-    color: yellow;
-    font-family: 'Frijole', cursive;
-    font-size: 48px;
-    margin-top: 10px;
-    text-shadow: 4px 2px black;
-}
+    .navegacao h1 {
+        color: yellow;
+        font-family: 'Frijole', cursive;
+        font-size: 48px;
+        margin-top: 10px;
+        text-shadow: 4px 2px black;        
+    }
+
+    .navegacao a{
+        text-decoration: none;
+    }

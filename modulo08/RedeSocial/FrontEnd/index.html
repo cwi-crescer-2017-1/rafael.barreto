@@ -9,17 +9,18 @@
     <link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+        crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/cadastro.css">
 
 </head>
 
-<body ng-app="plusUltra" class="fadeIn">
+<body ng-app="plusUltra">
     <div class="navegacao">
         <nav>
-            <h1>Plus Ultra!!!</h1>
+            <a href="#!/login"><h1>Plus Ultra!!!</h1></a>
         </nav>
     </div>
 
@@ -29,7 +30,10 @@
 
 <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+<script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 <script src="js/mainController.js"></script>
+<script src="js/cadastroController.js"></script>
+<script src="services/usuarioService.js"></script>
 </body>
 
 </html>

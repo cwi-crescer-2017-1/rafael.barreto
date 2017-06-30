@@ -1,19 +1,27 @@
-<div class="col-md-4 col-md-offset-4 login tela-cadastro">
+<div class="col-md-4 col-md-offset-4 login tela-cadastro fadeIn">
     <form>
         <br>
         <legend>Cadastro</legend>
         <div class="cadastro nome"><label>Nome</label></div>
-        <input class="form-control" type="text" placeholder="Joao da silva" autofocus>
+        <input class="form-control" type="text" placeholder="Joao da silva" autofocus  ng-model="usuario.nome" >
+        
         <div class="cadastro email"><label>E-mail</label></div>
-        <input class="form-control" type="text" placeholder="Teste@mail.com">
+        <input class="form-control" type="text" placeholder="Teste@mail.com" ng-model="usuario.email">
+        
         <div class="cadastro senha"><label>Senha</label></div>
-        <input class="form-control" type="password" placeholder="123456">
+        <input class="form-control" type="password" placeholder="123456"  ng-model="usuario.senha">
+        
         <div class="cadastro"><label>Data Nascimento</label></div>
-        <input class="form-control" type="date">
-        <div class="cadastro"> <label> sexo </label></div>
-        <select class="form-control"></select>
+        <input class="form-control" type="date" ng-model="usuario.dataNascimento">
+        
+        <div class="cadastro" > <label> sexo </label></div>
+        <select class="form-control" ng-model="usuario.sexo">
+            <option ng-value="M"> Masculino</option>
+            <option ng-value="F"> Feminino </option>
+        </select>
+        
         <div class="botao-login">
-            <input type="button" class="btn btn-primary btn-login" value="Cadastrar">
+            <input type="button" class="btn btn-primary btn-login" value="Cadastrar" ng-click="Cadastrar(usuario)">
         </div>
     </form>
 </div>
