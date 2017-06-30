@@ -1,6 +1,6 @@
 
 
-modulo.controller("CadastroController",function($scope,UsuarioService){
+modulo.controller("CadastroController",function($scope,UsuarioService,toastr){
 
         $scope.Cadastrar = Cadastrar;        
 
