@@ -7,6 +7,7 @@ package br.com.crescer.social.service;
 
 import br.com.crescer.social.entidade.Usuario;
 import br.com.crescer.social.repositorio.UsuarioRepositorio;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,10 @@ public class UsuarioService {
     
     public Usuario buscarPorEmail(String email){
         return repositorio.findByEmail(email);
+    }
+
+    public List<Usuario> listarUsuario() {
+        return (List)repositorio.findAll();
     }
     
 }

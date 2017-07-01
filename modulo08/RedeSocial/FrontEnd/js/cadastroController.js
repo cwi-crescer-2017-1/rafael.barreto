@@ -7,7 +7,7 @@ modulo.controller("CadastroController",function($scope,UsuarioService,toastr){
         function Cadastrar(usuario){    
             debugger        
             UsuarioService.Cadastrar(usuario).then(function(response){
-                 toastr.success('Cadastrado com sucesso', 'Toastr fun!');
+                 toastr.success('Cadastrado com sucesso', 'Sucesso');
             })
         }
 

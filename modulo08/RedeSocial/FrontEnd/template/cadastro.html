@@ -1,18 +1,18 @@
 <div class="col-md-4 col-md-offset-4 login tela-cadastro fadeIn">
-    <form>
+    <form name="CadastroForm" ng-submit="Cadastrar(usuario)" novalidate>
         <br>
         <legend>Cadastro</legend>
         <div class="cadastro nome"><label>Nome</label></div>
-        <input class="form-control" type="text" placeholder="Joao da silva" autofocus  ng-model="usuario.nome" >
+        <input class="form-control" type="text" placeholder="Joao da silva" autofocus  ng-model="usuario.nome" required >
         
         <div class="cadastro email"><label>E-mail</label></div>
-        <input class="form-control" type="text" placeholder="Teste@mail.com" ng-model="usuario.email">
+        <input class="form-control" type="text" placeholder="Teste@mail.com" ng-model="usuario.email" required>
         
         <div class="cadastro senha"><label>Senha</label></div>
-        <input class="form-control" type="password" placeholder="123456"  ng-model="usuario.senha">
+        <input class="form-control" type="password" placeholder="123456"  ng-model="usuario.senha" required>
         
         <div class="cadastro"><label>Data Nascimento</label></div>
-        <input class="form-control" type="date" ng-model="usuario.dataNascimento">
+        <input class="form-control" type="date" ng-model="usuario.dataNascimento" required>
         
         <div class="cadastro" > <label> sexo </label></div>
         <select class="form-control" ng-model="usuario.sexo">
@@ -21,7 +21,7 @@
         </select>
         
         <div class="botao-login">
-            <input type="button" class="btn btn-primary btn-login" value="Cadastrar" ng-click="Cadastrar(usuario)">
-        </div>
+            <input type="submit" class="btn btn-primary btn-login" value="Cadastrar" ng-disabled="CadastroForm.$invalid">
+        </div>                        
     </form>
 </div>
