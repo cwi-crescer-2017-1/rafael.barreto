@@ -23,8 +23,7 @@ public class UsuarioService {
     
     @Autowired
     UsuarioRepositorio repositorio;
-    @Autowired
-    PostRepositorio postRep;
+    
     
     public void novoUsuario(Usuario u){
         u.setSenha(new BCryptPasswordEncoder().encode(u.getSenha()));        
@@ -40,12 +39,7 @@ public class UsuarioService {
     }
 
     public List<Usuario> listarUsuario() {
-        return (List)repositorio.findAll();
-    }
-
-    public void novaPostagem(Post post) {
-        post.setData();                        
-        postRep.save(post);
+        return (List<Usuario>)repositorio.findAll();
     }
     
 }

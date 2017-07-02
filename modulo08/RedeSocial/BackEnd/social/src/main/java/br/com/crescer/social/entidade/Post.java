@@ -5,6 +5,7 @@
  */
 package br.com.crescer.social.entidade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -38,7 +39,7 @@ public class Post {
     
     @Basic(optional = false)
     @ManyToOne
-    @JoinColumn(name = "usuarioId")
+    @JoinColumn(name = "usuarioId")    
     private Usuario usuario;
 
     @Basic(optional = false)

@@ -7,6 +7,7 @@ package br.com.crescer.social.controller;
 
 import br.com.crescer.social.entidade.Post;
 import br.com.crescer.social.entidade.Usuario;
+import br.com.crescer.social.service.PostService;
 import br.com.crescer.social.service.UsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author rafael.barreto
+ * @author rafael.barreto 
  */
 @RestController
 @RequestMapping("/usuario")
@@ -26,6 +27,8 @@ public class UsuarioController {
     
     @Autowired
     UsuarioService service;
+    @Autowired
+    PostService postService;    
     
     @GetMapping
     public List<Usuario> listarUsuario(){
@@ -39,6 +42,12 @@ public class UsuarioController {
     
     @PostMapping("/post")
     public void postar(@RequestBody Post post){
-        service.novaPostagem(post);
+        postService.postar(post);
+    }
+    
+    @GetMapping("/buscarpostagens")
+    public List<Post> buscarPostagem(){
+       List<Post> posts = postService.buscarPostagem();
+       return posts;
     }
 }

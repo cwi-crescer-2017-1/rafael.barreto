@@ -5,6 +5,7 @@
  */
 package br.com.crescer.social.entidade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.Basic;
@@ -53,7 +54,8 @@ public class Usuario {
     private Date dataNascimento;
     
     @OneToMany(mappedBy = "usuario")
-    @Basic(optional = true)
+    @Basic(optional = true) 
+    @JsonIgnore
     private Set<Post> postagem;
     
 
