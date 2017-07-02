@@ -5,7 +5,9 @@
  */
 package br.com.crescer.social.service;
 
+import br.com.crescer.social.entidade.Post;
 import br.com.crescer.social.entidade.Usuario;
+import br.com.crescer.social.repositorio.PostRepositorio;
 import br.com.crescer.social.repositorio.UsuarioRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class UsuarioService {
     
     @Autowired
     UsuarioRepositorio repositorio;
+    @Autowired
+    PostRepositorio postRep;
     
     public void novoUsuario(Usuario u){
         u.setSenha(new BCryptPasswordEncoder().encode(u.getSenha()));        
@@ -37,6 +41,11 @@ public class UsuarioService {
 
     public List<Usuario> listarUsuario() {
         return (List)repositorio.findAll();
+    }
+
+    public void novaPostagem(Post post) {
+        post.setData();                        
+        postRep.save(post);
     }
     
 }

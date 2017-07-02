@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: url(../imagen/homeBkg.jpg);    
+    background-size: 120%;
+    background-repeat: none;    
+    
+}
+
+.navegacao {
+    position: fixed;
+    top: 0px;
+    height: 80px;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.8);    
+    color: yellow;
+    font-size: 24px;
+}
+
+    .itens-navegacao{
+        position: relative;
+        top: 25%;        
+    }

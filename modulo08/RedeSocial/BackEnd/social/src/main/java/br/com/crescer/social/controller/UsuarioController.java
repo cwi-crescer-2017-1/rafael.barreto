@@ -5,6 +5,7 @@
  */
 package br.com.crescer.social.controller;
 
+import br.com.crescer.social.entidade.Post;
 import br.com.crescer.social.entidade.Usuario;
 import br.com.crescer.social.service.UsuarioService;
 import java.util.List;
@@ -34,5 +35,10 @@ public class UsuarioController {
     @PostMapping("/novo")
     public void cadastrar(@RequestBody Usuario u) {
         service.novoUsuario(u);
-    }        
+    }
+    
+    @PostMapping("/post")
+    public void postar(@RequestBody Post post){
+        service.novaPostagem(post);
+    }
 }

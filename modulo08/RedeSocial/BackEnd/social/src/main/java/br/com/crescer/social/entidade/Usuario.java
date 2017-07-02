@@ -6,12 +6,14 @@
 package br.com.crescer.social.entidade;
 
 import java.util.Date;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 /**
@@ -28,34 +30,39 @@ public class Usuario {
     @SequenceGenerator(name = SQ_NAME, sequenceName = SQ_NAME, allocationSize = 1)
     @Basic(optional = false)
     @Column(name = "ID")        
-    long id;
+    private long usuarioId;
     
-    @Basic
+    @Basic(optional = false)
     @Column(name = "NOME")        
-    String nome;
+    private String nome;
     
-    @Basic
+    @Basic(optional = false)
     @Column(name = "EMAIL")
-    String email;
+    private String email;
     
-    @Basic
+    @Basic(optional = true)
     @Column(name = "SEXO")
-    String sexo;
+    private String sexo;
     
-    @Basic
+    @Basic(optional = false)
     @Column(name = "SENHA")            
-    String senha;
-    
-    @Basic
+    private String senha;
+                                                                                                                                                                                 
+    @Basic(optional = false)
     @Column(name = "DATA_NASCIMENTO")
-    Date dataNascimento;
+    private Date dataNascimento;
+    
+    @OneToMany(mappedBy = "usuario")
+    @Basic(optional = true)
+    private Set<Post> postagem;
+    
 
-    public long getId() {
-        return id;
+    public long getUsuarioIdId() {
+        return usuarioId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUsuarioId(long id) {
+        this.usuarioId = id;
     }
 
     public String getNome() {
@@ -97,4 +104,17 @@ public class Usuario {
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+
+    public Set<Post> getPostagem() {
+        return postagem;
+    }
+
+    public void setPostagem(Set<Post> postagem) {
+        this.postagem = postagem;
+    }
+
+    public void adicionarPostagem(Post post){
+        this.postagem.add(post);
+    }
+    
 }
