@@ -11,11 +11,11 @@
             <div class="usuario-login">
                 <label>Usuario</label>
             </div>
-            <input class="form-control" type="text" placeholder="Nome de Usuario" autofocus>
+            <input class="form-control" type="text" placeholder="Nome de Usuario" ng-model="usuario.email" autofocus>
             <div class="senha-login">Senha</div>
-            <input class="form-control" type="text" placeholder="Senha">
+            <input class="form-control" type="password" placeholder="Senha" ng-model="usuario.senha">
             <div class="botao-login">
-                <input type="button" class="btn btn-primary btn-login" value="Logar">
+                <input type="button" class="btn btn-primary btn-login" value="Logar" ng-click="login(usuario)">
             </div>
             <div class="cadastrar">
                 <a href="#!/cadastro"> cadastrar </a>
