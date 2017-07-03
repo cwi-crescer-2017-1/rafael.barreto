@@ -22,6 +22,70 @@ body{
 }
 
     .itens-navegacao{
+        margin-left: 100px;
         position: relative;
         top: 25%;        
     }
+
+.barra-lateral{        
+    position: fixed;
+    margin-top: 80px;    
+    height: 100%;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+
+}
+
+.feed{
+    margin-top: 110px;   
+}
+
+.radio{
+    margin-top: 90px;   
+    background: rgba(30, 30,30, 0.8);
+    border-radius: 10px;    
+}
+
+    .radio div{    
+        color: yellow;
+        text-align: center;        
+    }
+
+.card-feed-postagem{
+    height: 230px;    
+    background: rgba(30, 30,30, 0.8);
+    border-radius: 20px;
+    box-shadow: 5px 5px 2px #363636;
+    text-align: center;
+    color: yellow;    
+}
+    .card-feed-postagem form label{
+        margin-top: 15px;   
+    }
+
+    .card-feed-postagem form textarea{
+        resize: none;
+        margin-top: 10px;
+        text-align: left;
+        font-size: 24px;
+    }
+
+    .btn-postar{
+        margin-top: 10px;
+        width: 100%;
+        background: black;               
+    }
+    
+    .btn-postar:hover{
+        background: gray;
+        color: yellow;
+        transition: 0.3s;
+    }
+
+    .btn-postar:active{
+        background: yellow;
+        color: black;
+        transition: 0.3s;        
+    }
+
+    
