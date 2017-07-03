@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 
-<body>
+<body ng-app="plusUltra">
     <div class="navegacao">
         <nav class="itens-navegacao row">
             <div class="col-md-3 "><label> lelouch lamperouge </label></div>
-            <div class="col-md-3 col-md-offset-1 solicitacoes"><label> solicitacoes </label></div>
-            <div class="col-md-3 col-md-offset-1"><label>buscar</label></div>
+            <div class="col-md-3 solicitacoes"><label> solicitacoes </label></div>
+            <div class="col-md-3"><label>buscar</label></div>
+            <div class="col-md-3"><label> logout </label></div>
         </nav>
     </div>
     <div>
@@ -29,9 +30,9 @@
             </div>
             <div class="feed-noticia">
                 <label> noticias </label>
-            </div>
+            </div>            
         </div>
-        <div class="col-md-7 col-md-offset-2 feed">
+        <div class="col-md-6 col-md-offset-2 feed">
             <div class="card-feed-postagem col-md-8">
                 <form>
                     <label>Alguma novidade ?</label>
@@ -41,14 +42,13 @@
                 </form>
             </div>
             <div class=" card-feed-postagem postagens-amigos col-md-8">
-
+                
             </div>
         </div>
-        <div class="col-md-3 radio">
+        <div class="col-md-4 radio">
             <div> <label> Radio Online </label></div>
-            <iframe width="460" height="315" src="https://www.youtube.com/embed/25hiadrrScY" frameborder="0" allowfullscreen></iframe>
+            <iframe width="430" height="315" src="https://www.youtube.com/embed/25hiadrrScY" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 </body>
-
 </html>

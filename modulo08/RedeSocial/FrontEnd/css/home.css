@@ -87,9 +87,11 @@ body{
 }
 
 .radio{
-    margin-top: 90px;   
+    margin-top: 90px;  
     background: rgba(30, 30,30, 0.8);
-    border-radius: 10px;    
+    min-width: 430px;
+    border-radius: 10px;        
+    left: -80px;
 }
 
     .radio div{    
