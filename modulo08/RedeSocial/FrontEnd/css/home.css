@@ -22,9 +22,13 @@ body{
 }
 
     .itens-navegacao{
-        margin-left: 100px;
+        margin-left: 30px;
         position: relative;
         top: 25%;        
+    }
+
+    .solicitacoes label{
+        margin-left: 46px;
     }
 
 .barra-lateral{        
@@ -33,11 +37,53 @@ body{
     height: 100%;
     width: 300px;
     background: rgba(0, 0, 0, 0.8);
+    color: yellow;    
 
-}
+}    
+
+    .barra-lateral div{
+        height: 60px;        
+        background: rgba(0, 0, 0, 0.8);
+        font-size: 20px;    
+        border-bottom: 3px solid yellow;        
+        text-align: center;
+    }
+        .barra-lateral div label{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+    .barra-lateral div:hover{
+        background: yellow;
+        color: black;        
+        transition: 0.5s;
+        font-size: 24px;       
+    }
+
+
+    .barra-lateral .foto-perfil{
+        height: 150px;
+    }
+        .barra-lateral .foto-perfil:hover{
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .barra-lateral .foto-perfil img{
+            height: 140px;
+            width: auto;
+            border-radius: 50px;             
+        }
+        
+        .barra-lateral .foto-perfil img:hover{
+            transform: scale(1.1);                     
+            transition: 0.5s ease-in-out;
+        }
+
+
 
 .feed{
-    margin-top: 110px;   
+    margin-top: 90px;   
 }
 
 .radio{
@@ -54,10 +100,11 @@ body{
 .card-feed-postagem{
     height: 230px;    
     background: rgba(30, 30,30, 0.8);
-    border-radius: 20px;
+    margin-left: 100px;
+    border-radius: 10px;
     box-shadow: 5px 5px 2px #363636;
     text-align: center;
-    color: yellow;    
+    color: yellow;            
 }
     .card-feed-postagem form label{
         margin-top: 15px;   
@@ -76,16 +123,18 @@ body{
         background: black;               
     }
     
-    .btn-postar:hover{
-        background: gray;
-        color: yellow;
+    .btn-postar:hover{       
+        background: yellow;
+         color: black;
         transition: 0.3s;
     }
 
     .btn-postar:active{
-        background: yellow;
-        color: black;
-        transition: 0.3s;        
+        background: gray;
+        color: yellow;                
     }
 
+.postagens-amigos{
+    margin-top: 20px;
+}
     
