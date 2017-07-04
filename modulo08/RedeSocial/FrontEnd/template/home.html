@@ -19,8 +19,8 @@
             <label> Feed </label>
         </div>
     </div>
-    <div class="col-md-6 col-md-offset-2 feed">
-        <div class="card-feed-postagem col-md-8">
+    <div class="col-md-5 col-md-offset-2 feed">
+        <div class="card-feed-postagem /col-md-8">
             <form ng-submit="postar(postagem)">
                 <label>Alguma novidade ?</label>
                 <textarea class="form-control" rows="3" ng-model="postagem.postagem" autofocus>                       
@@ -28,7 +28,7 @@
                 <input type="submit" class="btn btn-postar" value="Postar">
             </form>
         </div>
-        <div class=" card-feed-postagem postagens-amigos col-md-8" ng-repeat="post in postagens">
+        <div class=" card-feed-postagem postagens-amigos col-md-8" ng-repeat="post in postagens  | orderBy:'-data' ">
             <div class="nomeAmigo">                
                 <label>{{post.usuario.nome}}</label>
             </div>
@@ -37,7 +37,7 @@
             </div>            
         </div>                
     </div>
-    <div class="col-md-4 radio">
+    <div class="col-md-3 radio">
         <div> <label> Radio Online </label></div>
         <iframe src="https://www.youtube.com/embed/25hiadrrScY" frameborder="0" allowfullscreen></iframe>
     </div>
