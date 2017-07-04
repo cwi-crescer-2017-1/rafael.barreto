@@ -4,7 +4,7 @@
         <div class="col-md-3 "><label> {{dados.nome}} </label></div>
         <div class="col-md-3 solicitacoes"><label> solicitacoes </label></div>
         <div class="col-md-3"><label>buscar</label></div>
-        <div class="col-md-3"><label> logout </label></div>
+        <div class="col-md-3 logout"><label ng-click="logout()"> logout </label></div>
     </nav>
 </div>
 <div>
@@ -16,26 +16,26 @@
             <label> minhas postagens </label>
         </div>
         <div class="feed-noticia">
-            <label> noticias </label>
+            <label> Feed </label>
         </div>
     </div>
     <div class="col-md-6 col-md-offset-2 feed">
         <div class="card-feed-postagem col-md-8">
-            <form>
+            <form ng-submit="postar(postagem)">
                 <label>Alguma novidade ?</label>
-                <textarea class="form-control" rows="3" autofocus>                       
+                <textarea class="form-control" rows="3" ng-model="postagem.postagem" autofocus>                       
                     </textarea>
-                <input type="button" class="btn btn-postar" value="Postar">
+                <input type="submit" class="btn btn-postar" value="Postar">
             </form>
         </div>
         <div class=" card-feed-postagem postagens-amigos col-md-8" ng-repeat="post in postagens">
-            <div class="nomeAmigo">
-                <label>{{post.nome}}</label>
+            <div class="nomeAmigo">                
+                <label>{{post.usuario.nome}}</label>
             </div>
             <div class="postagemAmigo">
                 <label>{{post.postagem}}</label>
-            </div>
-        </div>
+            </div>            
+        </div>                
     </div>
     <div class="col-md-4 radio">
         <div> <label> Radio Online </label></div>

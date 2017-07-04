@@ -6,6 +6,7 @@
 package br.com.crescer.social.controller;
 
 import br.com.crescer.social.entidade.Post;
+import br.com.crescer.social.entidade.PostBusca;
 import br.com.crescer.social.entidade.Usuario;
 import br.com.crescer.social.service.PostService;
 import br.com.crescer.social.service.UsuarioService;
@@ -47,18 +48,18 @@ public class UsuarioController {
         return hashMap;
     }
     
-    @GetMapping("/{email}")
-    public Map usuarioLogado(@PathVariable("email") String email){
-        return service.buscarUsuarioLogado(email);
+    @PostMapping("/buscarUsuario")
+    public Map usuarioLogado(@RequestBody PostBusca email){
+        return service.buscarUsuarioLogado(email.getEmail());
     }
 
     @PostMapping("/novo")
-    public void cadastrar(@RequestBody Usuario u) {
-        service.novoUsuario(u);
+    public Usuario cadastrar(@RequestBody Usuario u) {
+        return service.novoUsuario(u);
     }
 
     @PostMapping("/post")
-    public void postar(@RequestBody Post post) {
+    public void postar(@RequestBody PostBusca post) {
         postService.postar(post);
     }
 

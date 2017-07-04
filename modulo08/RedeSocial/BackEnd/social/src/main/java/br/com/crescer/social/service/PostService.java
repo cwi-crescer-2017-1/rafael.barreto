@@ -6,7 +6,9 @@
 package br.com.crescer.social.service;
 
 import br.com.crescer.social.entidade.Post;
+import br.com.crescer.social.entidade.PostBusca;
 import br.com.crescer.social.repositorio.PostRepositorio;
+import br.com.crescer.social.repositorio.UsuarioRepositorio;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,27 +25,20 @@ public class PostService {
 
     @Autowired
     PostRepositorio postRep;
+    @Autowired
+    UsuarioRepositorio userRep;
 
-    public void postar(Post post) {
-        post.setData();
-        postRep.save(post);
+    public void postar(PostBusca post) {
+        Post postar = new Post();
+        postar.setData();
+        postar.setUsuario(userRep.findOneByEmail(post.getEmail()));
+        postar.setPostagem(post.getPostagem());
+        postRep.save(postar);        
     }
 
     public List buscarPostagem() {
-        List<Map> posts = new ArrayList<>();
-        Map<String,Object> map = new HashMap<>();
-
-        for (Post post : (List<Post>) postRep.findAll()) {
-            map.put("nome", post.getUsuario().getNome());
-            map.put("usuarioId", post.getUsuario().getUsuarioIdId());
-            map.put("data", post.getData());
-            map.put("idPostagem", post.getId());
-            map.put("postagem", post.getPostagem());            
-            posts.add(map);
-        }        
-        return posts;
+        return (List)postRep.findAll();
     }
-
 }
 
 //posts.add(new PostRetorno(

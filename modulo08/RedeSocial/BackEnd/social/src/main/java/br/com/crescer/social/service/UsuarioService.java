@@ -24,8 +24,9 @@ public class UsuarioService {
     @Autowired
     UsuarioRepositorio repositorio;
 
-    public void novoUsuario(Usuario u) {
-        repositorio.save(u);
+    public Usuario novoUsuario(Usuario u) {
+        u.setSenha(new BCryptPasswordEncoder().encode(u.getSenha()));
+        return repositorio.save(u);
     }
 
     public Usuario buscarUsuario(long id) {
@@ -41,7 +42,7 @@ public class UsuarioService {
     }
 
     public Map buscarUsuarioLogado(String email) {
-        Usuario u = repositorio.findOneByEmail("rsmennabarreto@gmail.com");
+        Usuario u = repositorio.findOneByEmail(email);
         Map<String, Object> map = new HashMap<>();
 
         map.put("nome", u.getNome());
