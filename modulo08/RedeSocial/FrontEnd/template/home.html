@@ -1,54 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="css/home.css">
-</head>
-
-<body ng-app="plusUltra">
-    <div class="navegacao">
-        <nav class="itens-navegacao row">
-            <div class="col-md-3 "><label> lelouch lamperouge </label></div>
-            <div class="col-md-3 solicitacoes"><label> solicitacoes </label></div>
-            <div class="col-md-3"><label>buscar</label></div>
-            <div class="col-md-3"><label> logout </label></div>
-        </nav>
-    </div>
-    <div>
-        <div class="barra-lateral">
-            <div class="foto-perfil">
-                <img src="http://www.megacuriosidades.net/wp-content/uploads/2016/06/Code-Geass.jpg" alt="">
-            </div>
-            <div class="minhas-postagens">
-                <label> minhas postagens </label>
-            </div>
-            <div class="feed-noticia">
-                <label> noticias </label>
-            </div>            
+<link rel="stylesheet" href="css/home.css">
+<div class="navegacao">
+    <nav class="itens-navegacao row">
+        <div class="col-md-3 "><label> {{dados.nome}} </label></div>
+        <div class="col-md-3 solicitacoes"><label> solicitacoes </label></div>
+        <div class="col-md-3"><label>buscar</label></div>
+        <div class="col-md-3"><label> logout </label></div>
+    </nav>
+</div>
+<div>
+    <div class="barra-lateral">
+        <div class="foto-perfil">
+            <img src="{{dados.foto}}">
         </div>
-        <div class="col-md-6 col-md-offset-2 feed">
-            <div class="card-feed-postagem col-md-8">
-                <form>
-                    <label>Alguma novidade ?</label>
-                    <textarea class="form-control" rows="3" autofocus>                       
+        <div class="minhas-postagens">
+            <label> minhas postagens </label>
+        </div>
+        <div class="feed-noticia">
+            <label> noticias </label>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-2 feed">
+        <div class="card-feed-postagem col-md-8">
+            <form>
+                <label>Alguma novidade ?</label>
+                <textarea class="form-control" rows="3" autofocus>                       
                     </textarea>
-                    <input type="button" class="btn btn-postar" value="Postar">
-                </form>
-            </div>
-            <div class=" card-feed-postagem postagens-amigos col-md-8">
-                
-            </div>
+                <input type="button" class="btn btn-postar" value="Postar">
+            </form>
         </div>
-        <div class="col-md-4 radio">
-            <div> <label> Radio Online </label></div>
-            <iframe width="430" height="315" src="https://www.youtube.com/embed/25hiadrrScY" frameborder="0" allowfullscreen></iframe>
+        <div class=" card-feed-postagem postagens-amigos col-md-8" ng-repeat="post in postagens">
+            <div class="nomeAmigo">
+                <label>{{post.nome}}</label>
+            </div>
+            <div class="postagemAmigo">
+                <label>{{post.postagem}}</label>
+            </div>
         </div>
     </div>
-</body>
-</html>
+    <div class="col-md-4 radio">
+        <div> <label> Radio Online </label></div>
+        <iframe src="https://www.youtube.com/embed/25hiadrrScY" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>

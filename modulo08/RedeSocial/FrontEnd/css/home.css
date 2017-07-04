@@ -80,8 +80,6 @@ body{
             transition: 0.5s ease-in-out;
         }
 
-
-
 .feed{
     margin-top: 90px;   
 }
@@ -92,11 +90,16 @@ body{
     min-width: 430px;
     border-radius: 10px;        
     left: -80px;
+    text-align: center;
 }
 
     .radio div{    
-        color: yellow;
-        text-align: center;        
+        color: yellow;       
+    }
+
+    .radio iframe{
+        height:315px;
+        width:430px;        
     }
 
 .card-feed-postagem{

@@ -14,6 +14,7 @@ modulo.config(function($routeProvider){
             })
             .when('/home',{
                 templateUrl : 'template/home.html',
+                controller : 'homeController',
                 resolve: {
                 // define que para acessar esta página deve ser um usuário autenticado (mas não restringe o tipo de permissão)
                     autenticado: function (authService) {

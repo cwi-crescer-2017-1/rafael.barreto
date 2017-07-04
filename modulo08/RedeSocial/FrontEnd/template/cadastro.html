@@ -21,6 +21,9 @@
 
             <div class="cadastro"><label>Data Nascimento</label></div>
             <input class="form-control" type="date" ng-model="usuario.dataNascimento" required>
+            
+            <div class="cadastro"><label>Link Foto</label></div>
+            <input class="form-control" type="text" ng-model="usuario.foto" required>
 
             <div class="cadastro"> <label> sexo </label></div>
             <select class="form-control" ng-model="usuario.sexo">
@@ -30,7 +33,7 @@
 
             <div class="botao-login">
                 <input type="submit" class="btn btn-primary btn-login" value="Cadastrar" ng-disabled="CadastroForm.$invalid">
-            </div>
+            </div><br>
         </form>
     </div>
 </div>

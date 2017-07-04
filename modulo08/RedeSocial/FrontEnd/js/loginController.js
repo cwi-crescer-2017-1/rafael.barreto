@@ -13,7 +13,7 @@ modulo.controller('loginController', function ($scope,$location,toastr,authServi
             },
             function (response) {
                 console.log(response);
-                toastr.alert('Erro no Login!');
+                toastr.error('Erro no Login!');
             });
     };
 })

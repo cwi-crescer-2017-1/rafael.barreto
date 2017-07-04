@@ -53,6 +53,11 @@ public class Usuario {
     @Column(name = "DATA_NASCIMENTO")
     private Date dataNascimento;
     
+    @Basic(optional = false)
+    @Column(name = "URL_FOTO")
+    private String foto;    
+    
+    
     @OneToMany(mappedBy = "usuario")
     @Basic(optional = true) 
     @JsonIgnore
@@ -109,6 +114,15 @@ public class Usuario {
 
     public Set<Post> getPostagem() {
         return postagem;
+    }
+    
+    
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public void setPostagem(Set<Post> postagem) {
