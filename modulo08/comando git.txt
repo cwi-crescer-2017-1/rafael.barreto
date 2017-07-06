@@ -1,0 +1,4 @@
+git checkout master -- muda para master
+git pull -- puxa arquivos 
+git checkoute nome da branch-- volta para minha branch
+git merge master -- faz merge para ultimas alteracoes na master
